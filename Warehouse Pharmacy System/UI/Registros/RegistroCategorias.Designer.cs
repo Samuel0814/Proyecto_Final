@@ -33,11 +33,11 @@
             this.CategoriaIDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.Descripcionlabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.MYerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
-            this.MYerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.CategoriaIDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MYerrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -79,6 +79,10 @@
             this.label1.Size = new System.Drawing.Size(66, 13);
             this.label1.TabIndex = 49;
             this.label1.Text = "Categoria ID";
+            // 
+            // MYerrorProvider
+            // 
+            this.MYerrorProvider.ContainerControl = this;
             // 
             // Eliminarbutton
             // 
@@ -127,10 +131,7 @@
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
-            // 
-            // MYerrorProvider
-            // 
-            this.MYerrorProvider.ContainerControl = this;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // RegistroCategorias
             // 
