@@ -7,13 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Warehouse_Pharmacy_System
+namespace Warehouse_Pharmacy_System.UI.Inicio
 {
-    public partial class Form1 : Form
+    public partial class Home : Form
     {
-        public Form1()
+        public Home()
         {
             InitializeComponent();
+        }
+
+        private void entradaDeArticulosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
