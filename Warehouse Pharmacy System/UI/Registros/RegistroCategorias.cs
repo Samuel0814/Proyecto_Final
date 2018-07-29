@@ -44,7 +44,59 @@ namespace Warehouse_Pharmacy_System.UI.Registros
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            
+            int id = Convert.ToInt32(CategoriaIDnumericUpDown.Value);
+            Categorias talleres = BLL.CategoriasBLL.Buscar(id);
+
+            if (talleres != null)
+            {
+                DescripciontextBox.Text = talleres.NombreCategoria;
+            }
+        }
+
+        private void Nuevobutton_Click(object sender, EventArgs e)
+        {
+            CategoriaIDnumericUpDown.Value = 0;
+            DescripciontextBox.Clear();
+            MYerrorProvider.Clear();
+        }
+
+        private void Guardarbutton_Click(object sender, EventArgs e)
+        {
+            Categorias categorias;
+            bool Paso = false;
+
+            if (HayErrores())
+            {
+                MessageBox.Show("Favor revisar todos los campos", "Validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            categorias = LlenaClase();
+
+
+            if (CategoriaIDnumericUpDown.Value == 0)
+                Paso = BLL.CategoriasBLL.Guardar(categorias);
+            else
+                Paso = BLL.CategoriasBLL.Modificar(LlenaClase());
+
+
+            if (Paso)
+                MessageBox.Show("Guardado", "Exito",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("No se pudo guardar", "Falló",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void Eliminarbutton_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(CategoriaIDnumericUpDown.Value);
+
+            if (BLL.CategoriasBLL.Eliminar(id))
+                MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("No se pudo eliminar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
