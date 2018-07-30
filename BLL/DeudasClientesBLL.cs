@@ -69,7 +69,7 @@ namespace BLL
 
         }
 
-        public static bool Eliminar(DeudasClientes id)
+        public static bool Eliminar(int id)
         {
             bool paso = false;
 

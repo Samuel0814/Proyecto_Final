@@ -37,7 +37,7 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
             DeudasClientes entrada = new DeudasClientes();
 
             entrada.IdDeudas = Convert.ToInt32(UsuarioIDnumericUpDown.Value);
-            entrada.ClienteID = ClientecomboBox.SelectedIndex - 1;
+            entrada.ClienteID = ClientecomboBox.SelectedIndex + 1;
             entrada.Deuda = Convert.ToDecimal(DeudatextBox.Text);
             return entrada;
         }
@@ -85,31 +85,18 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            if (UsuarioIDnumericUpDown.Value == 0)
+            int id = Convert.ToInt32(UsuarioIDnumericUpDown.Value);
+
+            DeudasClientes entrada = BLL.DeudasClientesBLL.Buscar(id);
+
+            if (entrada != null)
             {
-                MYerrorProvider.SetError(UsuarioIDnumericUpDown, "Coloque un ID mayor a 0");
-                Limpiar();
+                ClientecomboBox.SelectedIndex = Convert.ToInt32(entrada.ClienteID);
+                DeudatextBox.Text = entrada.Deuda.ToString();
             }
             else
-            {
-                //MYerrorProvider.Clear();
-                //int id = Convert.ToInt32(UsuarioIDnumericUpDown.Value);
-                //Entidades.Clientes tipo;
-                ////tipo = BLL.ClientesBLL.Buscar(p => p.IdDeudas == id);
-                //if (tipo != null)
-                //{
-
-                //    ClientecomboBox.Text = tipo.ClienteId.ToString();
-                //    DeudatextBox.Text = tipo.Credito.ToString();
-                //    MessageBox.Show("Resultados de su busqueda");
-                //}
-                //else
-                //{
-                //    MessageBox.Show("No existe ninguna Deuda con ese Id.");
-                //    Limpiar();
-                //}
-
-            }
+                MessageBox.Show("No se encontro!", "Fallo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
@@ -151,7 +138,14 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
+            int id = Convert.ToInt32(UsuarioIDnumericUpDown.Value);
 
+            if (BLL.DeudasClientesBLL.Eliminar(id))
+            {
+                MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+                MessageBox.Show("No se pudo eliminar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void ClientecomboBox_SelectedValueChanged(object sender, EventArgs e)
@@ -160,6 +154,11 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
         }
 
         private void SaldarDeudas_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ClientecomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

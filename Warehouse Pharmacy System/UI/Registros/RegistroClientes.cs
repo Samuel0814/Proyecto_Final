@@ -34,10 +34,10 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             clientes.Nombres = NombretextBox.Text;
             clientes.Direccion = DirecciontextBox.Text;
             clientes.Email = EmailtextBox.Text;
-            clientes.Sexo = (Genero)SexocomboBox.SelectedValue;
+            clientes.Sexo = (Genero)SexocomboBox.SelectedIndex;
             clientes.FechaNacimiento = FechaNacimientodateTimePicker.Value;
             clientes.Credito = 0;
-            clientes.MaximoCredicto = Convert.ToDecimal(creditomaximotextBox.Text);
+            clientes.MaximoCredicto = 0;
             clientes.Cedula = CedulamaskedTextBox.Text;
             clientes.Telefono = TelefonomaskedTextBox.Text;
             return clientes;
@@ -116,7 +116,9 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                 NombretextBox.Text = clientes.Nombres;
                 DirecciontextBox.Text = clientes.Direccion;
                 EmailtextBox.Text = clientes.Email;
-                //Sexo
+
+                SexocomboBox.SelectedIndex = Convert.ToInt32(clientes.Sexo);
+
                 FechaNacimientodateTimePicker.Value = clientes.FechaNacimiento;
                 CreditotextBox.Text = clientes.Credito.ToString();
                 creditomaximotextBox.Text = clientes.MaximoCredicto.ToString();
@@ -160,6 +162,7 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             {
                 MessageBox.Show("Guardado", "Exito",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Limpiar();
             }
             else
             {
@@ -175,6 +178,7 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             if (BLL.ClientesBLL.Eliminar(id))
             {
                 MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Limpiar();
             }
             else
             {
