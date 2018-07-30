@@ -62,14 +62,15 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
             Dispose();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            new RegistroUsuarios().Show();
-        }
 
         private void Login_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new RegistroUsuarios().Show();
         }
     }
 }

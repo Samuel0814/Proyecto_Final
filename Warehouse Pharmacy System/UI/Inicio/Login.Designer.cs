@@ -78,6 +78,7 @@
             // 
             // button2
             // 
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button2.Location = new System.Drawing.Point(443, 192);
@@ -120,7 +121,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(593, 26);
+            this.button3.Location = new System.Drawing.Point(544, 48);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 8;
