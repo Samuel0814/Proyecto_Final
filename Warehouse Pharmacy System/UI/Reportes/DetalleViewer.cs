@@ -28,18 +28,3 @@ namespace Warehouse_Pharmacy_System.UI.Reportes
         }
     }
 }
-
-private List<Clientes> ListaCliente = null;
-public ClienteViewer(List<Clientes> clientes)
-{
-    this.ListaCliente = clientes;
-    InitializeComponent();
-}
-
-private void crystalReportViewer1_Load(object sender, EventArgs e)
-{
-    ListadoClientes listado = new ListadoClientes();
-    listado.SetDataSource(ListaCliente);
-    crystalReportViewer1.ReportSource = listado;
-    listado.Refresh();
-}

@@ -8,11 +8,14 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Windows.Forms;
+using Warehouse_Pharmacy_System.UI.Inicio;
+using Warehouse_Pharmacy_System.UI.Reportes;
 
 namespace Warehouse_Pharmacy_System.UI.Consultas
 {
     public partial class ConsultaDeudas : Form
     {
+        private List<SaldarDeudas> saldarDeudas;
         public ConsultaDeudas()
         {
             InitializeComponent();
@@ -45,7 +48,8 @@ namespace Warehouse_Pharmacy_System.UI.Consultas
                     break;
             }
 
-            ConsultadataGridView.DataSource = BLL.DeudasClientesBLL.GetList(filtro);
+            saldarDeudas = BLL.DeudasClientesBLL.GetList(filtro);
+            ConsultadataGridView.DataSource = saldarDeudas;
         }
 
         private void ConsultaDeudas_Load(object sender, EventArgs e)
@@ -55,7 +59,13 @@ namespace Warehouse_Pharmacy_System.UI.Consultas
 
         private void Imprimirbutton_Click(object sender, EventArgs e)
         {
-
+            if (saldarDeudas.Count == 0)
+            {
+                MessageBox.Show("Reporte esta vacio");
+                return;
+            }
+            DeudasViewer clienteViewer = new DeudasViewer(saldarDeudas);
+            clienteViewer.Show();
         }
 
         private void FiltrocomboBox_SelectedIndexChanged(object sender, EventArgs e)
