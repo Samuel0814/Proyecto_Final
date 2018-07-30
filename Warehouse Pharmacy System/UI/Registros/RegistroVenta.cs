@@ -61,7 +61,6 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                 catch 
                 {
 
-                    
                 }
               
             }else
@@ -117,6 +116,41 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                 EfectivotextBox.Enabled =true;
 
             }
+        }
+
+        private void RegistroVenta_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Nuevobutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Guardarbutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Eliminarbutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Agregarbutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NuevoClientebutton_Click(object sender, EventArgs e)
+        {
+            new RegistroClientes().Show();
         }
     }
 }

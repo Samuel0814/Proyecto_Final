@@ -44,7 +44,6 @@ namespace Warehouse_Pharmacy_System.UI.Registros
         {
             if(string.IsNullOrWhiteSpace(NombreArticulotextBox.Text))
             {
-
                 NombreArticulotextBox.Focus();
                 return false;
             }
@@ -105,6 +104,11 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             {
                 MessageBox.Show("No se pudo eliminar El usuario.");
             }
+        }
+
+        private void RegistroUsuarios_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

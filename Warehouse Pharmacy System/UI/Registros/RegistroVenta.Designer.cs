@@ -309,9 +309,9 @@
             // FacturaciondataGridView
             // 
             this.FacturaciondataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.FacturaciondataGridView.Location = new System.Drawing.Point(61, 416);
+            this.FacturaciondataGridView.Location = new System.Drawing.Point(61, 381);
             this.FacturaciondataGridView.Name = "FacturaciondataGridView";
-            this.FacturaciondataGridView.Size = new System.Drawing.Size(860, 248);
+            this.FacturaciondataGridView.Size = new System.Drawing.Size(860, 283);
             this.FacturaciondataGridView.TabIndex = 2;
             // 
             // groupBox3
@@ -412,6 +412,7 @@
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 
@@ -424,6 +425,7 @@
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Nuevobutton
             // 
@@ -436,6 +438,7 @@
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // Agregarbutton
             // 
@@ -449,6 +452,7 @@
             this.Agregarbutton.Text = "Agregar";
             this.Agregarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Agregarbutton.UseVisualStyleBackColor = true;
+            this.Agregarbutton.Click += new System.EventHandler(this.Agregarbutton_Click);
             // 
             // NuevoClientebutton
             // 
@@ -460,6 +464,7 @@
             this.NuevoClientebutton.TabIndex = 9;
             this.NuevoClientebutton.Text = "Nuevo Cliente";
             this.NuevoClientebutton.UseVisualStyleBackColor = true;
+            this.NuevoClientebutton.Click += new System.EventHandler(this.NuevoClientebutton_Click);
             // 
             // button1
             // 
@@ -472,6 +477,7 @@
             this.button1.Text = "Buscar";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ArticulodataGridView
             // 
@@ -524,6 +530,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "RegistroVenta";
             this.Text = "Facturacion";
+            this.Load += new System.EventHandler(this.RegistroVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MYerrorProvider)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

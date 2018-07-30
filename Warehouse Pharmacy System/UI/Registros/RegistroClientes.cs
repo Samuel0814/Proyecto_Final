@@ -32,78 +32,80 @@ namespace Warehouse_Pharmacy_System.UI.Registros
 
             clientes.ClienteId = Convert.ToInt32(ClienteIDnumericUpDown.Value);
             clientes.Nombres = NombretextBox.Text;
-            clientes.Direccion = Direccion.Text;
-            clientes.Email = Direccion.Text;
+            clientes.Direccion = DirecciontextBox.Text;
+            clientes.Email = EmailtextBox.Text;
             clientes.Sexo = (Genero)SexocomboBox.SelectedValue;
             clientes.FechaNacimiento = FechaNacimientodateTimePicker.Value;
             clientes.Credito = 0;
-            //clientes.CategoriaId = Convert.ToInt32(CategoriacomboBox.SelectedValue);
-            //clientes.ITBIS = Convert.ToDecimal(ITBIStextBox.Text);
+            clientes.MaximoCredicto = Convert.ToDecimal(creditomaximotextBox.Text);
+            clientes.Cedula = CedulamaskedTextBox.Text;
+            clientes.Telefono = TelefonomaskedTextBox.Text;
             return clientes;
         }
 
         private void Limpiar()
         {
-            //ArticuloIdnumericUpDown.Value = 0;
-            //NombreArticulotextBox.Clear();
-            //ExistenciatextBox.Clear();
-            //PrecioVentatextBox.Clear();
-            //PrecioCompratextBox.Clear();
-            //CodigoArticulotextBox.Clear();
-            //FechaIngresodateTimePicker.Value = DateTime.Now;
-            //CategoriacomboBox.SelectedValue = 0;
-            //ITBIStextBox.Clear();
+            ClienteIDnumericUpDown.Value = 0;
+            NombretextBox.Clear();
+            DirecciontextBox.Clear();
+            EmailtextBox.Clear();
+            SexocomboBox.SelectedValue = 0;
+            CreditotextBox.Clear();
+            FechaNacimientodateTimePicker.Value = DateTime.Now;
+            creditomaximotextBox.Clear();
+            CedulamaskedTextBox.Clear();
+            TelefonomaskedTextBox.Clear();
             MYerrorProvider.Clear();
         }
 
-    /*    private bool HayErrores()
+        private bool HayErrores()
         {
 
             bool HayErrores = false;
 
-            if (String.IsNullOrWhiteSpace(NombreArticulotextBox.Text))
+            if (String.IsNullOrWhiteSpace(NombretextBox.Text))
             {
-                MYerrorProvider.SetError(NombreArticulotextBox,
-                    "Debes debes dejar el nombre del articulo vacio");
+                MYerrorProvider.SetError(NombretextBox,
+                    "No Debes debes dejar el nombre del cliente vacio");
                 HayErrores = true;
             }
 
 
-            if (String.IsNullOrWhiteSpace(ExistenciatextBox.Text))
+            if (String.IsNullOrWhiteSpace(DirecciontextBox.Text))
             {
-                MYerrorProvider.SetError(ExistenciatextBox,
-                    "Debes debes dejar la Existencia vacia");
+                MYerrorProvider.SetError(DirecciontextBox,
+                    "No Debes debes dejar la direccion vacia");
                 HayErrores = true;
             }
 
 
-            if (String.IsNullOrWhiteSpace(PrecioVentatextBox.Text))
+            if (String.IsNullOrWhiteSpace(EmailtextBox.Text))
             {
-                MYerrorProvider.SetError(PrecioVentatextBox,
-                    "Debes debes dejar el precio de venta vacio");
+                MYerrorProvider.SetError(EmailtextBox,
+                    "Debes Introducir un email");
                 HayErrores = true;
             }
 
 
-            if (String.IsNullOrWhiteSpace(PrecioCompratextBox.Text))
+            if (String.IsNullOrWhiteSpace(CedulamaskedTextBox.Text))
             {
-                MYerrorProvider.SetError(PrecioCompratextBox,
-                    "Debes debes dejar el precio de compra vacio");
+                MYerrorProvider.SetError(CedulamaskedTextBox,
+                    "Debe introducir una cedula");
                 HayErrores = true;
             }
 
 
-            if (String.IsNullOrWhiteSpace(CodigoArticulotextBox.Text))
+            if (String.IsNullOrWhiteSpace(TelefonomaskedTextBox.Text))
             {
-                MYerrorProvider.SetError(CodigoArticulotextBox,
-                    "Debes debes dejar el codigo del articulo vacio");
+                MYerrorProvider.SetError(TelefonomaskedTextBox,
+                    "No debe dejar el telefono vacio");
                 HayErrores = true;
             }
             return HayErrores;
 
 
         }
-        */
+        
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {

@@ -41,7 +41,7 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             if (String.IsNullOrWhiteSpace(DescripciontextBox.Text))
             {
                 MYerrorProvider.SetError(DescripciontextBox,
-                    "Debes debes dejar la descripcion vacia");
+                    "No debes dejar la descripcion vacia");
                 HayErrores = true;
             }
             return HayErrores;

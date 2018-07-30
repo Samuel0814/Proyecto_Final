@@ -217,6 +217,7 @@
             this.Controls.Add(this.label1);
             this.Name = "SaldarDeudas";
             this.Text = "Saldar Deudas";
+            this.Load += new System.EventHandler(this.SaldarDeudas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MYerrorProvider)).EndInit();
             this.ResumeLayout(false);

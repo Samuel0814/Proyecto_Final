@@ -35,7 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.SexocomboBox = new System.Windows.Forms.ComboBox();
             this.Telefono = new System.Windows.Forms.Label();
-            this.ExistenciatextBox = new System.Windows.Forms.TextBox();
+            this.DirecciontextBox = new System.Windows.Forms.TextBox();
             this.Direccion = new System.Windows.Forms.Label();
             this.NombretextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -44,7 +44,7 @@
             this.Cedulalabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.CedulamaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.TelefonomaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.MYerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
@@ -110,13 +110,13 @@
             this.Telefono.TabIndex = 57;
             this.Telefono.Text = "Telefono";
             // 
-            // ExistenciatextBox
+            // DirecciontextBox
             // 
-            this.ExistenciatextBox.Location = new System.Drawing.Point(118, 134);
-            this.ExistenciatextBox.Multiline = true;
-            this.ExistenciatextBox.Name = "ExistenciatextBox";
-            this.ExistenciatextBox.Size = new System.Drawing.Size(282, 48);
-            this.ExistenciatextBox.TabIndex = 54;
+            this.DirecciontextBox.Location = new System.Drawing.Point(118, 134);
+            this.DirecciontextBox.Multiline = true;
+            this.DirecciontextBox.Name = "DirecciontextBox";
+            this.DirecciontextBox.Size = new System.Drawing.Size(282, 48);
+            this.DirecciontextBox.TabIndex = 54;
             // 
             // Direccion
             // 
@@ -186,16 +186,18 @@
             // CedulamaskedTextBox
             // 
             this.CedulamaskedTextBox.Location = new System.Drawing.Point(118, 199);
+            this.CedulamaskedTextBox.Mask = "###-#######-#";
             this.CedulamaskedTextBox.Name = "CedulamaskedTextBox";
-            this.CedulamaskedTextBox.Size = new System.Drawing.Size(120, 20);
+            this.CedulamaskedTextBox.Size = new System.Drawing.Size(81, 20);
             this.CedulamaskedTextBox.TabIndex = 65;
             // 
-            // maskedTextBox1
+            // TelefonomaskedTextBox
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(118, 278);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(120, 20);
-            this.maskedTextBox1.TabIndex = 66;
+            this.TelefonomaskedTextBox.Location = new System.Drawing.Point(118, 278);
+            this.TelefonomaskedTextBox.Mask = "+1 (###) ### - ####";
+            this.TelefonomaskedTextBox.Name = "TelefonomaskedTextBox";
+            this.TelefonomaskedTextBox.Size = new System.Drawing.Size(106, 20);
+            this.TelefonomaskedTextBox.TabIndex = 66;
             // 
             // MYerrorProvider
             // 
@@ -295,7 +297,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.CreditotextBox);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.TelefonomaskedTextBox);
             this.Controls.Add(this.CedulamaskedTextBox);
             this.Controls.Add(this.EmailtextBox);
             this.Controls.Add(this.FechaNacimientodateTimePicker);
@@ -303,7 +305,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.SexocomboBox);
             this.Controls.Add(this.Telefono);
-            this.Controls.Add(this.ExistenciatextBox);
+            this.Controls.Add(this.DirecciontextBox);
             this.Controls.Add(this.Direccion);
             this.Controls.Add(this.NombretextBox);
             this.Controls.Add(this.label6);
@@ -333,7 +335,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox SexocomboBox;
         private System.Windows.Forms.Label Telefono;
-        private System.Windows.Forms.TextBox ExistenciatextBox;
+        private System.Windows.Forms.TextBox DirecciontextBox;
         private System.Windows.Forms.Label Direccion;
         private System.Windows.Forms.TextBox NombretextBox;
         private System.Windows.Forms.Label label6;
@@ -346,7 +348,7 @@
         private System.Windows.Forms.Label Cedulalabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox CedulamaskedTextBox;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox TelefonomaskedTextBox;
         private System.Windows.Forms.ErrorProvider MYerrorProvider;
         private System.Windows.Forms.TextBox CreditotextBox;
         private System.Windows.Forms.Label label4;

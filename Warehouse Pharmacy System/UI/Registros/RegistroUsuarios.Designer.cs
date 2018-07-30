@@ -216,6 +216,7 @@
             this.Controls.Add(this.label1);
             this.Name = "RegistroUsuarios";
             this.Text = "RegistroUsuarios";
+            this.Load += new System.EventHandler(this.RegistroUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MYerrorProvider)).EndInit();
             this.ResumeLayout(false);

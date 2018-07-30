@@ -66,7 +66,7 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             if (String.IsNullOrWhiteSpace(NombreArticulotextBox.Text))
             {
                 MYerrorProvider.SetError(NombreArticulotextBox,
-                    "Debes debes dejar el nombre del articulo vacio");
+                    "No debes dejar el nombre del articulo vacio");
                 HayErrores = true;
             }
       
@@ -74,7 +74,7 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             if (String.IsNullOrWhiteSpace(ExistenciatextBox.Text))
             {
                 MYerrorProvider.SetError(ExistenciatextBox,
-                    "Debes debes dejar la Existencia vacia");
+                    "No debes dejar la Existencia vacia");
                 HayErrores = true;
             }
           
@@ -82,7 +82,7 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             if (String.IsNullOrWhiteSpace(PrecioVentatextBox.Text))
             {
                 MYerrorProvider.SetError(PrecioVentatextBox,
-                    "Debes debes dejar el precio de venta vacio");
+                    "No debes dejar el precio de venta vacio");
                 HayErrores = true;
             }
          
@@ -90,7 +90,7 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             if (String.IsNullOrWhiteSpace(PrecioCompratextBox.Text))
             {
                 MYerrorProvider.SetError(PrecioCompratextBox,
-                    "Debes debes dejar el precio de compra vacio");
+                    "No debes dejar el precio de compra vacio");
                 HayErrores = true;
             }
            
@@ -98,9 +98,17 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             if (String.IsNullOrWhiteSpace(CodigoArticulotextBox.Text))
             {
                 MYerrorProvider.SetError(CodigoArticulotextBox,
-                    "Debes debes dejar el codigo del articulo vacio");
+                    "No debes dejar el codigo del articulo vacio");
                 HayErrores = true;
             }
+
+            if (String.IsNullOrWhiteSpace(ITBIStextBox.Text))
+            {
+                MYerrorProvider.SetError(CodigoArticulotextBox,
+                    "No debes dejar el ITBIS del articulo vacio");
+                HayErrores = true;
+            }
+
             return HayErrores;
 
 

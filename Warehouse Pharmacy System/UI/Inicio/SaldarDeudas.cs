@@ -74,8 +74,21 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
             {
                 MYerrorProvider.Clear();
                 int id = Convert.ToInt32(UsuarioIDnumericUpDown.Value);
-                
-             
+                Entidades.Clientes tipo;
+                tipo = BLL.ClientesBLL.Buscar(p => p.IdDeudas == id);
+                if (tipo != null)
+                {
+
+                    ClientecomboBox.Text = tipo.ClienteId.ToString();
+                    DeudatextBox.Text = tipo.Credito.ToString();
+                    MessageBox.Show("Resultados de su busqueda");
+                }
+                else
+                {
+                    MessageBox.Show("No existe ninguna Deuda con ese Id.");
+                    Limpiar();
+                }
+
             }
         }
 
@@ -92,6 +105,11 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
         private void ClientecomboBox_SelectedValueChanged(object sender, EventArgs e)
         {
             DeudatextBox.Text = db.clientes.Find(Convert.ToInt32(ClientecomboBox.SelectedValue)).Credito.ToString();
+        }
+
+        private void SaldarDeudas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
