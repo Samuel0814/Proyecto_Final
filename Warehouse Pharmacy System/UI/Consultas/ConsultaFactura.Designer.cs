@@ -52,7 +52,7 @@
             this.ConsultadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ConsultadataGridView.Location = new System.Drawing.Point(12, 111);
             this.ConsultadataGridView.Name = "ConsultadataGridView";
-            this.ConsultadataGridView.Size = new System.Drawing.Size(660, 262);
+            this.ConsultadataGridView.Size = new System.Drawing.Size(830, 385);
             this.ConsultadataGridView.TabIndex = 17;
             // 
             // panel1
@@ -61,7 +61,7 @@
             this.panel1.Controls.Add(this.DesdedateTimePicker);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(173, 64);
+            this.panel1.Location = new System.Drawing.Point(277, 64);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(409, 41);
             this.panel1.TabIndex = 16;
@@ -105,7 +105,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 83);
+            this.label3.Location = new System.Drawing.Point(113, 76);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(148, 13);
             this.label3.TabIndex = 15;
@@ -115,25 +115,27 @@
             // 
             this.Imprimirbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Print_32;
             this.Imprimirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Imprimirbutton.Location = new System.Drawing.Point(12, 379);
+            this.Imprimirbutton.Location = new System.Drawing.Point(12, 502);
             this.Imprimirbutton.Name = "Imprimirbutton";
             this.Imprimirbutton.Size = new System.Drawing.Size(89, 48);
             this.Imprimirbutton.TabIndex = 14;
             this.Imprimirbutton.Text = "Imprimir";
             this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
             // 
             // Buscatbutton
             // 
             this.Buscatbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Search_Property_32;
             this.Buscatbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscatbutton.Location = new System.Drawing.Point(597, 29);
+            this.Buscatbutton.Location = new System.Drawing.Point(767, 12);
             this.Buscatbutton.Name = "Buscatbutton";
             this.Buscatbutton.Size = new System.Drawing.Size(75, 58);
             this.Buscatbutton.TabIndex = 13;
             this.Buscatbutton.Text = "Buscar";
             this.Buscatbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscatbutton.UseVisualStyleBackColor = true;
+            this.Buscatbutton.Click += new System.EventHandler(this.Buscatbutton_Click);
             // 
             // groupBox1
             // 
@@ -141,7 +143,7 @@
             this.groupBox1.Controls.Add(this.FiltrocomboBox);
             this.groupBox1.Controls.Add(this.Criteriolabel);
             this.groupBox1.Controls.Add(this.Filtrolabel);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(116, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(570, 46);
             this.groupBox1.TabIndex = 12;
@@ -161,6 +163,7 @@
             this.FiltrocomboBox.Name = "FiltrocomboBox";
             this.FiltrocomboBox.Size = new System.Drawing.Size(155, 21);
             this.FiltrocomboBox.TabIndex = 2;
+            this.FiltrocomboBox.SelectedIndexChanged += new System.EventHandler(this.FiltrocomboBox_SelectedIndexChanged);
             // 
             // Criteriolabel
             // 
@@ -184,7 +187,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(683, 439);
+            this.ClientSize = new System.Drawing.Size(854, 562);
             this.Controls.Add(this.ConsultadataGridView);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
@@ -193,6 +196,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ConsultaFactura";
             this.Text = "ConsultaFactura";
+            this.Load += new System.EventHandler(this.ConsultaFactura_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

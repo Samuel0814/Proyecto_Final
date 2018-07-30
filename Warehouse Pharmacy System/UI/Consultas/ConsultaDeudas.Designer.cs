@@ -59,6 +59,7 @@
             this.Imprimirbutton.Text = "Imprimir";
             this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
             // 
             // Buscatbutton
             // 
@@ -98,6 +99,7 @@
             this.FiltrocomboBox.Name = "FiltrocomboBox";
             this.FiltrocomboBox.Size = new System.Drawing.Size(155, 21);
             this.FiltrocomboBox.TabIndex = 2;
+            this.FiltrocomboBox.SelectedIndexChanged += new System.EventHandler(this.FiltrocomboBox_SelectedIndexChanged);
             // 
             // Criteriolabel
             // 
@@ -128,6 +130,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ConsultaDeudas";
             this.Text = "ConsultaDeudas";
+            this.Load += new System.EventHandler(this.ConsultaDeudas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace BLL
 {
-    class FacturaBLL
+    public class FacturaBLL
     {
 
         public static bool Guardar(Facturas factura)
