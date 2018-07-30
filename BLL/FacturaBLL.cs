@@ -42,6 +42,14 @@ namespace BLL
                 foreach (FacturasDetalles detalle in detalles)
                 {
                     contexto.DetalleFactura.Add(detalle);
+                    contexto.articulos.Find(detalle.IdArticulo).Existencia -= detalle.Cantidad;
+
+                }
+                if(factura.Tipoventa==Facturas.Tipo.Credito)
+                {
+                    Clientes tmp = contexto.clientes.Find(factura.ClienteId);
+                    tmp.Credito =tmp.Credito + factura.Total;
+
 
                 }
                 contexto.SaveChanges();
@@ -60,9 +68,26 @@ namespace BLL
             bool paso = false;
 
             Contexto contexto = new Contexto();
+            Facturas tmpFactura = contexto.Facturas.Find(facturas.IdFactura);
+            Clientes cliente = contexto.clientes.Find(facturas.ClienteId);
+            if (tmpFactura.Tipoventa == Facturas.Tipo.Credito)
+            {
+                Clientes tmpCliente = contexto.clientes.Find(tmpFactura.ClienteId);
+                tmpCliente.Credito = tmpCliente.Credito - tmpFactura.Total;
+
+
+            }
+            
             try
             {
                 contexto.Entry(facturas).State = EntityState.Modified;
+                if (facturas.Tipoventa == Facturas.Tipo.Credito)
+                {
+                    Clientes tmp = contexto.clientes.Find(facturas.ClienteId);
+                    tmp.Credito = tmp.Credito + facturas.Total;
+
+
+                }
                 if (contexto.SaveChanges() > 0)
                 {
                     paso = true;
@@ -92,6 +117,15 @@ namespace BLL
                 {
                     paso = true;
                 }
+
+                if (factura.Tipoventa == Facturas.Tipo.Credito)
+                {
+                    Clientes tmp = contexto.clientes.Find(factura.ClienteId);
+                    tmp.Credito = tmp.Credito - factura.Total;
+
+
+                }
+
                 contexto.Dispose();
             }
             catch (Exception)

@@ -45,7 +45,6 @@
             this.ClienteVentatextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.ArticulocomboBox = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.CantidadnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
@@ -70,6 +69,10 @@
             this.Agregarbutton = new System.Windows.Forms.Button();
             this.NuevoClientebutton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.ArticulodataGridView = new System.Windows.Forms.DataGridView();
+            this.CodigoArticulotextbox = new System.Windows.Forms.TextBox();
+            this.NombreArticulotextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.MYerrorProvider)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -77,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FacturaciondataGridView)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ArticulodataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // MYerrorProvider
@@ -207,6 +211,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.NombreArticulotextBox);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.CodigoArticulotextbox);
+            this.groupBox2.Controls.Add(this.ArticulodataGridView);
             this.groupBox2.Controls.Add(this.Agregarbutton);
             this.groupBox2.Controls.Add(this.TotaltextBox);
             this.groupBox2.Controls.Add(this.label13);
@@ -216,11 +224,10 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.CantidadnumericUpDown);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.ArticulocomboBox);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Location = new System.Drawing.Point(148, 153);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(653, 231);
+            this.groupBox2.Size = new System.Drawing.Size(653, 222);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Articulo";
@@ -228,25 +235,17 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(7, 39);
+            this.label9.Location = new System.Drawing.Point(14, 32);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(42, 13);
+            this.label9.Size = new System.Drawing.Size(40, 13);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Articulo";
+            this.label9.Text = "Codigo";
             this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // ArticulocomboBox
-            // 
-            this.ArticulocomboBox.FormattingEnabled = true;
-            this.ArticulocomboBox.Location = new System.Drawing.Point(88, 31);
-            this.ArticulocomboBox.Name = "ArticulocomboBox";
-            this.ArticulocomboBox.Size = new System.Drawing.Size(223, 21);
-            this.ArticulocomboBox.TabIndex = 1;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(14, 208);
+            this.label10.Location = new System.Drawing.Point(14, 183);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(49, 13);
             this.label10.TabIndex = 2;
@@ -254,7 +253,7 @@
             // 
             // CantidadnumericUpDown
             // 
-            this.CantidadnumericUpDown.Location = new System.Drawing.Point(69, 205);
+            this.CantidadnumericUpDown.Location = new System.Drawing.Point(69, 180);
             this.CantidadnumericUpDown.Name = "CantidadnumericUpDown";
             this.CantidadnumericUpDown.Size = new System.Drawing.Size(91, 20);
             this.CantidadnumericUpDown.TabIndex = 3;
@@ -262,7 +261,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(166, 208);
+            this.label11.Location = new System.Drawing.Point(166, 183);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(37, 13);
             this.label11.TabIndex = 4;
@@ -270,7 +269,7 @@
             // 
             // PreciotextBox
             // 
-            this.PreciotextBox.Location = new System.Drawing.Point(209, 205);
+            this.PreciotextBox.Location = new System.Drawing.Point(209, 180);
             this.PreciotextBox.Name = "PreciotextBox";
             this.PreciotextBox.Size = new System.Drawing.Size(91, 20);
             this.PreciotextBox.TabIndex = 5;
@@ -278,7 +277,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(306, 208);
+            this.label12.Location = new System.Drawing.Point(306, 183);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(72, 13);
             this.label12.TabIndex = 6;
@@ -286,7 +285,7 @@
             // 
             // ItbistextBox
             // 
-            this.ItbistextBox.Location = new System.Drawing.Point(384, 205);
+            this.ItbistextBox.Location = new System.Drawing.Point(384, 180);
             this.ItbistextBox.Name = "ItbistextBox";
             this.ItbistextBox.Size = new System.Drawing.Size(91, 20);
             this.ItbistextBox.TabIndex = 7;
@@ -294,7 +293,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(481, 208);
+            this.label13.Location = new System.Drawing.Point(481, 183);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(31, 13);
             this.label13.TabIndex = 8;
@@ -302,7 +301,7 @@
             // 
             // TotaltextBox
             // 
-            this.TotaltextBox.Location = new System.Drawing.Point(518, 205);
+            this.TotaltextBox.Location = new System.Drawing.Point(518, 180);
             this.TotaltextBox.Name = "TotaltextBox";
             this.TotaltextBox.Size = new System.Drawing.Size(91, 20);
             this.TotaltextBox.TabIndex = 9;
@@ -387,6 +386,7 @@
             this.checkBox1.TabIndex = 17;
             this.checkBox1.Text = "Venta a Credito";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // Imprimirbutton
             // 
@@ -439,9 +439,10 @@
             // 
             // Agregarbutton
             // 
+            this.Agregarbutton.Enabled = false;
             this.Agregarbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Add_New_32;
             this.Agregarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Agregarbutton.Location = new System.Drawing.Point(517, 19);
+            this.Agregarbutton.Location = new System.Drawing.Point(562, 7);
             this.Agregarbutton.Name = "Agregarbutton";
             this.Agregarbutton.Size = new System.Drawing.Size(85, 38);
             this.Agregarbutton.TabIndex = 11;
@@ -472,6 +473,42 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // ArticulodataGridView
+            // 
+            this.ArticulodataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ArticulodataGridView.Location = new System.Drawing.Point(10, 58);
+            this.ArticulodataGridView.Name = "ArticulodataGridView";
+            this.ArticulodataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ArticulodataGridView.Size = new System.Drawing.Size(599, 107);
+            this.ArticulodataGridView.TabIndex = 12;
+            this.ArticulodataGridView.DataSourceChanged += new System.EventHandler(this.ArticulodataGridView_DataSourceChanged);
+            // 
+            // CodigoArticulotextbox
+            // 
+            this.CodigoArticulotextbox.Location = new System.Drawing.Point(102, 32);
+            this.CodigoArticulotextbox.Name = "CodigoArticulotextbox";
+            this.CodigoArticulotextbox.Size = new System.Drawing.Size(100, 20);
+            this.CodigoArticulotextbox.TabIndex = 13;
+            this.CodigoArticulotextbox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // NombreArticulotextBox
+            // 
+            this.NombreArticulotextBox.Location = new System.Drawing.Point(273, 32);
+            this.NombreArticulotextBox.Name = "NombreArticulotextBox";
+            this.NombreArticulotextBox.Size = new System.Drawing.Size(100, 20);
+            this.NombreArticulotextBox.TabIndex = 15;
+            this.NombreArticulotextBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(212, 32);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Nombre";
+            this.label4.TextChanged += new System.EventHandler(this.Nombre);
+            // 
             // RegistroVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -497,6 +534,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.FacturaciondataGridView)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ArticulodataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -514,7 +552,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button NuevoClientebutton;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox ArticulocomboBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox ClienteVentatextBox;
         private System.Windows.Forms.TextBox FechaVentatextBox;
@@ -544,5 +581,9 @@
         private System.Windows.Forms.TextBox TotalFacturatextBox;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox CodigoArticulotextbox;
+        private System.Windows.Forms.DataGridView ArticulodataGridView;
+        private System.Windows.Forms.TextBox NombreArticulotextBox;
+        private System.Windows.Forms.Label label4;
     }
 }

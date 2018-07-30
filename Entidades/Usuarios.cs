@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 
@@ -10,6 +11,7 @@ namespace Entidades
     {
         [Key]
         public int Id { get; set; }
+        [Index(IsUnique=true)]
         public string NombreUsuario { get; set; }
         public string PassUsuario { get; set; }
         public string Tipo { get; set; }

@@ -14,7 +14,7 @@ namespace Entidades
 
         public string NombreUsuario { get; set; }
         public DateTime FechaVenta { get; set; }
-        public string Cliente { get; set; }
+        public int ClienteId { get; set; }
         public Tipo Tipoventa { get; set; }
         public int CantidadProd { get; set; }
         public decimal Total { get; set; }
@@ -25,12 +25,12 @@ namespace Entidades
         {
 
         }
-        public Facturas(int idFactura, string nombreUsuario, DateTime fechaVenta, string cliente, Tipo tipoventa, int cantidadProd, decimal total)
+        public Facturas(int idFactura, string nombreUsuario, DateTime fechaVenta, int cliente, Tipo tipoventa, int cantidadProd, decimal total)
         {
             this.IdFactura = idFactura;
             this.NombreUsuario = nombreUsuario;
             this.FechaVenta = fechaVenta;
-            this.Cliente = cliente;
+            this.ClienteId = cliente;
             this.Tipoventa = tipoventa;
             this.CantidadProd = cantidadProd;
             this.Total = total;

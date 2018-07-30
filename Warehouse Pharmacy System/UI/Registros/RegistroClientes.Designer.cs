@@ -50,6 +50,10 @@
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.CreditotextBox = new System.Windows.Forms.TextBox();
+            this.creditomaximotextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteIDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MYerrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -208,6 +212,7 @@
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 
@@ -220,6 +225,7 @@
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Nuevobutton
             // 
@@ -232,6 +238,7 @@
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // Buscarbutton
             // 
@@ -246,11 +253,48 @@
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(298, 278);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 13);
+            this.label4.TabIndex = 67;
+            this.label4.Text = "Total Deuda";
+            // 
+            // CreditotextBox
+            // 
+            this.CreditotextBox.Location = new System.Drawing.Point(284, 294);
+            this.CreditotextBox.Name = "CreditotextBox";
+            this.CreditotextBox.ReadOnly = true;
+            this.CreditotextBox.Size = new System.Drawing.Size(100, 20);
+            this.CreditotextBox.TabIndex = 68;
+            // 
+            // creditomaximotextBox
+            // 
+            this.creditomaximotextBox.Location = new System.Drawing.Point(284, 340);
+            this.creditomaximotextBox.Name = "creditomaximotextBox";
+            this.creditomaximotextBox.Size = new System.Drawing.Size(100, 20);
+            this.creditomaximotextBox.TabIndex = 70;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(298, 324);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 13);
+            this.label5.TabIndex = 69;
+            this.label5.Text = "Credito Maximo";
+            // 
             // RegistroClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(427, 468);
+            this.Controls.Add(this.creditomaximotextBox);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.CreditotextBox);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.CedulamaskedTextBox);
             this.Controls.Add(this.EmailtextBox);
@@ -304,5 +348,9 @@
         private System.Windows.Forms.MaskedTextBox CedulamaskedTextBox;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.ErrorProvider MYerrorProvider;
+        private System.Windows.Forms.TextBox CreditotextBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox creditomaximotextBox;
+        private System.Windows.Forms.Label label5;
     }
 }

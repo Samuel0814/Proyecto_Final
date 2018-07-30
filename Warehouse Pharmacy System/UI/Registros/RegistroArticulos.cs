@@ -38,7 +38,6 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             articulos.Existencia = Convert.ToInt32(ExistenciatextBox.Text);
             articulos.PrecioVenta = Convert.ToDecimal(PrecioVentatextBox.Text);
             articulos.PrecioCompra = Convert.ToDecimal(PrecioCompratextBox.Text);
-            articulos.CodigoArticulo = CodigoArticulotextBox.Text;
             articulos.FechaIngreso = FechaIngresodateTimePicker.Value;
             articulos.CategoriaId = Convert.ToInt32(CategoriacomboBox.SelectedValue);
             articulos.ITBIS = Convert.ToDecimal(ITBIStextBox.Text);
@@ -169,7 +168,6 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                 ExistenciatextBox.Text = articulos.Existencia.ToString();
                 PrecioVentatextBox.Text = articulos.PrecioVenta.ToString();
                 PrecioCompratextBox.Text = articulos.PrecioCompra.ToString();
-                CodigoArticulotextBox.Text = articulos.CodigoArticulo.ToString();
                 FechaIngresodateTimePicker.Value = articulos.FechaIngreso;
                 CategoriacomboBox.SelectedValue = articulos.CategoriaId;
                 ITBIStextBox.Text = articulos.ITBIS.ToString();

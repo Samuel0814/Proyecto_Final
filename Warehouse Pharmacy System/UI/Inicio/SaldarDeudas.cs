@@ -1,4 +1,5 @@
-﻿using Entidades;
+﻿using DAL;
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,16 +13,21 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
 {
     public partial class SaldarDeudas : Form
     {
+        Contexto db = new Contexto();
         public SaldarDeudas()
         {
             InitializeComponent();
+            ClientecomboBox.DataSource = db.clientes.ToList();
+            ClientecomboBox.DisplayMember = "Nombres";
+            ClientecomboBox.ValueMember = "ClienteId";
         }
 
         public static int TOINT(string nombre)
         {
-            int numero;
-            int.TryParse(nombre, out numero);
-            return numero;
+            //int numero;
+            //int.TryParse(nombre, out numero);
+            //return numero;
+           return int.Parse(nombre);
         }
 
         private bool Validar()
@@ -81,6 +87,11 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ClientecomboBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            DeudatextBox.Text = db.clientes.Find(Convert.ToInt32(ClientecomboBox.SelectedValue)).Credito.ToString();
         }
     }
 }

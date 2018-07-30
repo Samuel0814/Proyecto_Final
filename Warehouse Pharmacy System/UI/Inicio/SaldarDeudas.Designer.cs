@@ -37,13 +37,13 @@
             this.NombreArticulolabel = new System.Windows.Forms.Label();
             this.Contraseñalabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.DevueltatextBox = new System.Windows.Forms.TextBox();
+            this.MYerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ClientecomboBox = new System.Windows.Forms.ComboBox();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
-            this.DevueltatextBox = new System.Windows.Forms.TextBox();
-            this.MYerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ClientecomboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MYerrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -70,6 +70,7 @@
             this.DeudatextBox.Location = new System.Drawing.Point(76, 95);
             this.DeudatextBox.Multiline = true;
             this.DeudatextBox.Name = "DeudatextBox";
+            this.DeudatextBox.ReadOnly = true;
             this.DeudatextBox.Size = new System.Drawing.Size(183, 25);
             this.DeudatextBox.TabIndex = 69;
             // 
@@ -120,6 +121,28 @@
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 65;
             this.label1.Text = "ID Deudas";
+            // 
+            // DevueltatextBox
+            // 
+            this.DevueltatextBox.Location = new System.Drawing.Point(76, 185);
+            this.DevueltatextBox.Multiline = true;
+            this.DevueltatextBox.Name = "DevueltatextBox";
+            this.DevueltatextBox.ReadOnly = true;
+            this.DevueltatextBox.Size = new System.Drawing.Size(88, 25);
+            this.DevueltatextBox.TabIndex = 72;
+            // 
+            // MYerrorProvider
+            // 
+            this.MYerrorProvider.ContainerControl = this;
+            // 
+            // ClientecomboBox
+            // 
+            this.ClientecomboBox.FormattingEnabled = true;
+            this.ClientecomboBox.Location = new System.Drawing.Point(76, 62);
+            this.ClientecomboBox.Name = "ClientecomboBox";
+            this.ClientecomboBox.Size = new System.Drawing.Size(183, 21);
+            this.ClientecomboBox.TabIndex = 73;
+            this.ClientecomboBox.SelectedValueChanged += new System.EventHandler(this.ClientecomboBox_SelectedValueChanged);
             // 
             // Eliminarbutton
             // 
@@ -172,26 +195,6 @@
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
-            // 
-            // DevueltatextBox
-            // 
-            this.DevueltatextBox.Location = new System.Drawing.Point(76, 185);
-            this.DevueltatextBox.Multiline = true;
-            this.DevueltatextBox.Name = "DevueltatextBox";
-            this.DevueltatextBox.Size = new System.Drawing.Size(88, 25);
-            this.DevueltatextBox.TabIndex = 72;
-            // 
-            // MYerrorProvider
-            // 
-            this.MYerrorProvider.ContainerControl = this;
-            // 
-            // ClientecomboBox
-            // 
-            this.ClientecomboBox.FormattingEnabled = true;
-            this.ClientecomboBox.Location = new System.Drawing.Point(76, 62);
-            this.ClientecomboBox.Name = "ClientecomboBox";
-            this.ClientecomboBox.Size = new System.Drawing.Size(183, 21);
-            this.ClientecomboBox.TabIndex = 73;
             // 
             // SaldarDeudas
             // 

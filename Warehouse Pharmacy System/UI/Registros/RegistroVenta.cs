@@ -1,4 +1,5 @@
 ﻿using DAL;
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace Warehouse_Pharmacy_System.UI.Registros
         public RegistroVenta()
         {
             InitializeComponent();
+            BuscarArticulos();
             ClientecomboBox.DataSource = new Contexto().clientes.ToList();
         }
 
@@ -31,6 +33,90 @@ namespace Warehouse_Pharmacy_System.UI.Registros
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            BuscarArticulos();
+               
+                
+                
+                
+       }
+        public void BuscarArticulos()
+        {
+            List<Articulos> ArticulosList = new Contexto().articulos.ToList();
+
+            if(!string.IsNullOrWhiteSpace(CodigoArticulotextbox.Text))
+            {
+                int id;
+                try
+                {
+                    id = int.Parse(CodigoArticulotextbox.Text);
+                    ArticulodataGridView.DataSource =(from articulo in ArticulosList
+                                                     where articulo.IdArticulo==id
+                                                     select articulo).ToList();
+
+                }
+                catch 
+                {
+
+                    
+                }
+              
+            }else
+            {
+                if(!string.IsNullOrWhiteSpace(NombreArticulotextBox.Text))
+                {
+                    ArticulodataGridView.DataSource = (from articulo in ArticulosList
+                                                       where articulo.NombreArticulo.Contains(NombreArticulotextBox.Text)
+                                                       select articulo).ToList();
+                }
+                else
+                {
+                    ArticulodataGridView.DataSource = ArticulosList;
+                                                 
+                }
+            }
+            
+            
+           
+            
+            
+
+
+        }
+
+        private void ArticulodataGridView_DataSourceChanged(object sender, EventArgs e)
+        {
+            if (ArticulodataGridView.DataSource!=null)
+            {
+                Agregarbutton.Enabled = true;
+            }
+            else
+            {
+                Agregarbutton.Enabled = false;
+            }
+        }
+
+        private void Nombre(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox1.Checked)
+            {
+                DevueltatextBox.Enabled = false;
+                EfectivotextBox.Enabled = false;
+            }
+            else
+            {
+                DevueltatextBox.Enabled = true;
+                EfectivotextBox.Enabled =true;
+
+            }
         }
     }
 }

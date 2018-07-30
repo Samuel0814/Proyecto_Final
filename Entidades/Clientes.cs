@@ -8,14 +8,16 @@ namespace Entidades
 {
     public class Clientes
     {
+        public  enum Genero { Masculino, Femenino}
         [Key]
         public int ClienteId { get; set; }
         public string Nombres { get; set; }
         public string Direccion { get; set; }
         public string Email { get; set; }
-        public string Sexo { get; set; }
+        public Genero Sexo { get; set; }
         public DateTime FechaNacimiento { get; set; }
         public decimal Credito { get; set; }
+        public decimal MaximoCredicto { get; set; }
         public string Cedula { get; set; }
         public string Telefono { get; set; }
 
@@ -24,7 +26,7 @@ namespace Entidades
 
         }
 
-        public Clientes(int clienteId, string nombres, string direccion, string email, string sexo, DateTime fechaNacimiento, string cedula)
+        public Clientes(int clienteId, string nombres, string direccion, string email, Genero sexo, DateTime fechaNacimiento, string cedula, decimal maximocredito)
         {
             this.Cedula = cedula;
             this.ClienteId = clienteId;
@@ -33,6 +35,7 @@ namespace Entidades
             this.Email = email;
             this.Sexo = sexo;
             this.FechaNacimiento = fechaNacimiento;
+            this.MaximoCredicto = maximocredito;
         }
     }
 }
