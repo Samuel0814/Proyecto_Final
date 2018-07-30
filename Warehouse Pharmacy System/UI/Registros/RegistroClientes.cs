@@ -109,20 +109,80 @@ namespace Warehouse_Pharmacy_System.UI.Registros
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
+            var clientes = BLL.ClientesBLL.Buscar(Convert.ToInt32(ClienteIDnumericUpDown.Value));
 
+            if (clientes != null)
+            {
+                NombretextBox.Text = clientes.Nombres;
+                DirecciontextBox.Text = clientes.Direccion;
+                EmailtextBox.Text = clientes.Email;
+                //Sexo
+                FechaNacimientodateTimePicker.Value = clientes.FechaNacimiento;
+                CreditotextBox.Text = clientes.Credito.ToString();
+                creditomaximotextBox.Text = clientes.MaximoCredicto.ToString();
+                CedulamaskedTextBox.Text = clientes.Cedula;
+                TelefonomaskedTextBox.Text = clientes.Telefono;
+
+            }
+            else
+            {
+                MessageBox.Show("No encontrado");
+            }
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
-
+            Limpiar();
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
+            Clientes clientes;
+            bool Paso = false;
 
+            if (HayErrores())
+            {
+                MessageBox.Show("Favor revisar todos los campos", "Validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            clientes = LlenaClase();
+
+
+            if (ClienteIDnumericUpDown.Value == 0)
+                Paso = BLL.ClientesBLL.Guardar(clientes);
+            else
+                Paso = BLL.ClientesBLL.Modificar(LlenaClase());
+
+
+            if (Paso)
+            {
+                MessageBox.Show("Guardado", "Exito",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("No se pudo guardar", "Falló",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(ClienteIDnumericUpDown.Value);
+
+            if (BLL.ClientesBLL.Eliminar(id))
+            {
+                MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("No se pudo eliminar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void SexocomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

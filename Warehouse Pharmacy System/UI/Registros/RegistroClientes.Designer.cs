@@ -100,6 +100,7 @@
             this.SexocomboBox.Name = "SexocomboBox";
             this.SexocomboBox.Size = new System.Drawing.Size(120, 21);
             this.SexocomboBox.TabIndex = 58;
+            this.SexocomboBox.SelectedIndexChanged += new System.EventHandler(this.SexocomboBox_SelectedIndexChanged);
             // 
             // Telefono
             // 

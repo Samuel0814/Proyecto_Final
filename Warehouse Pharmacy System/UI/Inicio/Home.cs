@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Warehouse_Pharmacy_System.UI.Consultas;
 using Warehouse_Pharmacy_System.UI.Registros;
 
 namespace Warehouse_Pharmacy_System.UI.Inicio
@@ -54,7 +55,7 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
 
         private void articulosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            new ConsultaArticulos().Show();
         }
 
         private void Home_FormClosing(object sender, FormClosingEventArgs e)
@@ -68,6 +69,36 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
             //    e.Cancel = true; //Cancela el cerrado del formulario
             //}
            Application.Exit();
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ConsultaUsuario().Show();
+        }
+
+        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ConsultaCategorias().Show();
+        }
+
+        private void facturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ConsultaFactura().Show();
+        }
+
+        private void deudasPorCobrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ConsultaDeudas().Show();
+        }
+
+        private void venderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new RegistroVenta().Show();
+        }
+
+        private void saldarDeudasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new SaldarDeudas().Show();
         }
     }
 }

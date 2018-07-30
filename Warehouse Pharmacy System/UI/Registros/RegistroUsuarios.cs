@@ -26,10 +26,12 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                 if(Convert.ToInt32(UsuarioIDnumericUpDown.Value)==0)
                 {
                     BLL.UsuariosBLL.Guardar(user);
+                    MessageBox.Show("El Usuario se ha Guardado con exito.");
                 }
                 else
                 {
                     BLL.UsuariosBLL.Modificar(user);
+                    MessageBox.Show("El Usuario se ha Modificado con exito.");
                 }
 
             }
@@ -109,6 +111,20 @@ namespace Warehouse_Pharmacy_System.UI.Registros
         private void RegistroUsuarios_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Buscarbutton_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(UsuarioIDnumericUpDown.Value);
+            Usuarios usuarios = BLL.UsuariosBLL.Buscar(id);
+
+            if (usuarios != null)
+            {
+                NombreArticulotextBox.Text = usuarios.NombreUsuario;
+                //TipocomboBox.SelectedIndex = usuarios.Tipo;
+                ContraseñatextBox.Text = usuarios.PassUsuario;
+                ConfirmarContraseñatextBox.Text = usuarios.PassUsuario;
+            }
         }
     }
 }

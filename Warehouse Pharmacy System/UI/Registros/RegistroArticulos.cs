@@ -51,7 +51,6 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             ExistenciatextBox.Clear();
             PrecioVentatextBox.Clear();
             PrecioCompratextBox.Clear();
-            CodigoArticulotextBox.Clear();
             FechaIngresodateTimePicker.Value = DateTime.Now;
             CategoriacomboBox.SelectedValue = 0;
             ITBIStextBox.Clear();
@@ -95,16 +94,9 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             }
            
 
-            if (String.IsNullOrWhiteSpace(CodigoArticulotextBox.Text))
-            {
-                MYerrorProvider.SetError(CodigoArticulotextBox,
-                    "No debes dejar el codigo del articulo vacio");
-                HayErrores = true;
-            }
-
             if (String.IsNullOrWhiteSpace(ITBIStextBox.Text))
             {
-                MYerrorProvider.SetError(CodigoArticulotextBox,
+                MYerrorProvider.SetError(ITBIStextBox,
                     "No debes dejar el ITBIS del articulo vacio");
                 HayErrores = true;
             }

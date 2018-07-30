@@ -41,12 +41,10 @@
             this.PrecioCompratextBox = new System.Windows.Forms.TextBox();
             this.Categoria = new System.Windows.Forms.Label();
             this.CategoriacomboBox = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.FechaIngresodateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.ITBIStextBox = new System.Windows.Forms.TextBox();
-            this.CodigoArticulotextBox = new System.Windows.Forms.TextBox();
             this.MYerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
@@ -162,15 +160,6 @@
             this.CategoriacomboBox.Size = new System.Drawing.Size(283, 21);
             this.CategoriacomboBox.TabIndex = 36;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 225);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
-            this.label2.TabIndex = 37;
-            this.label2.Text = "Codigo Articulo";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -183,7 +172,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(229, 264);
+            this.label4.Location = new System.Drawing.Point(12, 231);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 39;
@@ -200,19 +189,11 @@
             // 
             // ITBIStextBox
             // 
-            this.ITBIStextBox.Location = new System.Drawing.Point(269, 259);
+            this.ITBIStextBox.Location = new System.Drawing.Point(102, 219);
             this.ITBIStextBox.Multiline = true;
             this.ITBIStextBox.Name = "ITBIStextBox";
             this.ITBIStextBox.Size = new System.Drawing.Size(116, 25);
             this.ITBIStextBox.TabIndex = 41;
-            // 
-            // CodigoArticulotextBox
-            // 
-            this.CodigoArticulotextBox.Location = new System.Drawing.Point(103, 222);
-            this.CodigoArticulotextBox.Multiline = true;
-            this.CodigoArticulotextBox.Name = "CodigoArticulotextBox";
-            this.CodigoArticulotextBox.Size = new System.Drawing.Size(282, 25);
-            this.CodigoArticulotextBox.TabIndex = 42;
             // 
             // MYerrorProvider
             // 
@@ -275,12 +256,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(408, 372);
-            this.Controls.Add(this.CodigoArticulotextBox);
             this.Controls.Add(this.ITBIStextBox);
             this.Controls.Add(this.FechaIngresodateTimePicker);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.CategoriacomboBox);
             this.Controls.Add(this.Categoria);
             this.Controls.Add(this.PrecioCompratextBox);
@@ -324,12 +303,10 @@
         private System.Windows.Forms.TextBox PrecioCompratextBox;
         private System.Windows.Forms.Label Categoria;
         private System.Windows.Forms.ComboBox CategoriacomboBox;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker FechaIngresodateTimePicker;
         private System.Windows.Forms.TextBox ITBIStextBox;
-        private System.Windows.Forms.TextBox CodigoArticulotextBox;
         private System.Windows.Forms.ErrorProvider MYerrorProvider;
     }
 }
