@@ -155,6 +155,7 @@
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 
@@ -180,6 +181,7 @@
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // Buscarbutton
             // 

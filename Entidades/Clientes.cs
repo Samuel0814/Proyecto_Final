@@ -15,7 +15,7 @@ namespace Entidades
         public string Email { get; set; }
         public string Sexo { get; set; }
         public DateTime FechaNacimiento { get; set; }
-
+        public decimal Credito { get; set; }
         public string Cedula { get; set; }
         public string Telefono { get; set; }
 

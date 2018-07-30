@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,36 +17,94 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             InitializeComponent();
         }
 
-        private void Guardarbutton_Click(object sender, EventArgs e)
+
+        private void Guardar_Modificar()
         {
+            Usuarios user = llenarclase();
             if(ValidarCampos())
             {
+                if(Convert.ToInt32(UsuarioIDnumericUpDown.Value)==0)
+                {
+                    BLL.UsuariosBLL.Guardar(user);
+                }
+                else
+                {
+                    BLL.UsuariosBLL.Modificar(user);
+                }
 
             }
         }
 
+        private Usuarios llenarclase()
+        {
+            return new Usuarios(Convert.ToInt32(UsuarioIDnumericUpDown.Value), NombreArticulotextBox.Text, ContraseñatextBox.Text, TipocomboBox.Text);
+        }
+
         private bool ValidarCampos()
         {
-            if(NombreArticulotextBox.Text.Trim().Length<1)
+            if(string.IsNullOrWhiteSpace(NombreArticulotextBox.Text))
             {
 
                 NombreArticulotextBox.Focus();
                 return false;
             }
-            if(ContraseñatextBox.Text.Trim().Length<1)
+            if(string.IsNullOrWhiteSpace(ContraseñatextBox.Text))
             {
                 ContraseñatextBox.Focus();
                 return false;
             }
-            if(ConfirmarContraseñatextBox.Text.Trim().Length<1)
+            if(string.IsNullOrWhiteSpace(ConfirmarContraseñatextBox.Text))
             {
                 ConfirmarContraseñatextBox.Focus();
                 return false;
 
             }
-            if()
+            if(!ContraseñatextBox.Text.Equals(ConfirmarContraseñatextBox.Text))
+            {
+                ContraseñatextBox.Clear();
+                ConfirmarContraseñatextBox.Clear();
+                return false;
+            }
+            
 
             return true;
+        }
+
+        private void Guardarbutton_Click(object sender, EventArgs e)
+        {
+            Guardar_Modificar();
+            limpiar();
+        }
+
+        private void Nuevobutton_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+
+        private void limpiar()
+        {
+            NombreArticulotextBox.Clear();
+            UsuarioIDnumericUpDown.Value = 0;
+            TipocomboBox.SelectedIndex = 0;
+            ContraseñatextBox.Clear();
+            ConfirmarContraseñatextBox.Clear();
+        }
+
+        private void Eliminarbutton_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(UsuarioIDnumericUpDown.Value);
+
+          
+            if (BLL.UsuariosBLL.Eliminar(id))
+            {
+
+                MessageBox.Show("El Usuario se ha Eliminado  con exito.");
+                limpiar();
+            }
+            else
+            {
+                MessageBox.Show("No se pudo eliminar El usuario.");
+            }
         }
     }
 }

@@ -49,7 +49,6 @@
     <Compile Include="Articulos.cs" />
     <Compile Include="Categorias.cs" />
     <Compile Include="Clientes.cs" />
-    <Compile Include="DeudasClientes.cs" />
     <Compile Include="Facturas.cs" />
     <Compile Include="FacturasDetalles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

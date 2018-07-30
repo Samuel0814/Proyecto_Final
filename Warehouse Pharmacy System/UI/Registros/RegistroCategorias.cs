@@ -26,6 +26,13 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             return categorias;
         }
 
+        private void Limpiar()
+        {
+            CategoriaIDnumericUpDown.Value = 0;
+            DescripciontextBox.Clear();
+            MYerrorProvider.Clear();
+        }
+
         private bool HayErrores()
         {
 
@@ -45,19 +52,17 @@ namespace Warehouse_Pharmacy_System.UI.Registros
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(CategoriaIDnumericUpDown.Value);
-            Categorias talleres = BLL.CategoriasBLL.Buscar(id);
+            Categorias categorias = BLL.CategoriasBLL.Buscar(id);
 
-            if (talleres != null)
+            if (categorias != null)
             {
-                DescripciontextBox.Text = talleres.NombreCategoria;
+                DescripciontextBox.Text = categorias.NombreCategoria;
             }
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
-            CategoriaIDnumericUpDown.Value = 0;
-            DescripciontextBox.Clear();
-            MYerrorProvider.Clear();
+            Limpiar();
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
@@ -81,12 +86,17 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                 Paso = BLL.CategoriasBLL.Modificar(LlenaClase());
 
 
-            if (Paso)
+
+            if (Paso) { 
                 MessageBox.Show("Guardado", "Exito",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+            }
             else
                 MessageBox.Show("No se pudo guardar", "Falló",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
@@ -97,6 +107,11 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                 MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MessageBox.Show("No se pudo eliminar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void RegistroCategorias_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -14,7 +14,6 @@ namespace Entidades
         public int Existencia { get; set; }
         public decimal PrecioVenta { get; set; }
         public decimal PrecioCompra { get; set; }
-        public string Categoria { get; set; }
         public string CodigoArticulo { get; set; }
         public DateTime FechaIngreso { get; set; }
         public int CategoriaId { get; set; }
@@ -30,14 +29,14 @@ namespace Entidades
         }
 
 
-        public Articulos(int idArticulo, string nombreArticulo, int existencia, decimal precioVenta, decimal precioCompra, string codigoArticulo, DateTime fechaIngreso, decimal itbs, string categoria)
+        public Articulos(int idArticulo, string nombreArticulo, int existencia, decimal precioVenta, decimal precioCompra, string codigoArticulo, DateTime fechaIngreso, decimal itbs)
         {
             this.IdArticulo = idArticulo;
             this.NombreArticulo = nombreArticulo;
             this.Existencia = existencia;
             this.PrecioVenta = precioVenta;
             this.PrecioCompra = precioCompra;
-            this.Categoria = categoria;
+           
             this.CodigoArticulo = codigoArticulo;
             this.FechaIngreso = fechaIngreso;
             this.ITBIS = itbs;

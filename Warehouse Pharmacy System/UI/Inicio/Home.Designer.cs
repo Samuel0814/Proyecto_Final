@@ -63,15 +63,17 @@
             // 
             this.salirToolStripMenuItem.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Team_16;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "Cambiar Usuario";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem1
             // 
             this.salirToolStripMenuItem1.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Exit_Sign_16;
             this.salirToolStripMenuItem1.Name = "salirToolStripMenuItem1";
-            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(162, 22);
+            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem1.Text = "Salir";
+            this.salirToolStripMenuItem1.Click += new System.EventHandler(this.salirToolStripMenuItem1_Click);
             // 
             // registroToolStripMenuItem
             // 
@@ -89,24 +91,28 @@
             this.registroDeArticulosToolStripMenuItem.Name = "registroDeArticulosToolStripMenuItem";
             this.registroDeArticulosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.registroDeArticulosToolStripMenuItem.Text = "Articulos";
+            this.registroDeArticulosToolStripMenuItem.Click += new System.EventHandler(this.registroDeArticulosToolStripMenuItem_Click);
             // 
             // vehiculosToolStripMenuItem
             // 
             this.vehiculosToolStripMenuItem.Name = "vehiculosToolStripMenuItem";
             this.vehiculosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.vehiculosToolStripMenuItem.Text = "Categoria";
+            this.vehiculosToolStripMenuItem.Click += new System.EventHandler(this.vehiculosToolStripMenuItem_Click);
             // 
             // usuarioToolStripMenuItem
             // 
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
             this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usuarioToolStripMenuItem.Text = "Usuario";
+            this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
+            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // consultaToolStripMenuItem
             // 
@@ -125,29 +131,30 @@
             this.articulosToolStripMenuItem.Name = "articulosToolStripMenuItem";
             this.articulosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.articulosToolStripMenuItem.Text = "Articulos";
+            this.articulosToolStripMenuItem.Click += new System.EventHandler(this.articulosToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             // 
             // categoriasToolStripMenuItem
             // 
             this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.categoriasToolStripMenuItem.Text = "Categorias";
             // 
             // facturasToolStripMenuItem
             // 
             this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
-            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.facturasToolStripMenuItem.Text = "Facturas";
             // 
             // deudasPorCobrarToolStripMenuItem
             // 
             this.deudasPorCobrarToolStripMenuItem.Name = "deudasPorCobrarToolStripMenuItem";
-            this.deudasPorCobrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deudasPorCobrarToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.deudasPorCobrarToolStripMenuItem.Text = "Deudas por Cobrar";
             // 
             // ventasToolStripMenuItem
@@ -162,13 +169,13 @@
             // venderToolStripMenuItem
             // 
             this.venderToolStripMenuItem.Name = "venderToolStripMenuItem";
-            this.venderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.venderToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.venderToolStripMenuItem.Text = "Vender";
             // 
             // saldarDeudasToolStripMenuItem
             // 
             this.saldarDeudasToolStripMenuItem.Name = "saldarDeudasToolStripMenuItem";
-            this.saldarDeudasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saldarDeudasToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.saldarDeudasToolStripMenuItem.Text = "Saldar Deudas";
             // 
             // menuStrip1
@@ -202,6 +209,7 @@
             this.DoubleBuffered = true;
             this.Name = "Home";
             this.Text = "Warehouse Pharmacy System";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Home_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

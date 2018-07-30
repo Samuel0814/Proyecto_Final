@@ -151,6 +151,7 @@
             this.Controls.Add(this.label1);
             this.Name = "RegistroCategorias";
             this.Text = "RegistroCategorias";
+            this.Load += new System.EventHandler(this.RegistroCategorias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CategoriaIDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MYerrorProvider)).EndInit();
             this.ResumeLayout(false);

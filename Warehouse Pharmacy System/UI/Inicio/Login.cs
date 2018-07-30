@@ -27,10 +27,12 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
 
                 if (UsuariosBLL.InicialSeccion(UsuariotextBox.Text,PasswordtextBox.Text))
                 {
-                    
 
 
+                    Visible = false;
                     Home frm = new Home();
+                    frm.Show();
+                    
                 }
             }
         }

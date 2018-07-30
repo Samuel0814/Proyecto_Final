@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,7 @@ namespace Warehouse_Pharmacy_System.UI.Registros
         public RegistroVenta()
         {
             InitializeComponent();
+            ClientecomboBox.DataSource = new Contexto().clientes.ToList();
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -22,6 +24,11 @@ namespace Warehouse_Pharmacy_System.UI.Registros
         }
 
         private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

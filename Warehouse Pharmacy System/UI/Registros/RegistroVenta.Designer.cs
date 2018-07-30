@@ -34,19 +34,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.ClientecomboBox = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.RealizoVentatextBox = new System.Windows.Forms.TextBox();
             this.FechaVentatextBox = new System.Windows.Forms.TextBox();
             this.ClienteVentatextBox = new System.Windows.Forms.TextBox();
-            this.TipoVentatextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.ArticulocomboBox = new System.Windows.Forms.ComboBox();
@@ -60,6 +56,13 @@
             this.TotaltextBox = new System.Windows.Forms.TextBox();
             this.FacturaciondataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.TotalFacturatextBox = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.EfectivotextBox = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.DevueltatextBox = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.Imprimirbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
@@ -67,12 +70,6 @@
             this.Agregarbutton = new System.Windows.Forms.Button();
             this.NuevoClientebutton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.TotalFacturatextBox = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.EfectivotextBox = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.DevueltatextBox = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.MYerrorProvider)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -88,30 +85,28 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.TipoVentatextBox);
+            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.ClienteVentatextBox);
             this.groupBox1.Controls.Add(this.FechaVentatextBox);
             this.groupBox1.Controls.Add(this.RealizoVentatextBox);
-            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.NuevoClientebutton);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.ClientecomboBox);
             this.groupBox1.Controls.Add(this.numericUpDown1);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(148, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(653, 135);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Factura";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label1
             // 
@@ -140,15 +135,6 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "% Descuento";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 104);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Tipo Venta";
-            // 
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(88, 20);
@@ -171,22 +157,14 @@
             this.textBox1.Size = new System.Drawing.Size(121, 20);
             this.textBox1.TabIndex = 6;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(88, 101);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 7;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(346, 19);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 13);
+            this.label5.Size = new System.Drawing.Size(54, 13);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Realizo Venta";
+            this.label5.Text = "Empleado";
             // 
             // label6
             // 
@@ -205,15 +183,6 @@
             this.label7.Size = new System.Drawing.Size(70, 13);
             this.label7.TabIndex = 12;
             this.label7.Text = "Cliente Venta";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(346, 104);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 13);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Tipo Venta";
             // 
             // RealizoVentatextBox
             // 
@@ -236,13 +205,6 @@
             this.ClienteVentatextBox.Size = new System.Drawing.Size(178, 20);
             this.ClienteVentatextBox.TabIndex = 16;
             // 
-            // TipoVentatextBox
-            // 
-            this.TipoVentatextBox.Location = new System.Drawing.Point(454, 106);
-            this.TipoVentatextBox.Name = "TipoVentatextBox";
-            this.TipoVentatextBox.Size = new System.Drawing.Size(178, 20);
-            this.TipoVentatextBox.TabIndex = 17;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.Agregarbutton);
@@ -256,9 +218,9 @@
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.ArticulocomboBox);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Location = new System.Drawing.Point(12, 153);
+            this.groupBox2.Location = new System.Drawing.Point(148, 153);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(653, 116);
+            this.groupBox2.Size = new System.Drawing.Size(653, 231);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Articulo";
@@ -284,7 +246,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(7, 84);
+            this.label10.Location = new System.Drawing.Point(14, 208);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(49, 13);
             this.label10.TabIndex = 2;
@@ -292,7 +254,7 @@
             // 
             // CantidadnumericUpDown
             // 
-            this.CantidadnumericUpDown.Location = new System.Drawing.Point(62, 81);
+            this.CantidadnumericUpDown.Location = new System.Drawing.Point(69, 205);
             this.CantidadnumericUpDown.Name = "CantidadnumericUpDown";
             this.CantidadnumericUpDown.Size = new System.Drawing.Size(91, 20);
             this.CantidadnumericUpDown.TabIndex = 3;
@@ -300,7 +262,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(159, 84);
+            this.label11.Location = new System.Drawing.Point(166, 208);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(37, 13);
             this.label11.TabIndex = 4;
@@ -308,7 +270,7 @@
             // 
             // PreciotextBox
             // 
-            this.PreciotextBox.Location = new System.Drawing.Point(202, 81);
+            this.PreciotextBox.Location = new System.Drawing.Point(209, 205);
             this.PreciotextBox.Name = "PreciotextBox";
             this.PreciotextBox.Size = new System.Drawing.Size(91, 20);
             this.PreciotextBox.TabIndex = 5;
@@ -316,7 +278,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(299, 84);
+            this.label12.Location = new System.Drawing.Point(306, 208);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(72, 13);
             this.label12.TabIndex = 6;
@@ -324,7 +286,7 @@
             // 
             // ItbistextBox
             // 
-            this.ItbistextBox.Location = new System.Drawing.Point(377, 81);
+            this.ItbistextBox.Location = new System.Drawing.Point(384, 205);
             this.ItbistextBox.Name = "ItbistextBox";
             this.ItbistextBox.Size = new System.Drawing.Size(91, 20);
             this.ItbistextBox.TabIndex = 7;
@@ -332,7 +294,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(474, 84);
+            this.label13.Location = new System.Drawing.Point(481, 208);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(31, 13);
             this.label13.TabIndex = 8;
@@ -340,7 +302,7 @@
             // 
             // TotaltextBox
             // 
-            this.TotaltextBox.Location = new System.Drawing.Point(511, 81);
+            this.TotaltextBox.Location = new System.Drawing.Point(518, 205);
             this.TotaltextBox.Name = "TotaltextBox";
             this.TotaltextBox.Size = new System.Drawing.Size(91, 20);
             this.TotaltextBox.TabIndex = 9;
@@ -348,7 +310,7 @@
             // FacturaciondataGridView
             // 
             this.FacturaciondataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.FacturaciondataGridView.Location = new System.Drawing.Point(12, 275);
+            this.FacturaciondataGridView.Location = new System.Drawing.Point(61, 416);
             this.FacturaciondataGridView.Name = "FacturaciondataGridView";
             this.FacturaciondataGridView.Size = new System.Drawing.Size(860, 248);
             this.FacturaciondataGridView.TabIndex = 2;
@@ -361,96 +323,12 @@
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.TotalFacturatextBox);
             this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Location = new System.Drawing.Point(133, 551);
+            this.groupBox3.Location = new System.Drawing.Point(182, 692);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(447, 48);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dinero";
-            // 
-            // Imprimirbutton
-            // 
-            this.Imprimirbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Print_32;
-            this.Imprimirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Imprimirbutton.Location = new System.Drawing.Point(12, 551);
-            this.Imprimirbutton.Name = "Imprimirbutton";
-            this.Imprimirbutton.Size = new System.Drawing.Size(87, 48);
-            this.Imprimirbutton.TabIndex = 18;
-            this.Imprimirbutton.Text = "Imprimir";
-            this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Imprimirbutton.UseVisualStyleBackColor = true;
-            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
-            // 
-            // Eliminarbutton
-            // 
-            this.Eliminarbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Delete_File_321;
-            this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Eliminarbutton.Location = new System.Drawing.Point(785, 551);
-            this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(87, 48);
-            this.Eliminarbutton.TabIndex = 17;
-            this.Eliminarbutton.Text = "Eliminar";
-            this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Eliminarbutton.UseVisualStyleBackColor = true;
-            // 
-            // Guardarbutton
-            // 
-            this.Guardarbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Save_All_32;
-            this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(692, 551);
-            this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(87, 48);
-            this.Guardarbutton.TabIndex = 16;
-            this.Guardarbutton.Text = "Guardar";
-            this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Guardarbutton.UseVisualStyleBackColor = true;
-            // 
-            // Nuevobutton
-            // 
-            this.Nuevobutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Create_32;
-            this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(599, 551);
-            this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(87, 48);
-            this.Nuevobutton.TabIndex = 15;
-            this.Nuevobutton.Text = "Nuevo";
-            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Nuevobutton.UseVisualStyleBackColor = true;
-            // 
-            // Agregarbutton
-            // 
-            this.Agregarbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Add_New_32;
-            this.Agregarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Agregarbutton.Location = new System.Drawing.Point(517, 19);
-            this.Agregarbutton.Name = "Agregarbutton";
-            this.Agregarbutton.Size = new System.Drawing.Size(85, 38);
-            this.Agregarbutton.TabIndex = 11;
-            this.Agregarbutton.Text = "Agregar";
-            this.Agregarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Agregarbutton.UseVisualStyleBackColor = true;
-            // 
-            // NuevoClientebutton
-            // 
-            this.NuevoClientebutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Add_User_Male_16;
-            this.NuevoClientebutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NuevoClientebutton.Location = new System.Drawing.Point(233, 72);
-            this.NuevoClientebutton.Name = "NuevoClientebutton";
-            this.NuevoClientebutton.Size = new System.Drawing.Size(78, 47);
-            this.NuevoClientebutton.TabIndex = 9;
-            this.NuevoClientebutton.Text = "Nuevo Cliente";
-            this.NuevoClientebutton.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Search_Property_32;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(233, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(78, 47);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Buscar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // TotalFacturatextBox
             // 
@@ -500,11 +378,105 @@
             this.label16.TabIndex = 14;
             this.label16.Text = "Devuelta";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(88, 100);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(99, 17);
+            this.checkBox1.TabIndex = 17;
+            this.checkBox1.Text = "Venta a Credito";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // Imprimirbutton
+            // 
+            this.Imprimirbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Print_32;
+            this.Imprimirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Imprimirbutton.Location = new System.Drawing.Point(61, 692);
+            this.Imprimirbutton.Name = "Imprimirbutton";
+            this.Imprimirbutton.Size = new System.Drawing.Size(87, 48);
+            this.Imprimirbutton.TabIndex = 18;
+            this.Imprimirbutton.Text = "Imprimir";
+            this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
+            // 
+            // Eliminarbutton
+            // 
+            this.Eliminarbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Delete_File_321;
+            this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Eliminarbutton.Location = new System.Drawing.Point(834, 692);
+            this.Eliminarbutton.Name = "Eliminarbutton";
+            this.Eliminarbutton.Size = new System.Drawing.Size(87, 48);
+            this.Eliminarbutton.TabIndex = 17;
+            this.Eliminarbutton.Text = "Eliminar";
+            this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Eliminarbutton.UseVisualStyleBackColor = true;
+            // 
+            // Guardarbutton
+            // 
+            this.Guardarbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Save_All_32;
+            this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Guardarbutton.Location = new System.Drawing.Point(741, 692);
+            this.Guardarbutton.Name = "Guardarbutton";
+            this.Guardarbutton.Size = new System.Drawing.Size(87, 48);
+            this.Guardarbutton.TabIndex = 16;
+            this.Guardarbutton.Text = "Guardar";
+            this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Guardarbutton.UseVisualStyleBackColor = true;
+            // 
+            // Nuevobutton
+            // 
+            this.Nuevobutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Create_32;
+            this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Nuevobutton.Location = new System.Drawing.Point(648, 692);
+            this.Nuevobutton.Name = "Nuevobutton";
+            this.Nuevobutton.Size = new System.Drawing.Size(87, 48);
+            this.Nuevobutton.TabIndex = 15;
+            this.Nuevobutton.Text = "Nuevo";
+            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Nuevobutton.UseVisualStyleBackColor = true;
+            // 
+            // Agregarbutton
+            // 
+            this.Agregarbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Add_New_32;
+            this.Agregarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Agregarbutton.Location = new System.Drawing.Point(517, 19);
+            this.Agregarbutton.Name = "Agregarbutton";
+            this.Agregarbutton.Size = new System.Drawing.Size(85, 38);
+            this.Agregarbutton.TabIndex = 11;
+            this.Agregarbutton.Text = "Agregar";
+            this.Agregarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Agregarbutton.UseVisualStyleBackColor = true;
+            // 
+            // NuevoClientebutton
+            // 
+            this.NuevoClientebutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Add_User_Male_16;
+            this.NuevoClientebutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.NuevoClientebutton.Location = new System.Drawing.Point(233, 72);
+            this.NuevoClientebutton.Name = "NuevoClientebutton";
+            this.NuevoClientebutton.Size = new System.Drawing.Size(78, 47);
+            this.NuevoClientebutton.TabIndex = 9;
+            this.NuevoClientebutton.Text = "Nuevo Cliente";
+            this.NuevoClientebutton.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Search_Property_32;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(233, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(78, 47);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Buscar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // RegistroVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 611);
+            this.ClientSize = new System.Drawing.Size(993, 749);
             this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);
@@ -534,11 +506,9 @@
         private System.Windows.Forms.ErrorProvider MYerrorProvider;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox ClientecomboBox;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -546,11 +516,9 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox ArticulocomboBox;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox TipoVentatextBox;
         private System.Windows.Forms.TextBox ClienteVentatextBox;
         private System.Windows.Forms.TextBox FechaVentatextBox;
         private System.Windows.Forms.TextBox RealizoVentatextBox;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -575,5 +543,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox TotalFacturatextBox;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

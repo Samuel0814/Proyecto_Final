@@ -43,13 +43,13 @@
             this.NombreArticulolabel = new System.Windows.Forms.Label();
             this.Cedulalabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.CedulamaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.MYerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
-            this.CedulamaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.MYerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ClienteIDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MYerrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -179,6 +179,24 @@
             this.label1.TabIndex = 49;
             this.label1.Text = "Cliente ID";
             // 
+            // CedulamaskedTextBox
+            // 
+            this.CedulamaskedTextBox.Location = new System.Drawing.Point(118, 199);
+            this.CedulamaskedTextBox.Name = "CedulamaskedTextBox";
+            this.CedulamaskedTextBox.Size = new System.Drawing.Size(120, 20);
+            this.CedulamaskedTextBox.TabIndex = 65;
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(118, 278);
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(120, 20);
+            this.maskedTextBox1.TabIndex = 66;
+            // 
+            // MYerrorProvider
+            // 
+            this.MYerrorProvider.ContainerControl = this;
+            // 
             // Eliminarbutton
             // 
             this.Eliminarbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Delete_File_32;
@@ -226,24 +244,7 @@
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
-            // 
-            // CedulamaskedTextBox
-            // 
-            this.CedulamaskedTextBox.Location = new System.Drawing.Point(118, 199);
-            this.CedulamaskedTextBox.Name = "CedulamaskedTextBox";
-            this.CedulamaskedTextBox.Size = new System.Drawing.Size(120, 20);
-            this.CedulamaskedTextBox.TabIndex = 65;
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(118, 278);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(120, 20);
-            this.maskedTextBox1.TabIndex = 66;
-            // 
-            // MYerrorProvider
-            // 
-            this.MYerrorProvider.ContainerControl = this;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // RegistroClientes
             // 
@@ -272,6 +273,7 @@
             this.Controls.Add(this.label1);
             this.Name = "RegistroClientes";
             this.Text = "RegistroClientes";
+            this.Load += new System.EventHandler(this.RegistroClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ClienteIDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MYerrorProvider)).EndInit();
             this.ResumeLayout(false);

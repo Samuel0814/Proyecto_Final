@@ -10,12 +10,12 @@ namespace Entidades
     {
         [Key]
         public int IdFactura { get; set; }
-
+        public enum  Tipo {Credito,contado }
 
         public string NombreUsuario { get; set; }
         public DateTime FechaVenta { get; set; }
         public string Cliente { get; set; }
-        public string TipoVenta { get; set; }
+        public Tipo Tipoventa { get; set; }
         public int CantidadProd { get; set; }
         public decimal Total { get; set; }
 
@@ -25,13 +25,13 @@ namespace Entidades
         {
 
         }
-        public Facturas(int idFactura, string nombreUsuario, DateTime fechaVenta, string cliente, string tipoventa, int cantidadProd, decimal total)
+        public Facturas(int idFactura, string nombreUsuario, DateTime fechaVenta, string cliente, Tipo tipoventa, int cantidadProd, decimal total)
         {
             this.IdFactura = idFactura;
             this.NombreUsuario = nombreUsuario;
             this.FechaVenta = fechaVenta;
             this.Cliente = cliente;
-            this.TipoVenta = tipoventa;
+            this.Tipoventa = tipoventa;
             this.CantidadProd = cantidadProd;
             this.Total = total;
 

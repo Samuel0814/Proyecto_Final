@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Tipo = new System.Windows.Forms.Label();
             this.EfectivotextBox = new System.Windows.Forms.TextBox();
             this.DeudatextBox = new System.Windows.Forms.TextBox();
-            this.ClientetextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.UsuarioIDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.NombreArticulolabel = new System.Windows.Forms.Label();
@@ -42,7 +42,10 @@
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.DevueltatextBox = new System.Windows.Forms.TextBox();
+            this.MYerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ClientecomboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIDnumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MYerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // Tipo
@@ -69,14 +72,6 @@
             this.DeudatextBox.Name = "DeudatextBox";
             this.DeudatextBox.Size = new System.Drawing.Size(183, 25);
             this.DeudatextBox.TabIndex = 69;
-            // 
-            // ClientetextBox
-            // 
-            this.ClientetextBox.Location = new System.Drawing.Point(76, 59);
-            this.ClientetextBox.Multiline = true;
-            this.ClientetextBox.Name = "ClientetextBox";
-            this.ClientetextBox.Size = new System.Drawing.Size(183, 25);
-            this.ClientetextBox.TabIndex = 60;
             // 
             // label6
             // 
@@ -137,6 +132,7 @@
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 
@@ -149,6 +145,7 @@
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Nuevobutton
             // 
@@ -161,6 +158,7 @@
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // Buscarbutton
             // 
@@ -173,6 +171,7 @@
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // DevueltatextBox
             // 
@@ -182,16 +181,28 @@
             this.DevueltatextBox.Size = new System.Drawing.Size(88, 25);
             this.DevueltatextBox.TabIndex = 72;
             // 
+            // MYerrorProvider
+            // 
+            this.MYerrorProvider.ContainerControl = this;
+            // 
+            // ClientecomboBox
+            // 
+            this.ClientecomboBox.FormattingEnabled = true;
+            this.ClientecomboBox.Location = new System.Drawing.Point(76, 62);
+            this.ClientecomboBox.Name = "ClientecomboBox";
+            this.ClientecomboBox.Size = new System.Drawing.Size(183, 21);
+            this.ClientecomboBox.TabIndex = 73;
+            // 
             // SaldarDeudas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(271, 282);
+            this.Controls.Add(this.ClientecomboBox);
             this.Controls.Add(this.DevueltatextBox);
             this.Controls.Add(this.Tipo);
             this.Controls.Add(this.EfectivotextBox);
             this.Controls.Add(this.DeudatextBox);
-            this.Controls.Add(this.ClientetextBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.UsuarioIDnumericUpDown);
             this.Controls.Add(this.Eliminarbutton);
@@ -204,6 +215,7 @@
             this.Name = "SaldarDeudas";
             this.Text = "Saldar Deudas";
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIDnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MYerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,7 +225,6 @@
         private System.Windows.Forms.Label Tipo;
         private System.Windows.Forms.TextBox EfectivotextBox;
         private System.Windows.Forms.TextBox DeudatextBox;
-        private System.Windows.Forms.TextBox ClientetextBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown UsuarioIDnumericUpDown;
         private System.Windows.Forms.Button Eliminarbutton;
@@ -224,5 +235,7 @@
         private System.Windows.Forms.Label Contraseñalabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox DevueltatextBox;
+        private System.Windows.Forms.ErrorProvider MYerrorProvider;
+        private System.Windows.Forms.ComboBox ClientecomboBox;
     }
 }

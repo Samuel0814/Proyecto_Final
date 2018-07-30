@@ -15,5 +15,15 @@ namespace Warehouse_Pharmacy_System.UI.Registros
         {
             InitializeComponent();
         }
+
+        private void RegistroClientes_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Buscarbutton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
