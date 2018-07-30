@@ -267,8 +267,23 @@
     <EmbeddedResource Include="UI\Registros\RegistroVenta.resx">
       <DependentUpon>RegistroVenta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ArticulosViewer.resx">
+      <DependentUpon>ArticulosViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\CategoriasViewer.resx">
+      <DependentUpon>CategoriasViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\ClienteViewer.resx">
       <DependentUpon>ClienteViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\DetalleViewer.resx">
+      <DependentUpon>DetalleViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\DeudasViewer.resx">
+      <DependentUpon>DeudasViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\FacturaViewer.resx">
+      <DependentUpon>FacturaViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\ListadoArticulos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

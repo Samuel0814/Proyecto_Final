@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,9 +12,34 @@ namespace Warehouse_Pharmacy_System.UI.Reportes
 {
     public partial class DetalleViewer : Form
     {
-        public DetalleViewer()
+        private List<FacturasDetalles> facturas = null;
+        public DetalleViewer(List<FacturasDetalles> clientes)
         {
+            this.facturas = clientes;
             InitializeComponent();
         }
+
+        private void crystalReportViewer1_Load(object sender, EventArgs e)
+        {
+            ListadoDetalle listado = new ListadoDetalle();
+            listado.SetDataSource(listado);
+            crystalReportViewer1.ReportSource = listado;
+            listado.Refresh();
+        }
     }
+}
+
+private List<Clientes> ListaCliente = null;
+public ClienteViewer(List<Clientes> clientes)
+{
+    this.ListaCliente = clientes;
+    InitializeComponent();
+}
+
+private void crystalReportViewer1_Load(object sender, EventArgs e)
+{
+    ListadoClientes listado = new ListadoClientes();
+    listado.SetDataSource(ListaCliente);
+    crystalReportViewer1.ReportSource = listado;
+    listado.Refresh();
 }

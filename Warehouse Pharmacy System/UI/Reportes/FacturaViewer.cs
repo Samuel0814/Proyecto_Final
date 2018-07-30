@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,9 +12,19 @@ namespace Warehouse_Pharmacy_System.UI.Reportes
 {
     public partial class FacturaViewer : Form
     {
-        public FacturaViewer()
+        private List<Facturas> facturas = null;
+        public FacturaViewer(List<Facturas> facturas)
         {
+            this.facturas = facturas;
             InitializeComponent();
+        }
+
+        private void crystalReportViewer1_Load(object sender, EventArgs e)
+        {
+            ListadoFacturas listado = new ListadoFacturas();
+            listado.SetDataSource(facturas);
+            crystalReportViewer1.ReportSource = listado;
+            listado.Refresh();
         }
     }
 }
