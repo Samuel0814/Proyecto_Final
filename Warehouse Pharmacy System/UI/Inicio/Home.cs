@@ -100,5 +100,10 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
         {
             new SaldarDeudas().Show();
         }
+
+        private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new ConsultaCliente().Show();
+        }
     }
 }
