@@ -12,15 +12,27 @@ namespace BLL
 {
     public class FacturaBLL
     {
-
-        public static bool Guardar(Facturas factura)
+        public static bool Guardar(Facturas facturas)
         {
             bool paso = false;
+
             Contexto contexto = new Contexto();
             try
             {
-                if (contexto.Facturas.Add(factura) != null)
+                if (contexto.Facturas.Add(facturas) != null)
                 {
+                    foreach (var item in facturas.Detalle)
+                    {
+                     var articulo = contexto.articulos.Find(item.IdArticulo);
+                     articulo.Existencia -= item.Cantidad;
+                        ////if ()
+                        ////{
+                        ////    var Cliente = contexto.clientes.Find(item.ClienteId);
+                        ////    clientes.TotalMantenimiento += Convert.ToInt32(item.Importe);
+                        ////}
+                     
+                        
+                    }
                     contexto.SaveChanges();
                     paso = true;
                 }
@@ -33,61 +45,30 @@ namespace BLL
             return paso;
         }
 
-        public static bool  Guardar(Facturas factura, List<FacturasDetalles> detalles)
-        {
-            try
-            {
-                Contexto contexto = new Contexto();
-                contexto.Facturas.Add(factura);
-                foreach (FacturasDetalles detalle in detalles)
-                {
-                    contexto.DetalleFactura.Add(detalle);
-                    contexto.articulos.Find(detalle.IdArticulo).Existencia -= detalle.Cantidad;
-
-                }
-                if(factura.Tipoventa==Facturas.Tipo.Credito)
-                {
-                    Clientes tmp = contexto.clientes.Find(factura.ClienteId);
-                    tmp.Credito =tmp.Credito + factura.Total;
-
-
-                }
-                contexto.SaveChanges();
-
-            }
-            catch (Exception)
-            {
-
-                return false;
-            }
-            return true;
-        }
-
-        public static bool Modificar(Facturas   facturas)
+        public static bool Modificar(Facturas mantenimientoDetalle)
         {
             bool paso = false;
-
             Contexto contexto = new Contexto();
-            Facturas tmpFactura = contexto.Facturas.Find(facturas.IdFactura);
-            Clientes cliente = contexto.clientes.Find(facturas.ClienteId);
-            if (tmpFactura.Tipoventa == Facturas.Tipo.Credito)
-            {
-                Clientes tmpCliente = contexto.clientes.Find(tmpFactura.ClienteId);
-                tmpCliente.Credito = tmpCliente.Credito - tmpFactura.Total;
-
-
-            }
-            
             try
             {
-                contexto.Entry(facturas).State = EntityState.Modified;
-                if (facturas.Tipoventa == Facturas.Tipo.Credito)
+                int sum = 0;
+                int sumTotal = 0;
+                foreach (var item in mantenimientoDetalle.Detalle)
                 {
-                    Clientes tmp = contexto.clientes.Find(facturas.ClienteId);
-                    tmp.Credito = tmp.Credito + facturas.Total;
+                    var estado = item.ID > 0 ? EntityState.Modified : EntityState.Added;
+                    contexto.Entry(item).State = estado;
 
-
+                    //TODO:
+                    sum += item.Cantidad;
+                    sumTotal += Convert.ToInt32(item.Importe);
+                    contexto.articulos.Find(item.IdArticulo).Existencia -= sum;
+                    //contexto.Clientes.Find(item.ClienteID).Deuda = int.Parse(sumTotal.ToString());
                 }
+
+
+                contexto.Entry(mantenimientoDetalle).State = EntityState.Modified;
+
+
                 if (contexto.SaveChanges() > 0)
                 {
                     paso = true;
@@ -97,7 +78,6 @@ namespace BLL
             catch (Exception)
             {
                 MessageBox.Show("Error al modificar");
-
             }
             return paso;
         }
@@ -109,47 +89,58 @@ namespace BLL
             Contexto contexto = new Contexto();
             try
             {
-                Facturas factura = contexto.Facturas.Find(id);
+                Facturas facturas = contexto.Facturas.Find(id);
 
-                contexto.Facturas.Remove(factura);
+
+                foreach (var item in facturas.Detalle)
+                {
+                    var articulo = contexto.articulos.Find(item.IdArticulo);
+                    articulo.Existencia += item.Cantidad;
+                    //var cliente = contexto.clientes.Find(item.IdCliente);
+                    //cliente.Credito -= Convert.ToInt32(item.Importe);
+
+
+                }
+                contexto.Facturas.Remove(facturas);
 
                 if (contexto.SaveChanges() > 0)
                 {
                     paso = true;
                 }
+                contexto.Dispose();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se encuentras facturas registrados en el ID seleccionado");
+            }
+            return paso;
+        }
 
-                if (factura.Tipoventa == Facturas.Tipo.Credito)
+
+
+        public static Facturas Buscar(int id)
+        {
+            Contexto contexto = new Contexto();
+            Facturas facturas = new Facturas();
+            try
+            {
+                facturas = contexto.Facturas.Find(id);
+
+                facturas.Detalle.Count();
+
+                foreach (var item in facturas.Detalle)
                 {
-                    Clientes tmp = contexto.clientes.Find(factura.ClienteId);
-                    tmp.Credito = tmp.Credito - factura.Total;
-
-
+                    string s = item.Articulos.NombreArticulo;
                 }
 
                 contexto.Dispose();
             }
             catch (Exception)
             {
-                MessageBox.Show("No se encuentran facturas registradas en el ID seleccionado");
-            }
-            return paso;
-        }
 
-        public static Articulos Buscar(int id)
-        {
-            Contexto contexto = new Contexto();
-            Articulos articulo = new Articulos();
-            try
-            {
-                articulo = contexto.articulos.Find(id);
-                contexto.Dispose();
+                MessageBox.Show("No se encuentras detalles de facturas registrados en el ID Seleccionado");
             }
-            catch (Exception)
-            {
-                MessageBox.Show("No se encuentran  facturas registradas en el ID seleccionado");
-
-            }
-            return articulo;
+            return facturas;
         }
 
         public static List<Facturas> GetList(Expression<Func<Facturas, bool>> expression)
@@ -163,8 +154,7 @@ namespace BLL
             }
             catch (Exception)
             {
-                MessageBox.Show("No se encuentran facturas registradas");
-
+                MessageBox.Show("No se encuentras facturas registrados");
             }
             return facturas;
         }

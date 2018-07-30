@@ -11,30 +11,20 @@ namespace Entidades
         [Key]
         public int IdFactura { get; set; }
         public enum  Tipo {Credito,contado }
-
-        public string NombreUsuario { get; set; }
         public DateTime FechaVenta { get; set; }
-        public int ClienteId { get; set; }
-        public Tipo Tipoventa { get; set; }
-        public int CantidadProd { get; set; }
-        public decimal Total { get; set; }
+        public float SubTotal { get; set; }
+        public float Itbis { get; set; }
+        public float Total { get; set; }
 
-
+        public virtual ICollection<FacturasDetalles> Detalle { get; set; }
 
         public Facturas()
         {
-
+            this.Detalle = new List<FacturasDetalles>();
         }
-        public Facturas(int idFactura, string nombreUsuario, DateTime fechaVenta, int cliente, Tipo tipoventa, int cantidadProd, decimal total)
+        public void AgregarFacturas(int id, int idFactura, int ArticuloId, int idCliente, int Cantidad, float precio, float importe)
         {
-            this.IdFactura = idFactura;
-            this.NombreUsuario = nombreUsuario;
-            this.FechaVenta = fechaVenta;
-            this.ClienteId = cliente;
-            this.Tipoventa = tipoventa;
-            this.CantidadProd = cantidadProd;
-            this.Total = total;
-
+            this.Detalle.Add(new FacturasDetalles(id,idFactura, ArticuloId, idCliente ,Cantidad, precio, importe));
         }
     }
 }

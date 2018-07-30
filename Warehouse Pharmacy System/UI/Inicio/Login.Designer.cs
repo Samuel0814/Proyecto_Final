@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.UsuariotextBox = new System.Windows.Forms.TextBox();
             this.PasswordtextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -36,18 +35,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_User_32;
-            this.pictureBox1.Location = new System.Drawing.Point(315, 129);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(35, 31);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // UsuariotextBox
             // 
@@ -119,15 +109,14 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Welcome ";
             // 
-            // button3
+            // pictureBox1
             // 
-            this.button3.Location = new System.Drawing.Point(544, 48);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.pictureBox1.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_User_32;
+            this.pictureBox1.Location = new System.Drawing.Point(315, 129);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(35, 31);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Login
             // 
@@ -137,7 +126,6 @@
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.CancelButton = this.button2;
             this.ClientSize = new System.Drawing.Size(717, 267);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -167,6 +155,5 @@
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox UsuariotextBox;
         public System.Windows.Forms.TextBox PasswordtextBox;
-        private System.Windows.Forms.Button button3;
     }
 }

@@ -143,16 +143,76 @@
     <Compile Include="UI\Registros\RegistroVenta.Designer.cs">
       <DependentUpon>RegistroVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Reportes\ArticulosViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ArticulosViewer.Designer.cs">
+      <DependentUpon>ArticulosViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reportes\CategoriasViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\CategoriasViewer.Designer.cs">
+      <DependentUpon>CategoriasViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Reportes\ClienteViewer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Reportes\ClienteViewer.Designer.cs">
       <DependentUpon>ClienteViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Reportes\DetalleViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\DetalleViewer.Designer.cs">
+      <DependentUpon>DetalleViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reportes\DeudasViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\DeudasViewer.Designer.cs">
+      <DependentUpon>DeudasViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reportes\FacturaViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\FacturaViewer.Designer.cs">
+      <DependentUpon>FacturaViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reportes\ListadoArticulos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoArticulos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ListadoCategorias.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoCategorias.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\Reportes\ListadoClientes.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ListadoClientes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ListadoDetalle.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoDetalle.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ListadoDeudas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoDeudas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ListadoFacturas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoFacturas.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="UI\Consultas\ConsultaArticulos.resx">
@@ -210,9 +270,29 @@
     <EmbeddedResource Include="UI\Reportes\ClienteViewer.resx">
       <DependentUpon>ClienteViewer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ListadoArticulos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoArticulos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ListadoCategorias.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoCategorias.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\ListadoClientes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ListadoClientes.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ListadoDetalle.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoDetalle.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ListadoDeudas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoDeudas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ListadoFacturas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoFacturas.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="App.config">
       <SubType>Designer</SubType>
@@ -228,7 +308,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8_Delete_32.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_Search_Property_32.png" />
   </ItemGroup>
