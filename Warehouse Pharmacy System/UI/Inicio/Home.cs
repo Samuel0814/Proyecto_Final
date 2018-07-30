@@ -105,5 +105,10 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
         {
             new ConsultaCliente().Show();
         }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

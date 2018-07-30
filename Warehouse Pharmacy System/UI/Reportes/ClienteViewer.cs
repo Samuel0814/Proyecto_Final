@@ -12,7 +12,7 @@ namespace Warehouse_Pharmacy_System.UI.Reportes
 {
     public partial class ClienteViewer : Form
     {
-        private List<Clientes> ListaCliente;
+        private List<Clientes> ListaCliente = null;
         public ClienteViewer(List<Clientes>clientes)
         {
             this.ListaCliente = clientes;
@@ -21,7 +21,10 @@ namespace Warehouse_Pharmacy_System.UI.Reportes
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
-            
+            ListadoClientes listado = new ListadoClientes();
+            listado.SetDataSource(ListaCliente);
+            crystalReportViewer1.ReportSource= listado;
+            listado.Refresh();
         }
     }
 }

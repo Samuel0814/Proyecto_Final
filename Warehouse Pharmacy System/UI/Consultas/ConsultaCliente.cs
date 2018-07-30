@@ -8,11 +8,13 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Windows.Forms;
+using Warehouse_Pharmacy_System.UI.Reportes;
 
 namespace Warehouse_Pharmacy_System.UI.Consultas
 {
     public partial class ConsultaCliente : Form
     {
+        private List<Clientes> ListaCliente;
         public ConsultaCliente()
         {
             InitializeComponent();
@@ -33,7 +35,14 @@ namespace Warehouse_Pharmacy_System.UI.Consultas
 
         private void Imprimirbutton_Click(object sender, EventArgs e)
         {
-
+            if (ListaCliente.Count == 0)
+            {
+                MessageBox.Show("Reporte esta vacio");
+                return;
+            }
+            ClienteViewer clienteViewer = new ClienteViewer(ListaCliente);
+            clienteViewer.Show();
+            
         }
 
         private void Buscatbutton_Click_1(object sender, EventArgs e)
@@ -54,8 +63,8 @@ namespace Warehouse_Pharmacy_System.UI.Consultas
                     Expression<Func<Clientes, bool>> filtro2 = a => true;
                     break;
             }
-
-            ConsultadataGridView.DataSource = BLL.ClientesBLL.GetList(filtro);
+            ListaCliente = BLL.ClientesBLL.GetList(filtro);
+            ConsultadataGridView.DataSource = ListaCliente;
         }
 
         private void FiltrocomboBox_SelectedIndexChanged_1(object sender, EventArgs e)
