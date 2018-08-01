@@ -48,8 +48,9 @@ namespace Warehouse_Pharmacy_System.UI.Consultas
                     break;
             }
 
-            saldarDeudas = BLL.DeudasClientesBLL.GetList(filtro);
-            ConsultadataGridView.DataSource = saldarDeudas;
+            //saldarDeudas = BLL.DeudasClientesBLL.GetList(filtro);
+            //ConsultadataGridView.DataSource = saldarDeudas;
+            ConsultadataGridView.DataSource = BLL.DeudasClientesBLL.GetList(filtro);
         }
 
         private void ConsultaDeudas_Load(object sender, EventArgs e)
@@ -59,13 +60,13 @@ namespace Warehouse_Pharmacy_System.UI.Consultas
 
         private void Imprimirbutton_Click(object sender, EventArgs e)
         {
-            if (saldarDeudas.Count == 0)
-            {
-                MessageBox.Show("Reporte esta vacio");
-                return;
-            }
-            DeudasViewer clienteViewer = new DeudasViewer(saldarDeudas);
-            clienteViewer.Show();
+            //if (saldarDeudas.Count == 0)
+            //{
+            //    MessageBox.Show("Reporte esta vacio");
+            //    return;
+            //}
+            //DeudasViewer clienteViewer = new DeudasViewer(saldarDeudas);
+            //clienteViewer.Show();
         }
 
         private void FiltrocomboBox_SelectedIndexChanged(object sender, EventArgs e)
