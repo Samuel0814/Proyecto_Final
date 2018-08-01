@@ -73,7 +73,7 @@ namespace BLL
             }
             catch (Exception)
             {
-                MessageBox.Show("No se encuentran entradas de articulos registradas en el ID seleccionado");
+                MessageBox.Show("No se encuentran articulos registrados en el ID seleccionado");
             }
             return paso;
         }
@@ -89,7 +89,7 @@ namespace BLL
             }
             catch (Exception)
             {
-                MessageBox.Show("No se encuentran  articulos registradas en el ID seleccionado");
+                MessageBox.Show("No se encuentran  articulos registrados en el ID seleccionado");
 
             }
             return articulo;
@@ -106,7 +106,7 @@ namespace BLL
             }
             catch (Exception)
             {
-                MessageBox.Show("No se encuentran articulos registradas");
+                MessageBox.Show("No se encuentran articulos registrados");
 
             }
             return articulos;

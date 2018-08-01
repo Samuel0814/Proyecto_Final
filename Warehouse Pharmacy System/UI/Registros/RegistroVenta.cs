@@ -69,6 +69,8 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             Facturas.Total = Convert.ToSingle(TotalnumericUpDown.Value);
             Facturas.SubTotal = Convert.ToSingle(SubTotalnumericUpDown.Value);
             Facturas.Itbis = Convert.ToSingle(ItbisnumericUpDown.Value);
+            Facturas.IdCliente = Convert.ToInt32(ClientecomboBox.SelectedValue);
+            Facturas.ACredito = CreditocheckBox.Checked;
 
             return Facturas;
         }
@@ -77,7 +79,6 @@ namespace Warehouse_Pharmacy_System.UI.Registros
         {
             Repositorio<Articulos> ArticuloRepositorio = new Repositorio<Articulos>(new Contexto());
             Repositorio<Clientes> Clienterepositorio = new Repositorio<Clientes>(new Contexto());
-            Repositorio<Facturas> FacturasRepositorio = new Repositorio<Facturas>(new Contexto());
 
             ArticulocomboBox.DataSource = ArticuloRepositorio.GetList(c => true);
             ArticulocomboBox.ValueMember = "IdArticulo";
@@ -87,9 +88,6 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             ClientecomboBox.ValueMember = "ClienteId";
             ClientecomboBox.DisplayMember = "Nombres";
 
-            TipoVentacomboBox.DataSource = FacturasRepositorio.GetList(c => true);
-            TipoVentacomboBox.ValueMember = "IdFactura";
-            TipoVentacomboBox.DisplayMember = "Tipo";
         }
 
         private void MostrarPrecio()
@@ -390,6 +388,11 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                 }
 
             }
+        }
+
+        private void CreditocheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

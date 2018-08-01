@@ -87,7 +87,7 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             }
 
 
-            if (String.IsNullOrWhiteSpace(CedulamaskedTextBox.Text))
+            if (CedulamaskedTextBox.Text.Trim().Trim('-').Length<1)
             {
                 MYerrorProvider.SetError(CedulamaskedTextBox,
                     "Debe introducir una cedula");
@@ -95,7 +95,7 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             }
 
 
-            if (String.IsNullOrWhiteSpace(TelefonomaskedTextBox.Text))
+            if (TelefonomaskedTextBox.Text.Trim('(').Trim(')').Trim('-').Trim().Length<1)
             {
                 MYerrorProvider.SetError(TelefonomaskedTextBox,
                     "No debe dejar el telefono vacio");
@@ -192,6 +192,11 @@ namespace Warehouse_Pharmacy_System.UI.Registros
         }
 
         private void creditomaximotextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CedulamaskedTextBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }

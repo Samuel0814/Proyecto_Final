@@ -191,11 +191,12 @@
             this.CedulamaskedTextBox.Name = "CedulamaskedTextBox";
             this.CedulamaskedTextBox.Size = new System.Drawing.Size(81, 20);
             this.CedulamaskedTextBox.TabIndex = 65;
+            this.CedulamaskedTextBox.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.CedulamaskedTextBox_MaskInputRejected);
             // 
             // TelefonomaskedTextBox
             // 
             this.TelefonomaskedTextBox.Location = new System.Drawing.Point(118, 278);
-            this.TelefonomaskedTextBox.Mask = "+1 (###) ### - ####";
+            this.TelefonomaskedTextBox.Mask = " (###) ### - ####";
             this.TelefonomaskedTextBox.Name = "TelefonomaskedTextBox";
             this.TelefonomaskedTextBox.Size = new System.Drawing.Size(106, 20);
             this.TelefonomaskedTextBox.TabIndex = 66;

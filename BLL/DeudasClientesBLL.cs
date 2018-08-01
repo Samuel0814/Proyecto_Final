@@ -62,7 +62,7 @@ namespace BLL
             }
             catch (Exception)
             {
-                MessageBox.Show("No se encuentran Articulos regitrados en el ID seleccionado");
+                MessageBox.Show("No se encuentran deudas regitradas en el ID seleccionado");
 
             }
             return paso;
@@ -91,7 +91,7 @@ namespace BLL
             }
             catch (Exception)
             {
-                MessageBox.Show("No se encuentran entradas de articulos registradas en el ID seleccionado");
+                MessageBox.Show("No se encuentran deudas registradas en el ID seleccionado");
             }
             return paso;
         }
@@ -107,7 +107,7 @@ namespace BLL
             }
             catch (Exception)
             {
-                MessageBox.Show("No se encuentran  articulos registradas en el ID seleccionado");
+                MessageBox.Show("No se encuentran deudas registradas en el ID seleccionado");
 
             }
             return deuda;
@@ -124,7 +124,7 @@ namespace BLL
             }
             catch (Exception)
             {
-                MessageBox.Show("No se encuentran articulos registradas");
+                MessageBox.Show("No se encuentran deudas registradas");
 
             }
             return deudasClientes;

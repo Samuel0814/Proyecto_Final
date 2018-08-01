@@ -49,7 +49,7 @@ namespace BLL
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al modificar");
+                MessageBox.Show("No se encuentran categorias regitrados en el ID seleccionado");
             }
             return paso;
         }
@@ -74,7 +74,7 @@ namespace BLL
             catch (Exception)
             {
 
-                MessageBox.Show("Error al eliminar");
+                MessageBox.Show("No se encuentran categorias regitrados en el ID seleccionado");
             }
             return paso;
         }
@@ -92,7 +92,7 @@ namespace BLL
             catch (Exception)
             {
 
-                MessageBox.Show("No se encuentran categorias registradas");
+                MessageBox.Show("No se encuentran categorias registrados en el Id seleccionado");
             }
             return categorias;
         }

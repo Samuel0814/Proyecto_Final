@@ -38,7 +38,6 @@
             this.DetalledataGridView = new System.Windows.Forms.DataGridView();
             this.CantidadnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.ArticulocomboBox = new System.Windows.Forms.ComboBox();
-            this.TipoVentacomboBox = new System.Windows.Forms.ComboBox();
             this.ClientecomboBox = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -58,7 +57,7 @@
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.CreditocheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.MYerrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TotalnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubTotalnumericUpDown)).BeginInit();
@@ -169,14 +168,6 @@
             this.ArticulocomboBox.Size = new System.Drawing.Size(403, 21);
             this.ArticulocomboBox.TabIndex = 37;
             this.ArticulocomboBox.SelectedIndexChanged += new System.EventHandler(this.ArticulocomboBox_SelectedIndexChanged);
-            // 
-            // TipoVentacomboBox
-            // 
-            this.TipoVentacomboBox.FormattingEnabled = true;
-            this.TipoVentacomboBox.Location = new System.Drawing.Point(101, 124);
-            this.TipoVentacomboBox.Name = "TipoVentacomboBox";
-            this.TipoVentacomboBox.Size = new System.Drawing.Size(403, 21);
-            this.TipoVentacomboBox.TabIndex = 36;
             // 
             // ClientecomboBox
             // 
@@ -370,20 +361,23 @@
             this.label1.TabIndex = 61;
             this.label1.Text = "FacturaID";
             // 
-            // label5
+            // CreditocheckBox
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 124);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 13);
-            this.label5.TabIndex = 57;
-            this.label5.Text = "Tipo de Venta";
+            this.CreditocheckBox.AutoSize = true;
+            this.CreditocheckBox.Location = new System.Drawing.Point(101, 116);
+            this.CreditocheckBox.Name = "CreditocheckBox";
+            this.CreditocheckBox.Size = new System.Drawing.Size(69, 17);
+            this.CreditocheckBox.TabIndex = 62;
+            this.CreditocheckBox.Text = "A Credito";
+            this.CreditocheckBox.UseVisualStyleBackColor = true;
+            this.CreditocheckBox.CheckedChanged += new System.EventHandler(this.CreditocheckBox_CheckedChanged);
             // 
             // RegistroVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(529, 524);
+            this.Controls.Add(this.CreditocheckBox);
             this.Controls.Add(this.TotalnumericUpDown);
             this.Controls.Add(this.SubTotalnumericUpDown);
             this.Controls.Add(this.ItbisnumericUpDown);
@@ -392,7 +386,6 @@
             this.Controls.Add(this.DetalledataGridView);
             this.Controls.Add(this.CantidadnumericUpDown);
             this.Controls.Add(this.ArticulocomboBox);
-            this.Controls.Add(this.TipoVentacomboBox);
             this.Controls.Add(this.ClientecomboBox);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -403,7 +396,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.FechadateTimePicker);
             this.Controls.Add(this.FacturaIDnumericUpDown);
@@ -440,7 +432,6 @@
         private System.Windows.Forms.DataGridView DetalledataGridView;
         private System.Windows.Forms.NumericUpDown CantidadnumericUpDown;
         private System.Windows.Forms.ComboBox ArticulocomboBox;
-        private System.Windows.Forms.ComboBox TipoVentacomboBox;
         private System.Windows.Forms.ComboBox ClientecomboBox;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
@@ -451,7 +442,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker FechadateTimePicker;
         private System.Windows.Forms.NumericUpDown FacturaIDnumericUpDown;
@@ -461,5 +451,6 @@
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.CheckBox CreditocheckBox;
     }
 }
