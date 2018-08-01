@@ -159,6 +159,7 @@
             this.CategoriacomboBox.Name = "CategoriacomboBox";
             this.CategoriacomboBox.Size = new System.Drawing.Size(283, 21);
             this.CategoriacomboBox.TabIndex = 36;
+            this.CategoriacomboBox.SelectedIndexChanged += new System.EventHandler(this.CategoriacomboBox_SelectedIndexChanged);
             // 
             // label3
             // 

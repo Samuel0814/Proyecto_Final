@@ -128,10 +128,10 @@ namespace BLL
 
                 facturas.Detalle.Count();
 
-                foreach (var item in facturas.Detalle)
-                {
-                    string s = item.Articulos.NombreArticulo;
-                }
+                //foreach (var item in facturas.Detalle)
+                //{
+                //    string s = item.IdArticulo;
+                //}
 
                 contexto.Dispose();
             }

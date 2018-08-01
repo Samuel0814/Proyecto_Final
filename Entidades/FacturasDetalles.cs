@@ -20,11 +20,11 @@ namespace Entidades
         public float Importe { get; set; }
         //public Entidades.Articulos Articulo { get; set; }
 
-        [ForeignKey("ClientesId")]
-        public virtual Clientes Clientes { get; set; }
+        //[ForeignKey("ClientesId")]
+        //public virtual Clientes Clientes { get; set; }
 
-        [ForeignKey("IdArticulo")]
-        public virtual Articulos Articulos { get; set; }
+        //[ForeignKey("IdArticulo")]
+        //public virtual Articulos Articulos { get; set; }
 
         public FacturasDetalles()
         {

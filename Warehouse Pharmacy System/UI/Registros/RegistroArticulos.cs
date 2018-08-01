@@ -178,5 +178,10 @@ namespace Warehouse_Pharmacy_System.UI.Registros
         {
 
         }
+
+        private void CategoriacomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

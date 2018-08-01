@@ -279,6 +279,7 @@
             this.creditomaximotextBox.Name = "creditomaximotextBox";
             this.creditomaximotextBox.Size = new System.Drawing.Size(100, 20);
             this.creditomaximotextBox.TabIndex = 70;
+            this.creditomaximotextBox.TextChanged += new System.EventHandler(this.creditomaximotextBox_TextChanged);
             // 
             // label5
             // 

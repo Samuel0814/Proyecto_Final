@@ -15,7 +15,7 @@ namespace Warehouse_Pharmacy_System.UI.Consultas
 {
     public partial class ConsultaDeudas : Form
     {
-        private List<SaldarDeudas> saldarDeudas;
+        //private List<SaldarDeudas> saldarDeudas;
         public ConsultaDeudas()
         {
             InitializeComponent();

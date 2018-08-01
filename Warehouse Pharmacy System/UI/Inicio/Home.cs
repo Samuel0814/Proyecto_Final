@@ -35,27 +35,37 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
 
         private void registroDeArticulosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new RegistroArticulos().Show();
+            RegistroArticulos r = new RegistroArticulos();
+            r.MdiParent = this;
+            r.Show();
         }
 
         private void vehiculosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new RegistroCategorias().Show();
+            RegistroCategorias r = new RegistroCategorias();
+            r.MdiParent = this;
+            r.Show();
         }
 
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new RegistroUsuarios().Show();
+            RegistroUsuarios r = new RegistroUsuarios();
+            r.MdiParent = this;
+            r.Show();
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new RegistroClientes().Show();
+            RegistroClientes r = new RegistroClientes();
+            r.MdiParent = this;
+            r.Show();
         }
 
         private void articulosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new ConsultaArticulos().Show();
+            ConsultaArticulos r = new ConsultaArticulos();
+            r.MdiParent = this;
+            r.Show();
         }
 
         private void Home_FormClosing(object sender, FormClosingEventArgs e)
@@ -73,37 +83,49 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new ConsultaUsuario().Show();
+            //new ConsultaUsuario().Show();
         }
 
         private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new ConsultaCategorias().Show();
+            ConsultaCategorias r = new ConsultaCategorias();
+            r.MdiParent = this;
+            r.Show();
         }
 
         private void facturasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new ConsultaFactura().Show();
+            ConsultaFactura r = new ConsultaFactura();
+            r.MdiParent = this;
+            r.Show();
         }
 
         private void deudasPorCobrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new ConsultaDeudas().Show();
+            ConsultaDeudas r = new ConsultaDeudas();
+            r.MdiParent = this;
+            r.Show();
         }
 
         private void venderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new RegistroVenta().Show();
+            RegistroVenta r = new RegistroVenta();
+            r.MdiParent = this;
+            r.Show();
         }
 
         private void saldarDeudasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new SaldarDeudas().Show();
+            SaldarDeudas r = new SaldarDeudas();
+            r.MdiParent = this;
+            r.Show();
         }
 
         private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            new ConsultaCliente().Show();
+            ConsultaCliente r = new ConsultaCliente();
+            r.MdiParent = this;
+            r.Show();
         }
 
         private void Home_Load(object sender, EventArgs e)

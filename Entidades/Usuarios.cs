@@ -11,7 +11,6 @@ namespace Entidades
     {
         [Key]
         public int Id { get; set; }
-        //[Index(IsUnique=true)]
         public string NombreUsuario { get; set; }
         public string PassUsuario { get; set; }
         public string Tipo { get; set; }

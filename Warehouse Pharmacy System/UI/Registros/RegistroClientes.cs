@@ -190,5 +190,10 @@ namespace Warehouse_Pharmacy_System.UI.Registros
         {
 
         }
+
+        private void creditomaximotextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
