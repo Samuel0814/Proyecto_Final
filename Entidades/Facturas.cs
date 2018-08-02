@@ -17,6 +17,7 @@ namespace Entidades
         public float Total { get; set; }
         public int IdCliente { get; set; }
         public DateTime FechaExpiracion { get; set; }
+        public bool EstaSaldada { get; set; }
 
         public virtual ICollection<FacturasDetalles> Detalle { get; set; }
 

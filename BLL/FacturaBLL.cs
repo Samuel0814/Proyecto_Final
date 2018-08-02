@@ -19,9 +19,29 @@ namespace BLL
             Contexto contexto = new Contexto();
             try
             {
+                DeudasClientes clientDeuda=new DeudasClientes();
+                clientDeuda.ClienteID = facturas.IdCliente;
+                
+                
+
                  if(facturas.ACredito)
                 {
-                    contexto.clientes.Find(facturas.IdCliente).Credito += (decimal)facturas.Total;
+                    var deuda = contexto.deudas.Find(facturas.IdCliente);
+                    if(deuda!=null)
+                    {
+                         deuda.Facturas.Add(facturas);
+                       
+
+                    }
+                    else
+                    {
+                        clientDeuda.Facturas.Add(facturas);
+
+                        contexto.deudas.Add(clientDeuda);
+
+                    }
+                    
+                    
                 }
                 if (contexto.Facturas.Add(facturas) != null)
                 {
@@ -47,23 +67,43 @@ namespace BLL
         public static bool Modificar(Facturas Factura)
         {
             bool paso = false;
+            Factura.EstaSaldada = false;
             Contexto contexto = new Contexto();
             Facturas Tmp = contexto.Facturas.Find(Factura.IdFactura);
-            Clientes client;
+            DeudasClientes clientDeuda;
             if (Factura.ACredito&&Tmp.ACredito)
             {
-               client= contexto.clientes.Find(Factura.IdCliente);
-                client.Credito -= (decimal)Tmp.Total;
-                client.Credito += (decimal)Factura.Total;
+               clientDeuda= contexto.deudas.Find(Factura.IdCliente);
+               var fact=clientDeuda.Facturas.Find(x=>x.IdFactura ==Factura.IdFactura);
+                fact = Factura;
+
 
             }
             else
                if(Factura.ACredito&& !Tmp.ACredito)
                {
-                    client = contexto.clientes.Find(Factura.IdCliente);
-                    client.Credito +=(decimal) Factura.Total;
+                clientDeuda = new DeudasClientes();
+                clientDeuda.ClienteID = Factura.IdCliente;
+                
+
+                clientDeuda.Facturas.Add(Factura);
+                //contexto.deudas.Add(clientDeuda);
+                var deuda = contexto.deudas.Find(Factura.IdCliente);
+                if (deuda != null)
+                {
+                    deuda.Facturas.Add(Factura);
+
 
                 }
+                else
+                {
+                    clientDeuda.Facturas.Add(Factura);
+
+                    contexto.deudas.Add(clientDeuda);
+
+                }
+
+            }
             try
             {
                 int sum = 0;

@@ -38,7 +38,7 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
 
             entrada.IdDeudas = Convert.ToInt32(UsuarioIDnumericUpDown.Value);
             entrada.ClienteID = ClientecomboBox.SelectedIndex + 1;
-            entrada.Deuda = Convert.ToDecimal(DeudatextBox.Text);
+           // entrada.Deuda = Convert.ToDecimal(DeudatextBox.Text);
             return entrada;
         }
 
@@ -85,55 +85,12 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(UsuarioIDnumericUpDown.Value);
-
-            DeudasClientes entrada = BLL.DeudasClientesBLL.Buscar(id);
-
-            if (entrada != null)
-            {
-                ClientecomboBox.SelectedIndex = Convert.ToInt32(entrada.ClienteID);
-                DeudatextBox.Text = entrada.Deuda.ToString();
-            }
-            else
-                MessageBox.Show("No se encontro!", "Fallo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            DeudasClientes entrada;
-            bool Paso = false;
-
-            if (Validar())
-            {
-                MessageBox.Show("Favor revisar todos los campos", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            int id = (int)UsuarioIDnumericUpDown.Value;
-            DeudasClientes EntradaAnterior = BLL.DeudasClientesBLL.Buscar(id);
-            entrada = LlenaClase();
-
-
-            if (UsuarioIDnumericUpDown.Value == 0)
-            {
-                Paso = BLL.DeudasClientesBLL.Guardar(entrada);
-
-            }
-            else
-            {
-
-                Paso = BLL.DeudasClientesBLL.Mofidicar(entrada, EntradaAnterior);
-
-            }
-
-            if (Paso)
-                MessageBox.Show("Guardado!!", "Exito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else
-                MessageBox.Show("No se pudo guardar!!", "Fallo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+           
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
@@ -150,7 +107,11 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
 
         private void ClientecomboBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            DeudatextBox.Text = db.clientes.Find(Convert.ToInt32(ClientecomboBox.SelectedValue)).Credito.ToString();
+            int id = Convert.ToInt32(ClientecomboBox.SelectedValue);
+            var deuda = from d in db.deudas
+                        where d.IdDeudas == id
+                        select d;
+            DeudatextBox.Text = deuda.First().DeudaTotal().ToString();
         }
 
         private void SaldarDeudas_Load(object sender, EventArgs e)

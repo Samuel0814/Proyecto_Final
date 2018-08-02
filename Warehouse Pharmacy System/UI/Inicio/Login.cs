@@ -70,7 +70,8 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
 
         private void button3_Click(object sender, EventArgs e)
         {
-            new RegistroVenta().Show();
+            new RegistroClientes().Show();
+           
         }
     }
 }

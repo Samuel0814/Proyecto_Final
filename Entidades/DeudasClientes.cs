@@ -11,7 +11,7 @@ namespace Entidades
         [Key]
         public int IdDeudas { get; set; }
         public int ClienteID { get; set; }
-        public decimal Deuda { get; set; }
+        public List<Facturas> Facturas { get; set; }
 
 
         public DeudasClientes()
@@ -19,11 +19,16 @@ namespace Entidades
 
 
         }
-        public DeudasClientes(int idDudas, int cliente, decimal deuda)
+       
+        public float DeudaTotal()
         {
-            this.IdDeudas = idDudas;
-            this.ClienteID = cliente;
-            this.Deuda = deuda;
+            float deuda = 0;
+            foreach(Facturas item in Facturas)
+            {
+                deuda += item.Total;
+            }
+
+            return deuda;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Entidades;
+﻿using DAL;
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,7 +37,7 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             clientes.Email = EmailtextBox.Text;
             clientes.Sexo = (Genero)SexocomboBox.SelectedIndex;
             clientes.FechaNacimiento = FechaNacimientodateTimePicker.Value;
-            clientes.Credito = 0;
+         
             clientes.MaximoCredicto = 0;
             clientes.Cedula = CedulamaskedTextBox.Text;
             clientes.Telefono = TelefonomaskedTextBox.Text;
@@ -86,21 +87,23 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                 HayErrores = true;
             }
 
-
-            if (CedulamaskedTextBox.Text.Trim().Trim('-').Length<1)
+            string ced = CedulamaskedTextBox.Text.Replace('-', ' ').Trim();
+            if (CedulamaskedTextBox.Text.Replace('-',' ').Trim().Length<11)
             {
                 MYerrorProvider.SetError(CedulamaskedTextBox,
                     "Debe introducir una cedula");
+                MessageBox.Show("la longitud de la cedula es igual a "+ced.Length);
                 HayErrores = true;
             }
 
-
-            if (TelefonomaskedTextBox.Text.Trim('(').Trim(')').Trim('-').Trim().Length<1)
+            string tel = TelefonomaskedTextBox.Text.Replace('-', ' ').Trim(' ');
+            if (TelefonomaskedTextBox.Text.Replace('-',' ').Trim().Trim().Length<10)
             {
                 MYerrorProvider.SetError(TelefonomaskedTextBox,
                     "No debe dejar el telefono vacio");
                 HayErrores = true;
             }
+            
             return HayErrores;
 
 
@@ -110,7 +113,7 @@ namespace Warehouse_Pharmacy_System.UI.Registros
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             var clientes = BLL.ClientesBLL.Buscar(Convert.ToInt32(ClienteIDnumericUpDown.Value));
-
+            var deuda = new Contexto().deudas.Where(x=>x.ClienteID==clientes.ClienteId);
             if (clientes != null)
             {
                 NombretextBox.Text = clientes.Nombres;
@@ -118,9 +121,17 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                 EmailtextBox.Text = clientes.Email;
 
                 SexocomboBox.SelectedIndex = Convert.ToInt32(clientes.Sexo);
-
+                
                 FechaNacimientodateTimePicker.Value = clientes.FechaNacimiento;
-                CreditotextBox.Text = clientes.Credito.ToString();
+                if (deuda.ToList().Count>0)
+                {
+                    CreditotextBox.Text = deuda.First().DeudaTotal().ToString();
+                }
+                else
+                {
+                    CreditotextBox.Text = "0";
+                }
+
                 creditomaximotextBox.Text = clientes.MaximoCredicto.ToString();
                 CedulamaskedTextBox.Text = clientes.Cedula;
                 TelefonomaskedTextBox.Text = clientes.Telefono;

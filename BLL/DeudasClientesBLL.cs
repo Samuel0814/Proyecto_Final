@@ -21,7 +21,7 @@ namespace BLL
                 if (contexto.deudas.Add(nuevo) != null)
                 {
                     Clientes clientes = contexto.clientes.Find(nuevo.ClienteID);
-                    clientes.Credito -= nuevo.Deuda;
+                    
 
                     contexto.SaveChanges();
                     paso = true;
@@ -36,38 +36,6 @@ namespace BLL
 
         }
 
-        public static bool Mofidicar(DeudasClientes existente, DeudasClientes EntradaAnterior)
-        {
-            bool paso = false;
-
-            Contexto contexto = new Contexto();
-            try
-            {
-                DeudasClientes entrada = BLL.DeudasClientesBLL.Buscar(existente.IdDeudas);
-
-                contexto.Entry(existente).State = EntityState.Modified;
-
-                Clientes clientes = contexto.clientes.Find(existente.IdDeudas);
-                Clientes ArticuloAnterior = contexto.clientes.Find(EntradaAnterior.ClienteID);
-                clientes.Credito += existente.Deuda;
-                ArticuloAnterior.Credito -= EntradaAnterior.Deuda;
-
-                contexto.Entry(clientes).State = EntityState.Modified;
-
-                if (contexto.SaveChanges() > 0)
-                {
-                    paso = true;
-                }
-                contexto.Dispose();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("No se encuentran deudas regitradas en el ID seleccionado");
-
-            }
-            return paso;
-
-        }
 
         public static bool Eliminar(int id)
         {
@@ -78,8 +46,8 @@ namespace BLL
             {
                 DeudasClientes deudasClientes = contexto.deudas.Find(id);
 
-                Clientes clientes = contexto.clientes.Find(deudasClientes.ClienteID);
-                clientes.Credito += deudasClientes.Deuda;
+               
+                
 
                 contexto.deudas.Remove(deudasClientes);
 
