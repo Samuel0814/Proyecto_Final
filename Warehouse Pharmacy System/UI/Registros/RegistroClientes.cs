@@ -96,8 +96,8 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                 HayErrores = true;
             }
 
-            string tel = TelefonomaskedTextBox.Text.Replace('-', ' ').Trim(' ');
-            if (TelefonomaskedTextBox.Text.Replace('-',' ').Trim().Trim().Length<10)
+            string tel = TelefonomaskedTextBox.Text.Replace('-', ' ').Trim();
+            if (TelefonomaskedTextBox.Text.Replace('-',' ').Trim().Trim().Length<12)
             {
                 MYerrorProvider.SetError(TelefonomaskedTextBox,
                     "No debe dejar el telefono vacio");
