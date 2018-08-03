@@ -37,8 +37,8 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             clientes.Email = EmailtextBox.Text;
             clientes.Sexo = (Genero)SexocomboBox.SelectedIndex;
             clientes.FechaNacimiento = FechaNacimientodateTimePicker.Value;
-         
-            clientes.MaximoCredicto = 0;
+            
+            clientes.MaximoCredicto = Convert.ToDecimal(creditomaximotextBox.Text);
             clientes.Cedula = CedulamaskedTextBox.Text;
             clientes.Telefono = TelefonomaskedTextBox.Text;
             return clientes;

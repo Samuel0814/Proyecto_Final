@@ -107,20 +107,6 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
             r.Show();
         }
 
-        private void venderToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RegistroVenta r = new RegistroVenta();
-            r.MdiParent = this;
-            r.Show();
-        }
-
-        private void saldarDeudasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SaldarDeudas r = new SaldarDeudas();
-            r.MdiParent = this;
-            r.Show();
-        }
-
         private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             ConsultaCliente r = new ConsultaCliente();
@@ -131,6 +117,20 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
         private void Home_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void ventasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            RegistroVenta r = new RegistroVenta();
+            r.MdiParent = this;
+            r.Show();
+        }
+
+        private void saldarDeudasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            SaldarDeudas r = new SaldarDeudas();
+            r.MdiParent = this;
+            r.Show();
         }
     }
 }

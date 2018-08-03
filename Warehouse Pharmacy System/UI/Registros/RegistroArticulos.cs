@@ -169,7 +169,7 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                 PrecioVentatextBox.Text = articulos.PrecioVenta.ToString();
                 PrecioCompratextBox.Text = articulos.PrecioCompra.ToString();
                 FechaIngresodateTimePicker.Value = articulos.FechaIngreso;
-                CategoriacomboBox.SelectedIndex = Convert.ToInt32(articulos.CategoriaId);
+                CategoriacomboBox.SelectedValue = Convert.ToInt32(articulos.CategoriaId);
                 ITBIStextBox.Text = articulos.ITBIS.ToString();
             }
         }

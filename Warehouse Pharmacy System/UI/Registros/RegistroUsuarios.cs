@@ -121,7 +121,7 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             if (usuarios != null)
             {
                 NombreArticulotextBox.Text = usuarios.NombreUsuario;
-                TipocomboBox.SelectedIndex = Convert.ToInt32(usuarios.Tipo);
+                TipocomboBox.SelectedItem = Convert.ToString(usuarios.Tipo);
                 ContraseñatextBox.Text = usuarios.PassUsuario;
                 ConfirmarContraseñatextBox.Text = usuarios.PassUsuario;
             }
