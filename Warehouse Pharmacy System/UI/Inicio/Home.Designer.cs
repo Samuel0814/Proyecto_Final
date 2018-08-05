@@ -33,7 +33,7 @@
             this.salirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.registroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeArticulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CategoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,7 +56,7 @@
             this.salirToolStripMenuItem1});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.archivoToolStripMenuItem.Text = "Archivo";
+            this.archivoToolStripMenuItem.Text = "Sistema";
             // 
             // salirToolStripMenuItem
             // 
@@ -78,7 +78,7 @@
             // 
             this.registroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registroDeArticulosToolStripMenuItem,
-            this.vehiculosToolStripMenuItem,
+            this.CategoriaToolStripMenuItem,
             this.usuarioToolStripMenuItem,
             this.clientesToolStripMenuItem,
             this.ventasToolStripMenuItem1,
@@ -89,20 +89,23 @@
             // 
             // registroDeArticulosToolStripMenuItem
             // 
+            this.registroDeArticulosToolStripMenuItem.Enabled = false;
             this.registroDeArticulosToolStripMenuItem.Name = "registroDeArticulosToolStripMenuItem";
             this.registroDeArticulosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.registroDeArticulosToolStripMenuItem.Text = "Articulos";
             this.registroDeArticulosToolStripMenuItem.Click += new System.EventHandler(this.registroDeArticulosToolStripMenuItem_Click);
             // 
-            // vehiculosToolStripMenuItem
+            // CategoriaToolStripMenuItem
             // 
-            this.vehiculosToolStripMenuItem.Name = "vehiculosToolStripMenuItem";
-            this.vehiculosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.vehiculosToolStripMenuItem.Text = "Categoria";
-            this.vehiculosToolStripMenuItem.Click += new System.EventHandler(this.vehiculosToolStripMenuItem_Click);
+            this.CategoriaToolStripMenuItem.Enabled = false;
+            this.CategoriaToolStripMenuItem.Name = "CategoriaToolStripMenuItem";
+            this.CategoriaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.CategoriaToolStripMenuItem.Text = "Categoria";
+            this.CategoriaToolStripMenuItem.Click += new System.EventHandler(this.vehiculosToolStripMenuItem_Click);
             // 
             // usuarioToolStripMenuItem
             // 
+            this.usuarioToolStripMenuItem.Enabled = false;
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
             this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usuarioToolStripMenuItem.Text = "Usuario";
@@ -110,6 +113,7 @@
             // 
             // clientesToolStripMenuItem
             // 
+            this.clientesToolStripMenuItem.Enabled = false;
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
@@ -124,6 +128,7 @@
             // 
             // saldarDeudasToolStripMenuItem1
             // 
+            this.saldarDeudasToolStripMenuItem1.Enabled = false;
             this.saldarDeudasToolStripMenuItem1.Name = "saldarDeudasToolStripMenuItem1";
             this.saldarDeudasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.saldarDeudasToolStripMenuItem1.Text = "Saldar Deudas";
@@ -223,7 +228,7 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem registroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroDeArticulosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vehiculosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CategoriaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem;

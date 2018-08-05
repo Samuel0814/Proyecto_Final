@@ -140,8 +140,17 @@ namespace BLL
                 }
 
 
-                contexto.Entry(Factura).State = EntityState.Modified;
-
+               
+                Facturas tmpfact =contexto.Facturas.Find(Factura.IdFactura);
+                tmpfact.IdCliente = Factura.IdCliente;
+                tmpfact.Detalle = Factura.Detalle;
+                tmpfact.Itbis = Factura.Itbis;
+                tmpfact.Total = Factura.Total;
+                tmpfact.SubTotal = Factura.SubTotal;
+                tmpfact.FechaVenta = Factura.FechaVenta;
+                tmpfact.FechaExpiracion = tmpfact.FechaVenta.AddDays(30);
+                tmpfact.ACredito = Factura.ACredito;
+                //contexto.Entry(tmpfact).State = EntityState.Modified;
 
                 if (contexto.SaveChanges() > 0)
                 {

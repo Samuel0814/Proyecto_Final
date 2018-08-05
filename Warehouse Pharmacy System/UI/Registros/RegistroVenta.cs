@@ -29,6 +29,8 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             SubTotalnumericUpDown.Value = Convert.ToInt32(facturas.SubTotal);
             ItbisnumericUpDown.Value = Convert.ToInt32(facturas.Itbis);
             TotalnumericUpDown.Value = Convert.ToInt32(facturas.Total);
+            CreditocheckBox.Checked = facturas.ACredito;
+            ClientecomboBox.SelectedValue = facturas.IdCliente;
 
 
             DetalledataGridView.DataSource = facturas.Detalle.ToList();
@@ -308,7 +310,7 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             SubTotalnumericUpDown.Value = 0;
             ItbisnumericUpDown.Value = 0;
             MYerrorProvider.Clear();
-            Facturas.Detalle.Clear();
+            Facturas.Detalle= new List<FacturasDetalles>();
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,9 +15,29 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
 {
     public partial class Home : Form
     {
+       
         public Home()
         {
             InitializeComponent();
+            Permisos();
+        }
+
+        private void Permisos()
+        {
+            switch(UsuariosBLL.UsuarioLogueado.Tipo)
+            {
+                case "Administrador":
+                    registroDeArticulosToolStripMenuItem.Enabled = true;
+                    usuarioToolStripMenuItem.Enabled = true;
+                    CategoriaToolStripMenuItem.Enabled = true;
+                    clientesToolStripMenuItem.Enabled = true;
+                    saldarDeudasToolStripMenuItem1.Enabled = true;
+                    
+                    break;
+                case "Empleado":
+
+                    break;
+            }
         }
 
         private void entradaDeArticulosToolStripMenuItem_Click(object sender, EventArgs e)

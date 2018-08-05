@@ -12,7 +12,8 @@ namespace BLL
 {
     public class UsuariosBLL
     {
-         public static bool Guardar(Usuarios usuarios)
+        public static Usuarios UsuarioLogueado { get; set; }
+        public static bool Guardar(Usuarios usuarios)
         {
             bool paso = false;
 
@@ -87,6 +88,12 @@ namespace BLL
             
             if(usuario.ToList().Count>0)
             {
+                foreach (var item in usuario)
+                {
+                    UsuarioLogueado = item;
+
+                }
+                
                 return true;
             }
             
