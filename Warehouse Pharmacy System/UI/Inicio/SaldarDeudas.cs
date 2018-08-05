@@ -36,9 +36,9 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
         {
             DeudasClientes entrada = new DeudasClientes();
 
-            entrada.IdDeudas = Convert.ToInt32(UsuarioIDnumericUpDown.Value);
-            entrada.ClienteID = ClientecomboBox.SelectedIndex + 1;
-           // entrada.Deuda = Convert.ToDecimal(DeudatextBox.Text);
+           // entrada.IdDeudas = Convert.ToInt32(UsuarioIDnumericUpDown.Value);
+           // entrada.ClienteID = ClientecomboBox.SelectedIndex + 1;
+           //// entrada.Deuda = Convert.ToDecimal(DeudatextBox.Text);
             return entrada;
         }
 
@@ -109,9 +109,9 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
         {
             try
             {
-                var client = (Clientes)ClientecomboBox.SelectedItem;
-                var deuda = new Contexto().deudas.Where(x => x.ClienteID == client.ClienteId).First();
-                DeudatextBox.Text = deuda.DeudaTotal().ToString();
+                //var client = (Clientes)ClientecomboBox.SelectedItem;
+                //var deuda = new Contexto().deudas.Where(x => x.ClienteID == client.ClienteId).First();
+                //DeudatextBox.Text = deuda.DeudaTotal().ToString();
             }
             catch
             {

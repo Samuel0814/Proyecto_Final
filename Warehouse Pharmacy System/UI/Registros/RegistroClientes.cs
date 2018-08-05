@@ -113,7 +113,8 @@ namespace Warehouse_Pharmacy_System.UI.Registros
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             var clientes = BLL.ClientesBLL.Buscar(Convert.ToInt32(ClienteIDnumericUpDown.Value));
-            var deuda = new Contexto().deudas.Where(x=>x.ClienteID==clientes.ClienteId);
+            Contexto db = new Contexto();
+           
             if (clientes != null)
             {
                 NombretextBox.Text = clientes.Nombres;
@@ -123,14 +124,7 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                 SexocomboBox.SelectedIndex = Convert.ToInt32(clientes.Sexo);
                 
                 FechaNacimientodateTimePicker.Value = clientes.FechaNacimiento;
-                if (deuda.ToList().Count>0)
-                {
-                    CreditotextBox.Text = deuda.First().DeudaTotal().ToString();
-                }
-                else
-                {
-                    CreditotextBox.Text = "0";
-                }
+               
 
                 creditomaximotextBox.Text = clientes.MaximoCredicto.ToString();
                 CedulamaskedTextBox.Text = clientes.Cedula;

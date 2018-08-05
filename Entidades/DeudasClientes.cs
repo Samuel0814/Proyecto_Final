@@ -10,25 +10,15 @@ namespace Entidades
     {
         [Key]
         public int IdDeudas { get; set; }
-        public int ClienteID { get; set; }
-        public List<Facturas> Facturas { get; set; }
+        public int IdFactura { get; set; }
 
 
         public DeudasClientes()
         {
-            Facturas = new List<Facturas>();
+            
 
         }
        
-        public float DeudaTotal()
-        {
-            float deuda = 0;
-            foreach(Facturas item in Facturas)
-            {
-                deuda += item.Total;
-            }
-
-            return deuda;
-        }
+       
     }
 }

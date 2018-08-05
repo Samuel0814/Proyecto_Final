@@ -40,7 +40,7 @@ namespace Warehouse_Pharmacy_System.UI.Consultas
                     break;
                 case 1:
                     id = Convert.ToInt32(CriteriotextBox.Text);
-                    filtro = a => a.ClienteID == id;
+                    filtro = a => a.IdFactura == id;
                     break;
 
                 case 2: //filtrando todos

@@ -14,14 +14,13 @@ namespace BLL
     {
         public static bool Guardar(DeudasClientes nuevo)
         {
-            
             bool paso = false;
             Contexto contexto = new Contexto();
             try
             {
                 if (contexto.deudas.Add(nuevo) != null)
                 {
-                    Clientes clientes = contexto.clientes.Find(nuevo.ClienteID);
+                   
                     
 
                     contexto.SaveChanges();

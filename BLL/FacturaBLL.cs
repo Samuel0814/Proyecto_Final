@@ -20,8 +20,8 @@ namespace BLL
             try
             {
                 DeudasClientes clientDeuda=new DeudasClientes();
-                clientDeuda.ClienteID = facturas.IdCliente;
-                clientDeuda.Facturas.Add(facturas);
+                clientDeuda.IdFactura = facturas.IdFactura;
+                
 
 
 
@@ -30,19 +30,9 @@ namespace BLL
                     if (TieneCreditoDisponile(facturas))
                     {
                         var deuda = contexto.deudas.Find(facturas.IdCliente);
-                        if (deuda != null)
-                        {
-                            deuda.Facturas.Add(facturas);
+                        contexto.deudas.Add(clientDeuda);
 
-
-                        }
-                        else
-                        {
-                            
-
-                            contexto.deudas.Add(clientDeuda);
-
-                        }
+                        
                     }else
                     {
                         MessageBox.Show("Este cliente no tiene Credito disponible");
@@ -82,21 +72,21 @@ namespace BLL
 
                 return false;
             }
-            var Deudas = from x in db.deudas
-                         where x.ClienteID == client.ClienteId
-                         select x;
+            var Deudas = from f in db.Facturas
+                         join d in db.Facturas on f.IdFactura equals factura.IdFactura
+                         where f.IdCliente== client.ClienteId 
+                         select f;
             foreach (var item in Deudas )
             {
-                foreach (var fact in item.Facturas)
-                {
+               
                     
-                    if(fact.FechaExpiracion<DateTime.Now)
+                    if(item.FechaExpiracion<DateTime.Now)
                     {
                         MessageBox.Show("Este cliente tiene factura pendinete");
                         return false;
                     }
 
-                }
+                
             }
 
 
@@ -110,39 +100,28 @@ namespace BLL
             Contexto contexto = new Contexto();
             Facturas Tmp = contexto.Facturas.Find(Factura.IdFactura);
             DeudasClientes clientDeuda;
-            if (Factura.ACredito&&Tmp.ACredito)
+            if (Factura.ACredito && Tmp.ACredito)
             {
-               clientDeuda= contexto.deudas.Find(Factura.IdCliente);
-               var fact=clientDeuda.Facturas.Find(x=>x.IdFactura ==Factura.IdFactura);
-                fact = Factura;
-
 
             }
             else
-               if(Factura.ACredito&& !Tmp.ACredito)
-               {
-                clientDeuda = new DeudasClientes();
-                clientDeuda.ClienteID = Factura.IdCliente;
-                
-
-                clientDeuda.Facturas.Add(Factura);
-                //contexto.deudas.Add(clientDeuda);
-                var deuda = contexto.deudas.Find(Factura.IdCliente);
-               
-                    if (deuda != null)
+            {
+                if (Factura.ACredito && !Tmp.ACredito)
+                {
+                    clientDeuda = new DeudasClientes();
+                    clientDeuda.IdFactura = Factura.IdFactura;
+                    contexto.deudas.Add(clientDeuda);
+                }
+                else
+                {
+                    if (!Tmp.ACredito&&Factura.ACredito)
                     {
-                        deuda.Facturas.Add(Factura);
-
-
+                        DeudasClientes deudacliente = (from d in contexto.deudas
+                                                      where d.IdFactura == Factura.IdFactura
+                                                      select d).First();
+                        contexto.deudas.Remove(deudacliente);
                     }
-                    else
-                    {
-                        clientDeuda.Facturas.Add(Factura);
-
-                        contexto.deudas.Add(clientDeuda);
-
-                    }
-               
+                }
 
             }
             try
