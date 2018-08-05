@@ -22,8 +22,10 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
 
         private void button1_Click(object sender, EventArgs e)
         {
+             this.Cursor = Cursors.WaitCursor;
             if(ValidarCampos())
             {
+               
 
                 if (UsuariosBLL.InicialSeccion(UsuariotextBox.Text,PasswordtextBox.Text))
                 {
@@ -35,6 +37,8 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
                     
                 }
             }
+            this.Cursor = Cursors.Arrow;
+
         }
 
         public bool ValidarCampos()

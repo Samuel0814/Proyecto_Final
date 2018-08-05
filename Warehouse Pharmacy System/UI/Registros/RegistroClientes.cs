@@ -38,7 +38,7 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             clientes.Sexo = (Genero)SexocomboBox.SelectedIndex;
             clientes.FechaNacimiento = FechaNacimientodateTimePicker.Value;
             
-            clientes.MaximoCredicto = Convert.ToDecimal(creditomaximotextBox.Text);
+            clientes.MaximoCredicto =(creditomaximotextBox.Text==string.Empty)?0:decimal.Parse(creditomaximotextBox.Text);
             clientes.Cedula = CedulamaskedTextBox.Text;
             clientes.Telefono = TelefonomaskedTextBox.Text;
             return clientes;
@@ -204,7 +204,25 @@ namespace Warehouse_Pharmacy_System.UI.Registros
 
         private void creditomaximotextBox_TextChanged(object sender, EventArgs e)
         {
+            if(!IsNumber(creditomaximotextBox.Text))
+            {
+                creditomaximotextBox.Clear();
+            }
+        }
 
+        private bool IsNumber(string text)
+        {
+            try
+            {
+                decimal.Parse(text);
+
+            }
+            catch 
+            {
+
+                return false;
+            }
+            return true;
         }
 
         private void CedulamaskedTextBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)

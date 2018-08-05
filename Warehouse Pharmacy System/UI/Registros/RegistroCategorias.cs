@@ -58,6 +58,10 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             {
                 DescripciontextBox.Text = categorias.NombreCategoria;
             }
+            else
+            {
+                MessageBox.Show("No encontrado");
+            }
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)

@@ -7,10 +7,11 @@ using System.Text;
 namespace Entidades
 {
     public class Facturas
-    { public enum  Tipo {Credito,contado }
+    { 
+
         [Key]
         public int IdFactura { get; set; }
-       public bool ACredito { get; set; }
+        public bool ACredito { get; set; }
         public DateTime FechaVenta { get; set; }
         public float SubTotal { get; set; }
         public float Itbis { get; set; }
@@ -19,7 +20,7 @@ namespace Entidades
         public DateTime FechaExpiracion { get; set; }
         public bool EstaSaldada { get; set; }
 
-        public virtual ICollection<FacturasDetalles> Detalle { get; set; }
+        public virtual List<FacturasDetalles> Detalle { get; set; }
 
         public Facturas()
         {

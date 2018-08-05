@@ -2,6 +2,7 @@
 using Entidades;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -71,6 +72,7 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             Facturas.Itbis = Convert.ToSingle(ItbisnumericUpDown.Value);
             Facturas.IdCliente = Convert.ToInt32(ClientecomboBox.SelectedValue);
             Facturas.ACredito = CreditocheckBox.Checked;
+            Facturas.FechaExpiracion = DateTime.Now.AddDays(30);
 
             return Facturas;
         }
@@ -96,6 +98,7 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             foreach (var item in lArticulos)
             {
                 PrecionumericUpDown.Text = item.PrecioVenta.ToString();
+               
             }
         }
 
@@ -231,29 +234,33 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                 return;
             }
 
-            FacturasDetalles detalle1 = new FacturasDetalles(
-                    id: 0,
-                    idFactura: (int)FacturaIDnumericUpDown.Value,
-                    ArticuloId: (int)ArticulocomboBox.SelectedValue,
-                    idCliente: (int)ClientecomboBox.SelectedValue,
-                    Cantidad: Convert.ToInt32(CantidadnumericUpDown.Value),
-                    precio: (float)Convert.ToInt32(PrecionumericUpDown.Text),
-                    importe: (float)Convert.ToInt32(ImportenumericUpDown.Text)
-                );
-            AgregarDetalle(
-                detalle1
-               );
+            else
+            {
+                FacturasDetalles detalle = new FacturasDetalles();
+
+                detalle.IdFactura = (int)FacturaIDnumericUpDown.Value;
+                detalle.IdArticulo = (int)ArticulocomboBox.SelectedValue;
+                detalle.IdCliente = (int)ClientecomboBox.SelectedValue;
+                detalle.Cantidad = Convert.ToInt32(CantidadnumericUpDown.Value);
+                detalle.Precio = (float)Convert.ToInt32(PrecionumericUpDown.Text);
+                detalle.Importe = (float)Convert.ToInt32(ImportenumericUpDown.Text);
+                    
+                AgregarDetalle(
+                    detalle
+                   );
 
 
-            DetalledataGridView.DataSource = null;
+                DetalledataGridView.DataSource = null;
 
 
-            DetalledataGridView.DataSource = Facturas.Detalle;
+                DetalledataGridView.DataSource = Facturas.Detalle;
 
-            DetalledataGridView.Columns["ID"].Visible = false;
-            DetalledataGridView.Columns["IdFactura"].Visible = false;
+                DetalledataGridView.Columns["ID"].Visible = false;
+                DetalledataGridView.Columns["IdFactura"].Visible = false;
 
-            Total();
+                Total();
+            }
+            CantidadnumericUpDown.Value = 0;
         }
 
         private void AgregarDetalle(FacturasDetalles facturasDetalles)
@@ -276,16 +283,15 @@ namespace Warehouse_Pharmacy_System.UI.Registros
 
         private void Removerbutton_Click(object sender, EventArgs e)
         {
-            if (DetalledataGridView.Rows.Count > 0 && DetalledataGridView.CurrentRow != null)
+            if (DetalledataGridView.Rows.Count > 0 )
             {
 
                 List<FacturasDetalles> Detalle = (List<FacturasDetalles>)DetalledataGridView.DataSource;
 
 
-                Detalle.RemoveAt(DetalledataGridView.CurrentRow.Index);
-
+                Facturas.Detalle.RemoveAt(Convert.ToInt32(DetalledataGridView.SelectedRows[0].Index));
                 DetalledataGridView.DataSource = null;
-                DetalledataGridView.DataSource = Detalle;
+                DetalledataGridView.DataSource = Facturas.Detalle;
 
             }
         }
@@ -326,7 +332,9 @@ namespace Warehouse_Pharmacy_System.UI.Registros
 
             if (FacturaIDnumericUpDown.Value == 0)
             {
+                Contexto db = new Contexto();
                 Facturas = LlenaClase();
+                Facturas.IdFactura = db.Facturas.ToList().Count + 1;
 
                 Paso = BLL.FacturaBLL.Guardar(Facturas);
 

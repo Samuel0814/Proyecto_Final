@@ -14,6 +14,7 @@ namespace BLL
     {
         public static bool Guardar(DeudasClientes nuevo)
         {
+            
             bool paso = false;
             Contexto contexto = new Contexto();
             try

@@ -16,7 +16,7 @@ namespace Entidades
 
         public DeudasClientes()
         {
-
+            Facturas = new List<Facturas>();
 
         }
        

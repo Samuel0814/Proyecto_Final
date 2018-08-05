@@ -172,6 +172,13 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                 CategoriacomboBox.SelectedValue = Convert.ToInt32(articulos.CategoriaId);
                 ITBIStextBox.Text = articulos.ITBIS.ToString();
             }
+
+            else
+            {
+                  MessageBox.Show("No encontrado");
+            }
+
+
         }
 
         private void RegistroArticulos_Load(object sender, EventArgs e)

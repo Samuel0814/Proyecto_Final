@@ -125,6 +125,10 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                 ContraseñatextBox.Text = usuarios.PassUsuario;
                 ConfirmarContraseñatextBox.Text = usuarios.PassUsuario;
             }
+            else
+            {
+                MessageBox.Show("No encontrado");
+            }
         }
     }
 }

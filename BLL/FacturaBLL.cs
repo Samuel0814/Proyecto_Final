@@ -21,28 +21,37 @@ namespace BLL
             {
                 DeudasClientes clientDeuda=new DeudasClientes();
                 clientDeuda.ClienteID = facturas.IdCliente;
-                
-                
+                clientDeuda.Facturas.Add(facturas);
 
-                 if(facturas.ACredito)
+
+
+                if (facturas.ACredito)
                 {
-                    var deuda = contexto.deudas.Find(facturas.IdCliente);
-                    if(deuda!=null)
+                    if (TieneCreditoDisponile(facturas))
                     {
-                         deuda.Facturas.Add(facturas);
-                       
+                        var deuda = contexto.deudas.Find(facturas.IdCliente);
+                        if (deuda != null)
+                        {
+                            deuda.Facturas.Add(facturas);
 
-                    }
-                    else
+
+                        }
+                        else
+                        {
+                            
+
+                            contexto.deudas.Add(clientDeuda);
+
+                        }
+                    }else
                     {
-                        clientDeuda.Facturas.Add(facturas);
-
-                        contexto.deudas.Add(clientDeuda);
-
+                        MessageBox.Show("Este cliente no tiene Credito disponible");
+                        return false;
                     }
                     
                     
                 }
+               
                 if (contexto.Facturas.Add(facturas) != null)
                 {
                     foreach (var item in facturas.Detalle)
@@ -57,11 +66,41 @@ namespace BLL
                 }
                 contexto.Dispose();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                MessageBox.Show("Error al guardar");
+                MessageBox.Show(e.Message);
             }
             return paso;
+        }
+
+        private static bool TieneCreditoDisponile(Facturas factura)
+        {
+            Contexto db = new Contexto();
+            var client = db.clientes.Find(factura.IdCliente);
+            if(client.MaximoCredicto < decimal.Parse(factura.Total.ToString()))
+            {
+
+                return false;
+            }
+            var Deudas = from x in db.deudas
+                         where x.ClienteID == client.ClienteId
+                         select x;
+            foreach (var item in Deudas )
+            {
+                foreach (var fact in item.Facturas)
+                {
+                    
+                    if(fact.FechaExpiracion<DateTime.Now)
+                    {
+                        MessageBox.Show("Este cliente tiene factura pendinete");
+                        return false;
+                    }
+
+                }
+            }
+
+
+            return true;
         }
 
         public static bool Modificar(Facturas Factura)
@@ -89,19 +128,21 @@ namespace BLL
                 clientDeuda.Facturas.Add(Factura);
                 //contexto.deudas.Add(clientDeuda);
                 var deuda = contexto.deudas.Find(Factura.IdCliente);
-                if (deuda != null)
-                {
-                    deuda.Facturas.Add(Factura);
+               
+                    if (deuda != null)
+                    {
+                        deuda.Facturas.Add(Factura);
 
 
-                }
-                else
-                {
-                    clientDeuda.Facturas.Add(Factura);
+                    }
+                    else
+                    {
+                        clientDeuda.Facturas.Add(Factura);
 
-                    contexto.deudas.Add(clientDeuda);
+                        contexto.deudas.Add(clientDeuda);
 
-                }
+                    }
+               
 
             }
             try

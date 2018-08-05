@@ -73,6 +73,7 @@
             this.ConfirmarContraseñatextBox.Location = new System.Drawing.Point(123, 188);
             this.ConfirmarContraseñatextBox.Multiline = true;
             this.ConfirmarContraseñatextBox.Name = "ConfirmarContraseñatextBox";
+            this.ConfirmarContraseñatextBox.PasswordChar = '*';
             this.ConfirmarContraseñatextBox.Size = new System.Drawing.Size(211, 25);
             this.ConfirmarContraseñatextBox.TabIndex = 56;
             // 
@@ -81,6 +82,7 @@
             this.ContraseñatextBox.Location = new System.Drawing.Point(123, 152);
             this.ContraseñatextBox.Multiline = true;
             this.ContraseñatextBox.Name = "ContraseñatextBox";
+            this.ContraseñatextBox.PasswordChar = '*';
             this.ContraseñatextBox.Size = new System.Drawing.Size(211, 25);
             this.ContraseñatextBox.TabIndex = 55;
             // 

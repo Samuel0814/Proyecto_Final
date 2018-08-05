@@ -25,9 +25,9 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
 
         private void LlenaComboBox()
         {
-            Repositorio<Articulos> ArtRepositorio = new Repositorio<Articulos>(new Contexto());
+            
 
-            ClientecomboBox.DataSource = ArtRepositorio.GetList(c => true);
+            ClientecomboBox.DataSource = new Contexto().clientes.ToList();
             ClientecomboBox.ValueMember = "ClienteId";
             ClientecomboBox.DisplayMember = "Nombres";
         }
@@ -107,11 +107,21 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
 
         private void ClientecomboBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(ClientecomboBox.SelectedValue);
-            var deuda = from d in db.deudas
-                        where d.IdDeudas == id
-                        select d;
-            DeudatextBox.Text = deuda.First().DeudaTotal().ToString();
+            try
+            {
+                var client = (Clientes)ClientecomboBox.SelectedItem;
+                var deuda = new Contexto().deudas.Where(x => x.ClienteID == client.ClienteId).First();
+                DeudatextBox.Text = deuda.DeudaTotal().ToString();
+            }
+            catch
+            {
+
+            }
+           
+           
+
+
+
         }
 
         private void SaldarDeudas_Load(object sender, EventArgs e)
