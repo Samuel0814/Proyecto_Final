@@ -24,7 +24,8 @@ namespace Warehouse_Pharmacy_System.UI.Consultas
         {
             FiltrocomboBox.Items.Insert(0, "ID");
             FiltrocomboBox.Items.Insert(1, "NombreArticulo");
-            FiltrocomboBox.Items.Insert(2, "Todo");
+            FiltrocomboBox.Items.Insert(2, "Fecha");
+            FiltrocomboBox.Items.Insert(3, "Todo");
         }
 
         private void Buscatbutton_Click(object sender, EventArgs e)
@@ -41,7 +42,10 @@ namespace Warehouse_Pharmacy_System.UI.Consultas
                     filtro = a => a.NombreArticulo.Contains(CriteriotextBox.Text) && a.FechaIngreso >= DesdedateTimePicker.Value && a.FechaIngreso <= HastadateTimePicker.Value;
                     break;
 
-                case 2: //filtrando todos
+                case 2:
+                    filtro = a => a.FechaIngreso >= DesdedateTimePicker.Value.Date && a.FechaIngreso <= HastadateTimePicker.Value.Date;
+                     break;
+                case 3: //filtrando todos
                     Expression<Func<Articulos, bool>> filtro2 = a => true;
                     break;
             }
@@ -52,7 +56,7 @@ namespace Warehouse_Pharmacy_System.UI.Consultas
 
         private void FiltrocomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (FiltrocomboBox.SelectedIndex == 2)
+            if (FiltrocomboBox.SelectedIndex == 2 && FiltrocomboBox.SelectedIndex ==3)
             {
                 CriteriotextBox.Visible = false;
                 Criteriolabel.Visible = false;

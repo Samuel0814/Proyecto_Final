@@ -35,14 +35,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.Imprimirbutton = new System.Windows.Forms.Button();
-            this.Buscatbutton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.CriteriotextBox = new System.Windows.Forms.TextBox();
             this.FiltrocomboBox = new System.Windows.Forms.ComboBox();
             this.Criteriolabel = new System.Windows.Forms.Label();
             this.Filtrolabel = new System.Windows.Forms.Label();
             this.ImprimirTodasbutton = new System.Windows.Forms.Button();
+            this.Imprimirbutton = new System.Windows.Forms.Button();
+            this.Buscatbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -112,32 +112,6 @@
             this.label3.TabIndex = 15;
             this.label3.Text = "Filtrando por Rango de Fecha";
             // 
-            // Imprimirbutton
-            // 
-            this.Imprimirbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Print_32;
-            this.Imprimirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Imprimirbutton.Location = new System.Drawing.Point(12, 502);
-            this.Imprimirbutton.Name = "Imprimirbutton";
-            this.Imprimirbutton.Size = new System.Drawing.Size(89, 48);
-            this.Imprimirbutton.TabIndex = 14;
-            this.Imprimirbutton.Text = "Imprimir";
-            this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Imprimirbutton.UseVisualStyleBackColor = true;
-            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
-            // 
-            // Buscatbutton
-            // 
-            this.Buscatbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Search_Property_32;
-            this.Buscatbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscatbutton.Location = new System.Drawing.Point(767, 12);
-            this.Buscatbutton.Name = "Buscatbutton";
-            this.Buscatbutton.Size = new System.Drawing.Size(75, 58);
-            this.Buscatbutton.TabIndex = 13;
-            this.Buscatbutton.Text = "Buscar";
-            this.Buscatbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Buscatbutton.UseVisualStyleBackColor = true;
-            this.Buscatbutton.Click += new System.EventHandler(this.Buscatbutton_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.CriteriotextBox);
@@ -195,6 +169,32 @@
             this.ImprimirTodasbutton.Text = "Imprimir Todas";
             this.ImprimirTodasbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ImprimirTodasbutton.UseVisualStyleBackColor = true;
+            // 
+            // Imprimirbutton
+            // 
+            this.Imprimirbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Print_32;
+            this.Imprimirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Imprimirbutton.Location = new System.Drawing.Point(12, 502);
+            this.Imprimirbutton.Name = "Imprimirbutton";
+            this.Imprimirbutton.Size = new System.Drawing.Size(89, 48);
+            this.Imprimirbutton.TabIndex = 14;
+            this.Imprimirbutton.Text = "Imprimir";
+            this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
+            // 
+            // Buscatbutton
+            // 
+            this.Buscatbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Search_Property_32;
+            this.Buscatbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Buscatbutton.Location = new System.Drawing.Point(767, 12);
+            this.Buscatbutton.Name = "Buscatbutton";
+            this.Buscatbutton.Size = new System.Drawing.Size(75, 58);
+            this.Buscatbutton.TabIndex = 13;
+            this.Buscatbutton.Text = "Buscar";
+            this.Buscatbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Buscatbutton.UseVisualStyleBackColor = true;
+            this.Buscatbutton.Click += new System.EventHandler(this.Buscatbutton_Click);
             // 
             // ConsultaFactura
             // 

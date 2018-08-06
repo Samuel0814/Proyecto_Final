@@ -35,12 +35,12 @@
             this.Pagarbutton = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.TotalLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.DevueltatextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.TotaltextBox = new System.Windows.Forms.TextBox();
             this.EfectivotextBox = new System.Windows.Forms.NumericUpDown();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.FacturasdataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EfectivotextBox)).BeginInit();
             this.SuspendLayout();
@@ -116,18 +116,6 @@
             this.TotalLabel.TabIndex = 5;
             this.TotalLabel.Text = "Total:";
             // 
-            // button1
-            // 
-            this.button1.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Print_32;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(16, 366);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 48);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Imprimir";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // DevueltatextBox
             // 
             this.DevueltatextBox.Enabled = false;
@@ -175,6 +163,18 @@
             this.EfectivotextBox.Size = new System.Drawing.Size(99, 20);
             this.EfectivotextBox.TabIndex = 12;
             this.EfectivotextBox.ValueChanged += new System.EventHandler(this.EfectivotextBox_ValueChanged);
+            // 
+            // button1
+            // 
+            this.button1.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Print_32;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(16, 366);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(89, 48);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Imprimir";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // PagoFactura
             // 

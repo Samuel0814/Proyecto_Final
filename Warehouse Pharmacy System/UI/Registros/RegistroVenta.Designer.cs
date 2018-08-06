@@ -42,8 +42,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.Removerbutton = new System.Windows.Forms.Button();
-            this.Agregarbutton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -51,18 +49,20 @@
             this.label4 = new System.Windows.Forms.Label();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.FacturaIDnumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.Eliminarbutton = new System.Windows.Forms.Button();
-            this.Guardarbutton = new System.Windows.Forms.Button();
-            this.Nuevobutton = new System.Windows.Forms.Button();
-            this.Buscarbutton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.CreditocheckBox = new System.Windows.Forms.CheckBox();
-            this.Imprimirbutton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.EfectivonumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.DevueltanumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
+            this.Imprimirbutton = new System.Windows.Forms.Button();
+            this.Removerbutton = new System.Windows.Forms.Button();
+            this.Agregarbutton = new System.Windows.Forms.Button();
+            this.Eliminarbutton = new System.Windows.Forms.Button();
+            this.Guardarbutton = new System.Windows.Forms.Button();
+            this.Nuevobutton = new System.Windows.Forms.Button();
+            this.Buscarbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MYerrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TotalnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubTotalnumericUpDown)).BeginInit();
@@ -213,33 +213,6 @@
             this.label10.TabIndex = 21;
             this.label10.Text = "Total";
             // 
-            // Removerbutton
-            // 
-            this.Removerbutton.Enabled = false;
-            this.Removerbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Delete_32;
-            this.Removerbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Removerbutton.Location = new System.Drawing.Point(415, 213);
-            this.Removerbutton.Name = "Removerbutton";
-            this.Removerbutton.Size = new System.Drawing.Size(89, 37);
-            this.Removerbutton.TabIndex = 10;
-            this.Removerbutton.Text = "Remover";
-            this.Removerbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Removerbutton.UseVisualStyleBackColor = true;
-            this.Removerbutton.Click += new System.EventHandler(this.Removerbutton_Click);
-            // 
-            // Agregarbutton
-            // 
-            this.Agregarbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Add_New_32;
-            this.Agregarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Agregarbutton.Location = new System.Drawing.Point(324, 213);
-            this.Agregarbutton.Name = "Agregarbutton";
-            this.Agregarbutton.Size = new System.Drawing.Size(85, 38);
-            this.Agregarbutton.TabIndex = 9;
-            this.Agregarbutton.Text = "Agregar";
-            this.Agregarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Agregarbutton.UseVisualStyleBackColor = true;
-            this.Agregarbutton.Click += new System.EventHandler(this.Agregarbutton_Click);
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -306,6 +279,119 @@
             this.FacturaIDnumericUpDown.Size = new System.Drawing.Size(116, 20);
             this.FacturaIDnumericUpDown.TabIndex = 0;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 13);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "Fecha de Venta";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "FacturaID";
+            // 
+            // CreditocheckBox
+            // 
+            this.CreditocheckBox.AutoSize = true;
+            this.CreditocheckBox.Location = new System.Drawing.Point(101, 116);
+            this.CreditocheckBox.Name = "CreditocheckBox";
+            this.CreditocheckBox.Size = new System.Drawing.Size(69, 17);
+            this.CreditocheckBox.TabIndex = 4;
+            this.CreditocheckBox.Text = "A Credito";
+            this.CreditocheckBox.UseVisualStyleBackColor = true;
+            this.CreditocheckBox.CheckedChanged += new System.EventHandler(this.CreditocheckBox_CheckedChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(349, 518);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Efectivo";
+            // 
+            // EfectivonumericUpDown
+            // 
+            this.EfectivonumericUpDown.Location = new System.Drawing.Point(408, 516);
+            this.EfectivonumericUpDown.Maximum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            0});
+            this.EfectivonumericUpDown.Name = "EfectivonumericUpDown";
+            this.EfectivonumericUpDown.Size = new System.Drawing.Size(96, 20);
+            this.EfectivonumericUpDown.TabIndex = 17;
+            this.EfectivonumericUpDown.ValueChanged += new System.EventHandler(this.EfectivonumericUpDown_ValueChanged);
+            // 
+            // DevueltanumericUpDown
+            // 
+            this.DevueltanumericUpDown.Location = new System.Drawing.Point(408, 550);
+            this.DevueltanumericUpDown.Maximum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            0});
+            this.DevueltanumericUpDown.Name = "DevueltanumericUpDown";
+            this.DevueltanumericUpDown.ReadOnly = true;
+            this.DevueltanumericUpDown.Size = new System.Drawing.Size(96, 20);
+            this.DevueltanumericUpDown.TabIndex = 18;
+            this.DevueltanumericUpDown.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(349, 552);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 13);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Devuelta";
+            // 
+            // Imprimirbutton
+            // 
+            this.Imprimirbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Print_32;
+            this.Imprimirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Imprimirbutton.Location = new System.Drawing.Point(15, 421);
+            this.Imprimirbutton.Name = "Imprimirbutton";
+            this.Imprimirbutton.Size = new System.Drawing.Size(80, 51);
+            this.Imprimirbutton.TabIndex = 24;
+            this.Imprimirbutton.Text = "Imprimir";
+            this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Imprimirbutton.UseVisualStyleBackColor = true;
+            // 
+            // Removerbutton
+            // 
+            this.Removerbutton.Enabled = false;
+            this.Removerbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Delete_32;
+            this.Removerbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Removerbutton.Location = new System.Drawing.Point(415, 213);
+            this.Removerbutton.Name = "Removerbutton";
+            this.Removerbutton.Size = new System.Drawing.Size(89, 37);
+            this.Removerbutton.TabIndex = 10;
+            this.Removerbutton.Text = "Remover";
+            this.Removerbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Removerbutton.UseVisualStyleBackColor = true;
+            this.Removerbutton.Click += new System.EventHandler(this.Removerbutton_Click);
+            // 
+            // Agregarbutton
+            // 
+            this.Agregarbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Add_New_32;
+            this.Agregarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Agregarbutton.Location = new System.Drawing.Point(324, 213);
+            this.Agregarbutton.Name = "Agregarbutton";
+            this.Agregarbutton.Size = new System.Drawing.Size(85, 38);
+            this.Agregarbutton.TabIndex = 9;
+            this.Agregarbutton.Text = "Agregar";
+            this.Agregarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Agregarbutton.UseVisualStyleBackColor = true;
+            this.Agregarbutton.Click += new System.EventHandler(this.Agregarbutton_Click);
+            // 
             // Eliminarbutton
             // 
             this.Eliminarbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Delete_File_32;
@@ -357,92 +443,6 @@
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 13);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "Fecha de Venta";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "FacturaID";
-            // 
-            // CreditocheckBox
-            // 
-            this.CreditocheckBox.AutoSize = true;
-            this.CreditocheckBox.Location = new System.Drawing.Point(101, 116);
-            this.CreditocheckBox.Name = "CreditocheckBox";
-            this.CreditocheckBox.Size = new System.Drawing.Size(69, 17);
-            this.CreditocheckBox.TabIndex = 4;
-            this.CreditocheckBox.Text = "A Credito";
-            this.CreditocheckBox.UseVisualStyleBackColor = true;
-            this.CreditocheckBox.CheckedChanged += new System.EventHandler(this.CreditocheckBox_CheckedChanged);
-            // 
-            // Imprimirbutton
-            // 
-            this.Imprimirbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Print_32;
-            this.Imprimirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Imprimirbutton.Location = new System.Drawing.Point(15, 421);
-            this.Imprimirbutton.Name = "Imprimirbutton";
-            this.Imprimirbutton.Size = new System.Drawing.Size(80, 51);
-            this.Imprimirbutton.TabIndex = 24;
-            this.Imprimirbutton.Text = "Imprimir";
-            this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Imprimirbutton.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(349, 518);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Efectivo";
-            // 
-            // EfectivonumericUpDown
-            // 
-            this.EfectivonumericUpDown.Location = new System.Drawing.Point(408, 516);
-            this.EfectivonumericUpDown.Maximum = new decimal(new int[] {
-            1215752191,
-            23,
-            0,
-            0});
-            this.EfectivonumericUpDown.Name = "EfectivonumericUpDown";
-            this.EfectivonumericUpDown.Size = new System.Drawing.Size(96, 20);
-            this.EfectivonumericUpDown.TabIndex = 17;
-            this.EfectivonumericUpDown.ValueChanged += new System.EventHandler(this.EfectivonumericUpDown_ValueChanged);
-            // 
-            // DevueltanumericUpDown
-            // 
-            this.DevueltanumericUpDown.Location = new System.Drawing.Point(408, 550);
-            this.DevueltanumericUpDown.Maximum = new decimal(new int[] {
-            1215752191,
-            23,
-            0,
-            0});
-            this.DevueltanumericUpDown.Name = "DevueltanumericUpDown";
-            this.DevueltanumericUpDown.ReadOnly = true;
-            this.DevueltanumericUpDown.Size = new System.Drawing.Size(96, 20);
-            this.DevueltanumericUpDown.TabIndex = 18;
-            this.DevueltanumericUpDown.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(349, 552);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 13);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Devuelta";
             // 
             // RegistroVenta
             // 

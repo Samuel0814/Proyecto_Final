@@ -46,14 +46,14 @@
             this.CedulamaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.TelefonomaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.MYerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.Eliminarbutton = new System.Windows.Forms.Button();
-            this.Guardarbutton = new System.Windows.Forms.Button();
-            this.Nuevobutton = new System.Windows.Forms.Button();
-            this.Buscarbutton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.CreditotextBox = new System.Windows.Forms.TextBox();
             this.creditomaximotextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.Eliminarbutton = new System.Windows.Forms.Button();
+            this.Guardarbutton = new System.Windows.Forms.Button();
+            this.Nuevobutton = new System.Windows.Forms.Button();
+            this.Buscarbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteIDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MYerrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -208,6 +208,40 @@
             // 
             this.MYerrorProvider.ContainerControl = this;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(298, 278);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 13);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Total Deuda";
+            // 
+            // CreditotextBox
+            // 
+            this.CreditotextBox.Location = new System.Drawing.Point(284, 294);
+            this.CreditotextBox.Name = "CreditotextBox";
+            this.CreditotextBox.ReadOnly = true;
+            this.CreditotextBox.Size = new System.Drawing.Size(100, 20);
+            this.CreditotextBox.TabIndex = 8;
+            // 
+            // creditomaximotextBox
+            // 
+            this.creditomaximotextBox.Location = new System.Drawing.Point(284, 340);
+            this.creditomaximotextBox.Name = "creditomaximotextBox";
+            this.creditomaximotextBox.Size = new System.Drawing.Size(100, 20);
+            this.creditomaximotextBox.TabIndex = 9;
+            this.creditomaximotextBox.TextChanged += new System.EventHandler(this.creditomaximotextBox_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(298, 324);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 13);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Credito Maximo";
+            // 
             // Eliminarbutton
             // 
             this.Eliminarbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Delete_File_32;
@@ -259,40 +293,6 @@
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(298, 278);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 13);
-            this.label4.TabIndex = 22;
-            this.label4.Text = "Total Deuda";
-            // 
-            // CreditotextBox
-            // 
-            this.CreditotextBox.Location = new System.Drawing.Point(284, 294);
-            this.CreditotextBox.Name = "CreditotextBox";
-            this.CreditotextBox.ReadOnly = true;
-            this.CreditotextBox.Size = new System.Drawing.Size(100, 20);
-            this.CreditotextBox.TabIndex = 8;
-            // 
-            // creditomaximotextBox
-            // 
-            this.creditomaximotextBox.Location = new System.Drawing.Point(284, 340);
-            this.creditomaximotextBox.Name = "creditomaximotextBox";
-            this.creditomaximotextBox.Size = new System.Drawing.Size(100, 20);
-            this.creditomaximotextBox.TabIndex = 9;
-            this.creditomaximotextBox.TextChanged += new System.EventHandler(this.creditomaximotextBox_TextChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(298, 324);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 13);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Credito Maximo";
             // 
             // RegistroClientes
             // 

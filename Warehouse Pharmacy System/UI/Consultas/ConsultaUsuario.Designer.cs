@@ -1,6 +1,6 @@
 ﻿namespace Warehouse_Pharmacy_System.UI.Consultas
 {
-    partial class ConsultaCategorias
+    partial class ConsultaUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -46,7 +46,7 @@
             this.ConsultadataGridView.Location = new System.Drawing.Point(12, 64);
             this.ConsultadataGridView.Name = "ConsultadataGridView";
             this.ConsultadataGridView.Size = new System.Drawing.Size(746, 320);
-            this.ConsultadataGridView.TabIndex = 15;
+            this.ConsultadataGridView.TabIndex = 23;
             // 
             // groupBox1
             // 
@@ -57,7 +57,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(611, 46);
-            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             // 
             // CriteriotextBox
@@ -101,11 +101,10 @@
             this.Imprimirbutton.Location = new System.Drawing.Point(12, 390);
             this.Imprimirbutton.Name = "Imprimirbutton";
             this.Imprimirbutton.Size = new System.Drawing.Size(89, 48);
-            this.Imprimirbutton.TabIndex = 14;
+            this.Imprimirbutton.TabIndex = 22;
             this.Imprimirbutton.Text = "Imprimir";
             this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Imprimirbutton.UseVisualStyleBackColor = true;
-            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click_1);
             // 
             // Buscatbutton
             // 
@@ -114,25 +113,24 @@
             this.Buscatbutton.Location = new System.Drawing.Point(682, 12);
             this.Buscatbutton.Name = "Buscatbutton";
             this.Buscatbutton.Size = new System.Drawing.Size(76, 46);
-            this.Buscatbutton.TabIndex = 13;
+            this.Buscatbutton.TabIndex = 21;
             this.Buscatbutton.Text = "Buscar";
             this.Buscatbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscatbutton.UseVisualStyleBackColor = true;
             this.Buscatbutton.Click += new System.EventHandler(this.Buscatbutton_Click);
             // 
-            // ConsultaCategorias
+            // ConsultaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 450);
+            this.ClientSize = new System.Drawing.Size(773, 449);
             this.Controls.Add(this.ConsultadataGridView);
             this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.Buscatbutton);
             this.Controls.Add(this.groupBox1);
-            this.Name = "ConsultaCategorias";
-            this.ShowIcon = false;
-            this.Text = "ConsultaCategorias";
-            this.Load += new System.EventHandler(this.ConsultaCategorias_Load);
+            this.Name = "ConsultaUsuario";
+            this.Text = "ConsultaUsuario";
+            this.Load += new System.EventHandler(this.ConsultaUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

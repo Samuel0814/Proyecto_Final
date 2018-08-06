@@ -146,5 +146,12 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
             r.MdiParent = this;
             r.Show();
         }
+
+        private void usuariosToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            RegistroUsuarios r = new RegistroUsuarios();
+            r.MdiParent = this;
+            r.Show();
+        }
     }
 }
