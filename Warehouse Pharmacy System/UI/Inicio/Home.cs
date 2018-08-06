@@ -150,7 +150,8 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
 
         private void saldarDeudasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            SaldarDeudas r = new SaldarDeudas();
+            //SaldarDeudas r = new SaldarDeudas();
+            PagoFactura r = new PagoFactura();
             r.MdiParent = this;
             r.Show();
         }

@@ -109,9 +109,8 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
         {
             try
             {
-                //var client = (Clientes)ClientecomboBox.SelectedItem;
-                //var deuda = new Contexto().deudas.Where(x => x.ClienteID == client.ClienteId).First();
-                //DeudatextBox.Text = deuda.DeudaTotal().ToString();
+                Clientes client= (Clientes)ClientecomboBox.SelectedItem;
+               DeudatextBox.Text= CalcularDeuda(client).ToString();
             }
             catch
             {
@@ -121,6 +120,21 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
            
 
 
+
+        }
+
+        private double CalcularDeuda(Clientes client)
+        {
+            Contexto db = new Contexto();
+            double total = 0;
+
+            var factura = db.Facturas.Where(f => f.IdCliente == client.ClienteId);
+
+
+
+
+            return total;
+            
 
         }
 

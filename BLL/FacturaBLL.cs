@@ -29,6 +29,7 @@ namespace BLL
                 {
                     if (TieneCreditoDisponile(facturas))
                     {
+                        facturas.EstaSaldada = false;
                         var deuda = contexto.deudas.Find(facturas.IdCliente);
                         contexto.deudas.Add(clientDeuda);
 
@@ -40,6 +41,10 @@ namespace BLL
                     }
                     
                     
+                }
+                else
+                {
+                    facturas.EstaSaldada = true;
                 }
                
                 if (contexto.Facturas.Add(facturas) != null)

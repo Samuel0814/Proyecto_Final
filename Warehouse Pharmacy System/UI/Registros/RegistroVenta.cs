@@ -286,23 +286,30 @@ namespace Warehouse_Pharmacy_System.UI.Registros
 
         private void Removerbutton_Click(object sender, EventArgs e)
         {
-            if (DetalledataGridView.Rows.Count > 0 )
+            if (DetalledataGridView.Rows.Count > 0)
             {
+                try
+                {
 
-                List<FacturasDetalles> Detalle = (List<FacturasDetalles>)DetalledataGridView.DataSource;
-                Contexto db = new Contexto();
-                int detalleid = Convert.ToInt32(DetalledataGridView.SelectedRows[0].Cells[0].Value);
-                var detalle = db.DetalleFactura.Where(x=>x.ID==detalleid).First();
-                //
-                var articulo = db.articulos.Find(detalle.IdArticulo);
-                articulo.Existencia += detalle.Cantidad;
-                db.DetalleFactura.Remove(detalle);
+                    List<FacturasDetalles> Detalle = (List<FacturasDetalles>)DetalledataGridView.DataSource;
+                    Contexto db = new Contexto();
+                    int detalleid = Convert.ToInt32(DetalledataGridView.SelectedRows[0].Cells[0].Value);
+                    var detalle = db.DetalleFactura.Where(x => x.ID == detalleid).First();
+                    //
+                    var articulo = db.articulos.Find(detalle.IdArticulo);
+                    articulo.Existencia += detalle.Cantidad;
+                    db.DetalleFactura.Remove(detalle);
 
-                db.SaveChanges();
-                Facturas.Detalle=db.DetalleFactura.Where(x=>x.IdFactura==Facturas.IdFactura).ToList();
-                DetalledataGridView.DataSource = null;
-                DetalledataGridView.DataSource = Facturas.Detalle;
+                    db.SaveChanges();
+                    Facturas.Detalle = db.DetalleFactura.Where(x => x.IdFactura == Facturas.IdFactura).ToList();
+                    DetalledataGridView.DataSource = null;
+                    DetalledataGridView.DataSource = Facturas.Detalle;
+                }
+                catch
+                {
+                    Facturas.Detalle = new List<FacturasDetalles>();
 
+                }
             }
         }
 
