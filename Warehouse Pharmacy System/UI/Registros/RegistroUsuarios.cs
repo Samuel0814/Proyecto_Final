@@ -27,11 +27,13 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                 {
                     BLL.UsuariosBLL.Guardar(user);
                     MessageBox.Show("El Usuario se ha Guardado con exito.");
+                    limpiar();
                 }
                 else
                 {
                     BLL.UsuariosBLL.Modificar(user);
                     MessageBox.Show("El Usuario se ha Modificado con exito.");
+                    limpiar();
                 }
 
             }
@@ -47,22 +49,30 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             if(string.IsNullOrWhiteSpace(NombreArticulotextBox.Text))
             {
                 NombreArticulotextBox.Focus();
+                MYerrorProvider.SetError(NombreArticulotextBox,
+                    "No debes dejar este campo vacio");
                 return false;
             }
             if(string.IsNullOrWhiteSpace(ContraseñatextBox.Text))
             {
                 ContraseñatextBox.Focus();
+                MYerrorProvider.SetError(ContraseñatextBox,
+                     "No debes dejar este campo vacio");
                 return false;
             }
             if(string.IsNullOrWhiteSpace(ConfirmarContraseñatextBox.Text))
             {
                 ConfirmarContraseñatextBox.Focus();
+                MYerrorProvider.SetError(ConfirmarContraseñatextBox,
+                    "No debe dejar este campo vacio");
                 return false;
 
             }
             if(!ContraseñatextBox.Text.Equals(ConfirmarContraseñatextBox.Text))
             {
-                ContraseñatextBox.Clear();
+                MYerrorProvider.SetError(ConfirmarContraseñatextBox,
+                    "Las contraseñas no coinciden");
+                //ContraseñatextBox.Clear();
                 ConfirmarContraseñatextBox.Clear();
                 return false;
             }
@@ -73,8 +83,12 @@ namespace Warehouse_Pharmacy_System.UI.Registros
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
+        
+        
             Guardar_Modificar();
-            limpiar();
+            
+        
+            
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
@@ -94,18 +108,25 @@ namespace Warehouse_Pharmacy_System.UI.Registros
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(UsuarioIDnumericUpDown.Value);
-
-          
-            if (BLL.UsuariosBLL.Eliminar(id))
+            if(UsuarioIDnumericUpDown.Value ==  0)
             {
-
-                MessageBox.Show("El Usuario se ha Eliminado  con exito.");
-                limpiar();
+                MessageBox.Show("Ingrese un ID mayor a 0");
             }
             else
             {
-                MessageBox.Show("No se pudo eliminar El usuario.");
+                if (BLL.UsuariosBLL.Eliminar(id))
+                {
+
+                    MessageBox.Show("El Usuario se ha Eliminado  con exito.");
+                    limpiar();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo eliminar El usuario.");
+                }
             }
+          
+            
         }
 
         private void RegistroUsuarios_Load(object sender, EventArgs e)
@@ -117,17 +138,23 @@ namespace Warehouse_Pharmacy_System.UI.Registros
         {
             int id = Convert.ToInt32(UsuarioIDnumericUpDown.Value);
             Usuarios usuarios = BLL.UsuariosBLL.Buscar(id);
-
-            if (usuarios != null)
+            if(UsuarioIDnumericUpDown.Value == 0)
             {
-                NombreArticulotextBox.Text = usuarios.NombreUsuario;
-                TipocomboBox.SelectedItem = Convert.ToString(usuarios.Tipo);
-                ContraseñatextBox.Text = usuarios.PassUsuario;
-                ConfirmarContraseñatextBox.Text = usuarios.PassUsuario;
+                MessageBox.Show("Ingrese un ID mayor a o");
             }
             else
             {
-                MessageBox.Show("No encontrado");
+                if (usuarios != null)
+                {
+                    NombreArticulotextBox.Text = usuarios.NombreUsuario;
+                    TipocomboBox.SelectedItem = Convert.ToString(usuarios.Tipo);
+                    ContraseñatextBox.Text = usuarios.PassUsuario;
+                    ConfirmarContraseñatextBox.Text = usuarios.PassUsuario;
+                }
+                else
+                {
+                    MessageBox.Show("no se encuentran usuarios registrados en el ID seleccionado");
+                }
             }
         }
     }

@@ -149,12 +149,22 @@ namespace Warehouse_Pharmacy_System.UI.Registros
         {
             int id = Convert.ToInt32(ArticuloIdnumericUpDown.Value);
 
-            if (BLL.ArticuloBLL.Eliminar(id))
+            if (ArticuloIdnumericUpDown.Value == 0)
             {
-                MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("El ID debe ser mayor a 0");
+
             }
             else
-                MessageBox.Show("No se pudo eliminar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                if (BLL.ArticuloBLL.Eliminar(id))
+                {
+                    MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                }
+                else
+                    MessageBox.Show("No se pudo eliminar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
@@ -162,20 +172,27 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             int id = Convert.ToInt32(ArticuloIdnumericUpDown.Value);
             Articulos articulos = BLL.ArticuloBLL.Buscar(id);
 
-            if (articulos != null)
+            if (ArticuloIdnumericUpDown.Value == 0)
             {
-                NombreArticulotextBox.Text = articulos.NombreArticulo;
-                ExistenciatextBox.Text = articulos.Existencia.ToString();
-                PrecioVentatextBox.Text = articulos.PrecioVenta.ToString();
-                PrecioCompratextBox.Text = articulos.PrecioCompra.ToString();
-                FechaIngresodateTimePicker.Value = articulos.FechaIngreso;
-                CategoriacomboBox.SelectedValue = Convert.ToInt32(articulos.CategoriaId);
-                ITBIStextBox.Text = articulos.ITBIS.ToString();
-            }
+                MessageBox.Show("El ID debe ser mayor a 0");
 
+            }
             else
             {
-                  MessageBox.Show("No encontrado");
+                if (articulos != null)
+                {
+                    NombreArticulotextBox.Text = articulos.NombreArticulo;
+                    ExistenciatextBox.Text = articulos.Existencia.ToString();
+                    PrecioVentatextBox.Text = articulos.PrecioVenta.ToString();
+                    PrecioCompratextBox.Text = articulos.PrecioCompra.ToString();
+                    FechaIngresodateTimePicker.Value = articulos.FechaIngreso;
+                    CategoriacomboBox.SelectedValue = Convert.ToInt32(articulos.CategoriaId);
+                    ITBIStextBox.Text = articulos.ITBIS.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("No se encuentran categorias registradas en el ID seleccionado");
+                }
             }
 
 
@@ -212,6 +229,19 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                 return false;
             }
             return true;
+        }
+
+        private void ITBIStextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!IsNumber(ITBIStextBox.Text))
+            {
+                ITBIStextBox.Clear();
+            }
+        }
+
+        private void PrecioVentatextBox_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

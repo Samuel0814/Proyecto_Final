@@ -54,13 +54,21 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             int id = Convert.ToInt32(CategoriaIDnumericUpDown.Value);
             Categorias categorias = BLL.CategoriasBLL.Buscar(id);
 
-            if (categorias != null)
+            if (CategoriaIDnumericUpDown.Value == 0)
             {
-                DescripciontextBox.Text = categorias.NombreCategoria;
+                MessageBox.Show("El ID debe ser mayor a 0");
+
             }
             else
             {
-                MessageBox.Show("No encontrado");
+                if (categorias != null)
+                {
+                    DescripciontextBox.Text = categorias.NombreCategoria;
+                }
+                else
+                {
+                    MessageBox.Show("No se encuentran categorias registradas en el ID seleccionado");
+                }
             }
         }
 
@@ -107,13 +115,32 @@ namespace Warehouse_Pharmacy_System.UI.Registros
         {
             int id = Convert.ToInt32(CategoriaIDnumericUpDown.Value);
 
-            if (BLL.CategoriasBLL.Eliminar(id))
-                MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (CategoriaIDnumericUpDown.Value == 0)
+            {
+                MessageBox.Show("El ID debe ser mayor a 0");
+
+            }
             else
-                MessageBox.Show("No se pudo eliminar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                if (BLL.CategoriasBLL.Eliminar(id))
+                {
+                    MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo eliminar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            
         }
 
-        private void RegistroCategorias_Load(object sender, EventArgs e)
+
+   
+
+
+    private void RegistroCategorias_Load(object sender, EventArgs e)
         {
 
         }

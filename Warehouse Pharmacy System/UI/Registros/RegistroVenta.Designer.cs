@@ -58,6 +58,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.CreditocheckBox = new System.Windows.Forms.CheckBox();
+            this.Imprimirbutton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.EfectivonumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.DevueltanumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.MYerrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TotalnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubTotalnumericUpDown)).BeginInit();
@@ -67,6 +72,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FacturaIDnumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EfectivonumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DevueltanumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // MYerrorProvider
@@ -88,7 +95,7 @@
             // 
             // SubTotalnumericUpDown
             // 
-            this.SubTotalnumericUpDown.Location = new System.Drawing.Point(408, 426);
+            this.SubTotalnumericUpDown.Location = new System.Drawing.Point(408, 421);
             this.SubTotalnumericUpDown.Maximum = new decimal(new int[] {
             1215752191,
             23,
@@ -101,7 +108,7 @@
             // 
             // ItbisnumericUpDown
             // 
-            this.ItbisnumericUpDown.Location = new System.Drawing.Point(408, 457);
+            this.ItbisnumericUpDown.Location = new System.Drawing.Point(408, 452);
             this.ItbisnumericUpDown.Maximum = new decimal(new int[] {
             1215752191,
             23,
@@ -180,7 +187,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(349, 428);
+            this.label12.Location = new System.Drawing.Point(346, 423);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(53, 13);
             this.label12.TabIndex = 46;
@@ -189,7 +196,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(345, 459);
+            this.label11.Location = new System.Drawing.Point(346, 454);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(57, 13);
             this.label11.TabIndex = 47;
@@ -198,7 +205,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(349, 487);
+            this.label10.Location = new System.Drawing.Point(346, 487);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(31, 13);
             this.label10.TabIndex = 48;
@@ -287,6 +294,11 @@
             // FacturaIDnumericUpDown
             // 
             this.FacturaIDnumericUpDown.Location = new System.Drawing.Point(101, 12);
+            this.FacturaIDnumericUpDown.Maximum = new decimal(new int[] {
+            1661992959,
+            1808227885,
+            5,
+            0});
             this.FacturaIDnumericUpDown.Name = "FacturaIDnumericUpDown";
             this.FacturaIDnumericUpDown.Size = new System.Drawing.Size(116, 20);
             this.FacturaIDnumericUpDown.TabIndex = 31;
@@ -295,7 +307,7 @@
             // 
             this.Eliminarbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Delete_File_32;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Eliminarbutton.Location = new System.Drawing.Point(221, 462);
+            this.Eliminarbutton.Location = new System.Drawing.Point(242, 522);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(87, 48);
             this.Eliminarbutton.TabIndex = 45;
@@ -308,7 +320,7 @@
             // 
             this.Guardarbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Save_All_32;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(110, 462);
+            this.Guardarbutton.Location = new System.Drawing.Point(119, 522);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(87, 48);
             this.Guardarbutton.TabIndex = 44;
@@ -321,7 +333,7 @@
             // 
             this.Nuevobutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Create_32;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(15, 462);
+            this.Nuevobutton.Location = new System.Drawing.Point(15, 522);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(72, 48);
             this.Nuevobutton.TabIndex = 43;
@@ -372,11 +384,73 @@
             this.CreditocheckBox.UseVisualStyleBackColor = true;
             this.CreditocheckBox.CheckedChanged += new System.EventHandler(this.CreditocheckBox_CheckedChanged);
             // 
+            // Imprimirbutton
+            // 
+            this.Imprimirbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Print_32;
+            this.Imprimirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Imprimirbutton.Location = new System.Drawing.Point(15, 421);
+            this.Imprimirbutton.Name = "Imprimirbutton";
+            this.Imprimirbutton.Size = new System.Drawing.Size(80, 51);
+            this.Imprimirbutton.TabIndex = 63;
+            this.Imprimirbutton.Text = "Imprimir";
+            this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Imprimirbutton.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(349, 518);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.TabIndex = 64;
+            this.label3.Text = "Efectivo";
+            // 
+            // EfectivonumericUpDown
+            // 
+            this.EfectivonumericUpDown.Location = new System.Drawing.Point(408, 516);
+            this.EfectivonumericUpDown.Maximum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            0});
+            this.EfectivonumericUpDown.Name = "EfectivonumericUpDown";
+            this.EfectivonumericUpDown.Size = new System.Drawing.Size(96, 20);
+            this.EfectivonumericUpDown.TabIndex = 65;
+            this.EfectivonumericUpDown.ValueChanged += new System.EventHandler(this.EfectivonumericUpDown_ValueChanged);
+            // 
+            // DevueltanumericUpDown
+            // 
+            this.DevueltanumericUpDown.Location = new System.Drawing.Point(408, 550);
+            this.DevueltanumericUpDown.Maximum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            0});
+            this.DevueltanumericUpDown.Name = "DevueltanumericUpDown";
+            this.DevueltanumericUpDown.ReadOnly = true;
+            this.DevueltanumericUpDown.Size = new System.Drawing.Size(96, 20);
+            this.DevueltanumericUpDown.TabIndex = 66;
+            this.DevueltanumericUpDown.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(349, 552);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 13);
+            this.label5.TabIndex = 67;
+            this.label5.Text = "Devuelta";
+            // 
             // RegistroVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(529, 524);
+            this.ClientSize = new System.Drawing.Size(523, 578);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.DevueltanumericUpDown);
+            this.Controls.Add(this.EfectivonumericUpDown);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.CreditocheckBox);
             this.Controls.Add(this.TotalnumericUpDown);
             this.Controls.Add(this.SubTotalnumericUpDown);
@@ -407,6 +481,7 @@
             this.Controls.Add(this.label1);
             this.Name = "RegistroVenta";
             this.Text = "Facturacion";
+            this.Load += new System.EventHandler(this.RegistroVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MYerrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TotalnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubTotalnumericUpDown)).EndInit();
@@ -416,6 +491,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FacturaIDnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EfectivonumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DevueltanumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -452,5 +529,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.CheckBox CreditocheckBox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown DevueltanumericUpDown;
+        private System.Windows.Forms.NumericUpDown EfectivonumericUpDown;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button Imprimirbutton;
     }
 }

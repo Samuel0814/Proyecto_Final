@@ -108,6 +108,7 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
             Contexto db = new Contexto();
             double efectivo = Convert.ToDouble(EfectivotextBox.Value);
             double total = double.Parse(TotaltextBox.Text);
+           
             if (efectivo >= total)
             {
                 try
@@ -127,7 +128,7 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
                     if (db.SaveChanges() > 0)
                     {
                         MessageBox.Show("Su pago se ha realizado correctamente");
-
+                        
                     }
 
                 }
@@ -208,6 +209,16 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
 
                 throw;
             }
+        }
+
+        private void TotaltextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PagoFactura_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -87,9 +87,9 @@
             // Pagarbutton
             // 
             this.Pagarbutton.Enabled = false;
-            this.Pagarbutton.Location = new System.Drawing.Point(678, 60);
+            this.Pagarbutton.Location = new System.Drawing.Point(678, 42);
             this.Pagarbutton.Name = "Pagarbutton";
-            this.Pagarbutton.Size = new System.Drawing.Size(89, 23);
+            this.Pagarbutton.Size = new System.Drawing.Size(89, 41);
             this.Pagarbutton.TabIndex = 3;
             this.Pagarbutton.Text = "Pagar";
             this.Pagarbutton.UseVisualStyleBackColor = true;
@@ -118,11 +118,14 @@
             // 
             // button1
             // 
+            this.button1.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Print_32;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(16, 366);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 23);
+            this.button1.Size = new System.Drawing.Size(89, 48);
             this.button1.TabIndex = 6;
             this.button1.Text = "Imprimir";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             // 
             // DevueltatextBox
@@ -158,6 +161,7 @@
             this.TotaltextBox.Name = "TotaltextBox";
             this.TotaltextBox.Size = new System.Drawing.Size(100, 20);
             this.TotaltextBox.TabIndex = 11;
+            this.TotaltextBox.TextChanged += new System.EventHandler(this.TotaltextBox_TextChanged);
             // 
             // EfectivotextBox
             // 
@@ -168,7 +172,7 @@
             0,
             0});
             this.EfectivotextBox.Name = "EfectivotextBox";
-            this.EfectivotextBox.Size = new System.Drawing.Size(120, 20);
+            this.EfectivotextBox.Size = new System.Drawing.Size(99, 20);
             this.EfectivotextBox.TabIndex = 12;
             this.EfectivotextBox.ValueChanged += new System.EventHandler(this.EfectivotextBox_ValueChanged);
             // 
@@ -191,6 +195,7 @@
             this.Controls.Add(this.ClientecomboBox);
             this.Name = "PagoFactura";
             this.Text = "PagoFactura";
+            this.Load += new System.EventHandler(this.PagoFactura_Load);
             ((System.ComponentModel.ISupportInitialize)(this.FacturasdataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EfectivotextBox)).EndInit();
             this.ResumeLayout(false);

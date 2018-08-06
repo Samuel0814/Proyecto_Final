@@ -91,8 +91,8 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             if (CedulamaskedTextBox.Text.Replace('-',' ').Trim().Length<11)
             {
                 MYerrorProvider.SetError(CedulamaskedTextBox,
-                    "Debe introducir una cedula");
-                MessageBox.Show("la longitud de la cedula es igual a "+ced.Length);
+                    "Debe introducir una cedula correcta");
+                //MessageBox.Show("la longitud de la cedula es igual a "+ced.Length);
                 HayErrores = true;
             }
 
@@ -100,7 +100,7 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             if (TelefonomaskedTextBox.Text.Replace('-',' ').Trim().Trim().Length<12)
             {
                 MYerrorProvider.SetError(TelefonomaskedTextBox,
-                    "No debe dejar el telefono vacio");
+                    "debe introducir un telefono correcto");
                 HayErrores = true;
             }
             
@@ -115,26 +115,34 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             var clientes = BLL.ClientesBLL.Buscar(Convert.ToInt32(ClienteIDnumericUpDown.Value));
             Contexto db = new Contexto();
            
-            if (clientes != null)
+            if (ClienteIDnumericUpDown.Value == 0)
             {
-                NombretextBox.Text = clientes.Nombres;
-                DirecciontextBox.Text = clientes.Direccion;
-                EmailtextBox.Text = clientes.Email;
-
-                SexocomboBox.SelectedIndex = Convert.ToInt32(clientes.Sexo);
-                
-                FechaNacimientodateTimePicker.Value = clientes.FechaNacimiento;
-
-                CreditotextBox.Text = CalcularDeuda(clientes);
-                creditomaximotextBox.Text = clientes.MaximoCredicto.ToString();
-                CedulamaskedTextBox.Text = clientes.Cedula;
-                TelefonomaskedTextBox.Text = clientes.Telefono;
-
+                MessageBox.Show("Seleccione un ID mayor a 0");
             }
             else
             {
-                MessageBox.Show("No encontrado");
+                if (clientes != null)
+                {
+                    NombretextBox.Text = clientes.Nombres;
+                    DirecciontextBox.Text = clientes.Direccion;
+                    EmailtextBox.Text = clientes.Email;
+
+                    SexocomboBox.SelectedIndex = Convert.ToInt32(clientes.Sexo);
+
+                    FechaNacimientodateTimePicker.Value = clientes.FechaNacimiento;
+
+                    CreditotextBox.Text = CalcularDeuda(clientes);
+                    creditomaximotextBox.Text = clientes.MaximoCredicto.ToString();
+                    CedulamaskedTextBox.Text = clientes.Cedula;
+                    TelefonomaskedTextBox.Text = clientes.Telefono;
+
+                }
+                else
+                {
+                    MessageBox.Show("No se encuentras clientes registrados en el id seleccionado");
+                }
             }
+            
         }
 
         private string CalcularDeuda(Clientes clientes)
@@ -198,15 +206,23 @@ namespace Warehouse_Pharmacy_System.UI.Registros
         {
             int id = Convert.ToInt32(ClienteIDnumericUpDown.Value);
 
-            if (BLL.ClientesBLL.Eliminar(id))
+            if (ClienteIDnumericUpDown.Value == 0)
             {
-                MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Limpiar();
+                MessageBox.Show("El ID debe ser mayor a 0");
             }
             else
             {
-                MessageBox.Show("No se pudo eliminar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (BLL.ClientesBLL.Eliminar(id))
+                {
+                    MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo eliminar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+            
         }
 
         private void SexocomboBox_SelectedIndexChanged(object sender, EventArgs e)

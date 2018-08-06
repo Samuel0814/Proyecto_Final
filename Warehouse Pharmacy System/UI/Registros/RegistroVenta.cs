@@ -218,14 +218,20 @@ namespace Warehouse_Pharmacy_System.UI.Registros
         {
             int id = Convert.ToInt32(FacturaIDnumericUpDown.Value);
             Facturas = BLL.FacturaBLL.Buscar(id);
-
-            if (Facturas != null)
+            if (FacturaIDnumericUpDown.Value == 0)
             {
-                LlenarCampos(Facturas);
+                MessageBox.Show("El ID debe ser mayor a 0");
             }
             else
-                MessageBox.Show("No encontrado!", "Fallo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                if (Facturas != null)
+                {
+                    LlenarCampos(Facturas);
+                }
+                else
+                    MessageBox.Show("No encontrado!", "Fallo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Agregarbutton_Click(object sender, EventArgs e)
@@ -378,15 +384,22 @@ namespace Warehouse_Pharmacy_System.UI.Registros
         {
             int id = Convert.ToInt32(FacturaIDnumericUpDown.Value);
 
-
-            if (BLL.FacturaBLL.Eliminar(id))
+            if (FacturaIDnumericUpDown.Value == 0)
             {
-       
-
-                MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("El ID debe ser mayor a 0");
             }
             else
-                MessageBox.Show("No se pudo eliminar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                if (BLL.FacturaBLL.Eliminar(id))
+                {
+
+
+                    MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                    MessageBox.Show("No se pudo eliminar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void ArticulocomboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -418,6 +431,38 @@ namespace Warehouse_Pharmacy_System.UI.Registros
         private void CreditocheckBox_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EfectivonumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            double devuelta;
+            try
+            {
+                if (TotalnumericUpDown.Value == 0)
+                {
+
+                }
+                else
+                {
+                    devuelta = double.Parse(EfectivonumericUpDown.Value.ToString()) - double.Parse(TotalnumericUpDown.Text);
+                    DevueltanumericUpDown.Text = devuelta.ToString();
+                }
+            }
+            catch
+            {
+
+                throw;
+            }
+        }
+
+        private void RegistroVenta_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

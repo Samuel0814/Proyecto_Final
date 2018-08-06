@@ -74,7 +74,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(204, 148);
+            this.label6.Location = new System.Drawing.Point(12, 151);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 13);
             this.label6.TabIndex = 28;
@@ -104,7 +104,7 @@
             // PrecioVentalabel
             // 
             this.PrecioVentalabel.AutoSize = true;
-            this.PrecioVentalabel.Location = new System.Drawing.Point(12, 151);
+            this.PrecioVentalabel.Location = new System.Drawing.Point(215, 151);
             this.PrecioVentalabel.Name = "PrecioVentalabel";
             this.PrecioVentalabel.Size = new System.Drawing.Size(68, 13);
             this.PrecioVentalabel.TabIndex = 27;
@@ -121,7 +121,7 @@
             // 
             // ExistenciatextBox
             // 
-            this.ExistenciatextBox.Location = new System.Drawing.Point(103, 103);
+            this.ExistenciatextBox.Location = new System.Drawing.Point(102, 108);
             this.ExistenciatextBox.Multiline = true;
             this.ExistenciatextBox.Name = "ExistenciatextBox";
             this.ExistenciatextBox.Size = new System.Drawing.Size(282, 25);
@@ -130,15 +130,16 @@
             // 
             // PrecioVentatextBox
             // 
-            this.PrecioVentatextBox.Location = new System.Drawing.Point(103, 139);
+            this.PrecioVentatextBox.Location = new System.Drawing.Point(289, 145);
             this.PrecioVentatextBox.Multiline = true;
             this.PrecioVentatextBox.Name = "PrecioVentatextBox";
             this.PrecioVentatextBox.Size = new System.Drawing.Size(95, 25);
             this.PrecioVentatextBox.TabIndex = 33;
+            this.PrecioVentatextBox.TextChanged += new System.EventHandler(this.PrecioVentatextBox_TextChanged);
             // 
             // PrecioCompratextBox
             // 
-            this.PrecioCompratextBox.Location = new System.Drawing.Point(286, 139);
+            this.PrecioCompratextBox.Location = new System.Drawing.Point(102, 145);
             this.PrecioCompratextBox.Multiline = true;
             this.PrecioCompratextBox.Name = "PrecioCompratextBox";
             this.PrecioCompratextBox.Size = new System.Drawing.Size(99, 25);
@@ -196,6 +197,7 @@
             this.ITBIStextBox.Name = "ITBIStextBox";
             this.ITBIStextBox.Size = new System.Drawing.Size(116, 25);
             this.ITBIStextBox.TabIndex = 41;
+            this.ITBIStextBox.TextChanged += new System.EventHandler(this.ITBIStextBox_TextChanged);
             // 
             // MYerrorProvider
             // 
