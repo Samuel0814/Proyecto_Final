@@ -32,6 +32,7 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
                     CategoriaToolStripMenuItem.Enabled = true;
                     clientesToolStripMenuItem.Enabled = true;
                     saldarDeudasToolStripMenuItem1.Enabled = true;
+                    usuariosToolStripMenuItem.Enabled = true;
                     
                     break;
                 case "Empleado":
@@ -149,7 +150,7 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
 
         private void usuariosToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            RegistroUsuarios r = new RegistroUsuarios();
+            ConsultaUsuario r = new ConsultaUsuario();
             r.MdiParent = this;
             r.Show();
         }
