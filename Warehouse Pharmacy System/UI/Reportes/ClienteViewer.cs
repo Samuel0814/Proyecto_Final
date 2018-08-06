@@ -24,7 +24,7 @@ namespace Warehouse_Pharmacy_System.UI.Reportes
             ListadoClientes listado = new ListadoClientes();
             listado.SetDataSource(ListaCliente);
             crystalReportViewer1.ReportSource= listado;
-            listado.Refresh();
+            crystalReportViewer1.Refresh();
         }
     }
 }

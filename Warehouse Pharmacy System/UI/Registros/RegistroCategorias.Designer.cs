@@ -48,7 +48,7 @@
             this.DescripciontextBox.Multiline = true;
             this.DescripciontextBox.Name = "DescripciontextBox";
             this.DescripciontextBox.Size = new System.Drawing.Size(282, 25);
-            this.DescripciontextBox.TabIndex = 44;
+            this.DescripciontextBox.TabIndex = 1;
             // 
             // CategoriaIDnumericUpDown
             // 
@@ -60,7 +60,7 @@
             0});
             this.CategoriaIDnumericUpDown.Name = "CategoriaIDnumericUpDown";
             this.CategoriaIDnumericUpDown.Size = new System.Drawing.Size(120, 20);
-            this.CategoriaIDnumericUpDown.TabIndex = 43;
+            this.CategoriaIDnumericUpDown.TabIndex = 0;
             // 
             // Descripcionlabel
             // 
@@ -68,7 +68,7 @@
             this.Descripcionlabel.Location = new System.Drawing.Point(30, 86);
             this.Descripcionlabel.Name = "Descripcionlabel";
             this.Descripcionlabel.Size = new System.Drawing.Size(63, 13);
-            this.Descripcionlabel.TabIndex = 50;
+            this.Descripcionlabel.TabIndex = 7;
             this.Descripcionlabel.Text = "Descripcion";
             // 
             // label1
@@ -77,7 +77,7 @@
             this.label1.Location = new System.Drawing.Point(30, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 13);
-            this.label1.TabIndex = 49;
+            this.label1.TabIndex = 6;
             this.label1.Text = "Categoria ID";
             // 
             // MYerrorProvider
@@ -91,7 +91,7 @@
             this.Eliminarbutton.Location = new System.Drawing.Point(320, 140);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(83, 54);
-            this.Eliminarbutton.TabIndex = 47;
+            this.Eliminarbutton.TabIndex = 5;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
@@ -104,7 +104,7 @@
             this.Guardarbutton.Location = new System.Drawing.Point(174, 140);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(83, 54);
-            this.Guardarbutton.TabIndex = 46;
+            this.Guardarbutton.TabIndex = 4;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Guardarbutton.UseVisualStyleBackColor = true;
@@ -117,7 +117,7 @@
             this.Nuevobutton.Location = new System.Drawing.Point(33, 140);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(83, 54);
-            this.Nuevobutton.TabIndex = 45;
+            this.Nuevobutton.TabIndex = 3;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Nuevobutton.UseVisualStyleBackColor = true;
@@ -130,7 +130,7 @@
             this.Buscarbutton.Location = new System.Drawing.Point(328, 23);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(75, 54);
-            this.Buscarbutton.TabIndex = 48;
+            this.Buscarbutton.TabIndex = 2;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;

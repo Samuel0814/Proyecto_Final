@@ -64,7 +64,7 @@
             this.EmailtextBox.Multiline = true;
             this.EmailtextBox.Name = "EmailtextBox";
             this.EmailtextBox.Size = new System.Drawing.Size(282, 25);
-            this.EmailtextBox.TabIndex = 64;
+            this.EmailtextBox.TabIndex = 4;
             // 
             // FechaNacimientodateTimePicker
             // 
@@ -74,7 +74,7 @@
             this.FechaNacimientodateTimePicker.MaxDate = new System.DateTime(2000, 8, 6, 0, 0, 0, 0);
             this.FechaNacimientodateTimePicker.Name = "FechaNacimientodateTimePicker";
             this.FechaNacimientodateTimePicker.Size = new System.Drawing.Size(120, 20);
-            this.FechaNacimientodateTimePicker.TabIndex = 62;
+            this.FechaNacimientodateTimePicker.TabIndex = 7;
             this.FechaNacimientodateTimePicker.Value = new System.DateTime(2000, 8, 6, 0, 0, 0, 0);
             // 
             // label3
@@ -83,7 +83,7 @@
             this.label3.Location = new System.Drawing.Point(12, 347);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 13);
-            this.label3.TabIndex = 60;
+            this.label3.TabIndex = 21;
             this.label3.Text = "Fecha Nacimiento";
             // 
             // label2
@@ -92,7 +92,7 @@
             this.label2.Location = new System.Drawing.Point(12, 313);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 13);
-            this.label2.TabIndex = 59;
+            this.label2.TabIndex = 20;
             this.label2.Text = "Sexo";
             // 
             // SexocomboBox
@@ -101,7 +101,7 @@
             this.SexocomboBox.Location = new System.Drawing.Point(118, 313);
             this.SexocomboBox.Name = "SexocomboBox";
             this.SexocomboBox.Size = new System.Drawing.Size(120, 21);
-            this.SexocomboBox.TabIndex = 58;
+            this.SexocomboBox.TabIndex = 6;
             this.SexocomboBox.SelectedIndexChanged += new System.EventHandler(this.SexocomboBox_SelectedIndexChanged);
             // 
             // Telefono
@@ -110,7 +110,7 @@
             this.Telefono.Location = new System.Drawing.Point(12, 281);
             this.Telefono.Name = "Telefono";
             this.Telefono.Size = new System.Drawing.Size(49, 13);
-            this.Telefono.TabIndex = 57;
+            this.Telefono.TabIndex = 19;
             this.Telefono.Text = "Telefono";
             // 
             // DirecciontextBox
@@ -119,7 +119,7 @@
             this.DirecciontextBox.Multiline = true;
             this.DirecciontextBox.Name = "DirecciontextBox";
             this.DirecciontextBox.Size = new System.Drawing.Size(282, 48);
-            this.DirecciontextBox.TabIndex = 54;
+            this.DirecciontextBox.TabIndex = 2;
             // 
             // Direccion
             // 
@@ -127,7 +127,7 @@
             this.Direccion.Location = new System.Drawing.Point(12, 147);
             this.Direccion.Name = "Direccion";
             this.Direccion.Size = new System.Drawing.Size(52, 13);
-            this.Direccion.TabIndex = 53;
+            this.Direccion.TabIndex = 16;
             this.Direccion.Text = "Direccion";
             // 
             // NombretextBox
@@ -136,7 +136,7 @@
             this.NombretextBox.Multiline = true;
             this.NombretextBox.Name = "NombretextBox";
             this.NombretextBox.Size = new System.Drawing.Size(282, 48);
-            this.NombretextBox.TabIndex = 44;
+            this.NombretextBox.TabIndex = 1;
             // 
             // label6
             // 
@@ -144,7 +144,7 @@
             this.label6.Location = new System.Drawing.Point(12, 241);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(32, 13);
-            this.label6.TabIndex = 52;
+            this.label6.TabIndex = 18;
             this.label6.Text = "Email";
             // 
             // ClienteIDnumericUpDown
@@ -157,7 +157,7 @@
             0});
             this.ClienteIDnumericUpDown.Name = "ClienteIDnumericUpDown";
             this.ClienteIDnumericUpDown.Size = new System.Drawing.Size(120, 20);
-            this.ClienteIDnumericUpDown.TabIndex = 43;
+            this.ClienteIDnumericUpDown.TabIndex = 0;
             // 
             // NombreArticulolabel
             // 
@@ -165,7 +165,7 @@
             this.NombreArticulolabel.Location = new System.Drawing.Point(12, 98);
             this.NombreArticulolabel.Name = "NombreArticulolabel";
             this.NombreArticulolabel.Size = new System.Drawing.Size(49, 13);
-            this.NombreArticulolabel.TabIndex = 50;
+            this.NombreArticulolabel.TabIndex = 15;
             this.NombreArticulolabel.Text = "Nombres";
             // 
             // Cedulalabel
@@ -174,7 +174,7 @@
             this.Cedulalabel.Location = new System.Drawing.Point(12, 202);
             this.Cedulalabel.Name = "Cedulalabel";
             this.Cedulalabel.Size = new System.Drawing.Size(40, 13);
-            this.Cedulalabel.TabIndex = 51;
+            this.Cedulalabel.TabIndex = 17;
             this.Cedulalabel.Text = "Cedula";
             // 
             // label1
@@ -183,7 +183,7 @@
             this.label1.Location = new System.Drawing.Point(12, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 13);
-            this.label1.TabIndex = 49;
+            this.label1.TabIndex = 14;
             this.label1.Text = "Cliente ID";
             // 
             // CedulamaskedTextBox
@@ -192,7 +192,7 @@
             this.CedulamaskedTextBox.Mask = "###-#######-#";
             this.CedulamaskedTextBox.Name = "CedulamaskedTextBox";
             this.CedulamaskedTextBox.Size = new System.Drawing.Size(81, 20);
-            this.CedulamaskedTextBox.TabIndex = 65;
+            this.CedulamaskedTextBox.TabIndex = 3;
             this.CedulamaskedTextBox.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.CedulamaskedTextBox.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.CedulamaskedTextBox_MaskInputRejected);
             // 
@@ -202,7 +202,7 @@
             this.TelefonomaskedTextBox.Mask = "000-000-0000";
             this.TelefonomaskedTextBox.Name = "TelefonomaskedTextBox";
             this.TelefonomaskedTextBox.Size = new System.Drawing.Size(106, 20);
-            this.TelefonomaskedTextBox.TabIndex = 66;
+            this.TelefonomaskedTextBox.TabIndex = 5;
             // 
             // MYerrorProvider
             // 
@@ -215,7 +215,7 @@
             this.Eliminarbutton.Location = new System.Drawing.Point(317, 393);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(83, 54);
-            this.Eliminarbutton.TabIndex = 47;
+            this.Eliminarbutton.TabIndex = 12;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
@@ -228,7 +228,7 @@
             this.Guardarbutton.Location = new System.Drawing.Point(168, 393);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(83, 54);
-            this.Guardarbutton.TabIndex = 46;
+            this.Guardarbutton.TabIndex = 11;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Guardarbutton.UseVisualStyleBackColor = true;
@@ -241,7 +241,7 @@
             this.Nuevobutton.Location = new System.Drawing.Point(15, 393);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(83, 54);
-            this.Nuevobutton.TabIndex = 45;
+            this.Nuevobutton.TabIndex = 10;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Nuevobutton.UseVisualStyleBackColor = true;
@@ -254,7 +254,7 @@
             this.Buscarbutton.Location = new System.Drawing.Point(325, 12);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(75, 54);
-            this.Buscarbutton.TabIndex = 48;
+            this.Buscarbutton.TabIndex = 13;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
@@ -266,7 +266,7 @@
             this.label4.Location = new System.Drawing.Point(298, 278);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 13);
-            this.label4.TabIndex = 67;
+            this.label4.TabIndex = 22;
             this.label4.Text = "Total Deuda";
             // 
             // CreditotextBox
@@ -275,14 +275,14 @@
             this.CreditotextBox.Name = "CreditotextBox";
             this.CreditotextBox.ReadOnly = true;
             this.CreditotextBox.Size = new System.Drawing.Size(100, 20);
-            this.CreditotextBox.TabIndex = 68;
+            this.CreditotextBox.TabIndex = 8;
             // 
             // creditomaximotextBox
             // 
             this.creditomaximotextBox.Location = new System.Drawing.Point(284, 340);
             this.creditomaximotextBox.Name = "creditomaximotextBox";
             this.creditomaximotextBox.Size = new System.Drawing.Size(100, 20);
-            this.creditomaximotextBox.TabIndex = 70;
+            this.creditomaximotextBox.TabIndex = 9;
             this.creditomaximotextBox.TextChanged += new System.EventHandler(this.creditomaximotextBox_TextChanged);
             // 
             // label5
@@ -291,7 +291,7 @@
             this.label5.Location = new System.Drawing.Point(298, 324);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 13);
-            this.label5.TabIndex = 69;
+            this.label5.TabIndex = 23;
             this.label5.Text = "Credito Maximo";
             // 
             // RegistroClientes

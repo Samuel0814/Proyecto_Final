@@ -22,9 +22,9 @@ namespace Warehouse_Pharmacy_System.UI.Reportes
         private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
             ListadoDeudas listado = new ListadoDeudas();
-            listado.SetDataSource(listado);
+            listado.SetDataSource(deudasClientes);
             crystalReportViewer1.ReportSource = listado;
-            listado.Refresh();
+            crystalReportViewer1.Refresh();
         }
     }
 }

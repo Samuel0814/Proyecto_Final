@@ -16,7 +16,7 @@ namespace Warehouse_Pharmacy_System.UI.Consultas
 {
     public partial class ConsultaDeudas : Form
     {
-        //private List<SaldarDeudas> saldarDeudas;
+        private List<DeudasClientes> saldarDeudas;
         public ConsultaDeudas()
         {
             InitializeComponent();
@@ -36,13 +36,13 @@ namespace Warehouse_Pharmacy_System.UI.Consultas
 
         private void Imprimirbutton_Click(object sender, EventArgs e)
         {
-            //if (saldarDeudas.Count == 0)
-            //{
-            //    MessageBox.Show("Reporte esta vacio");
-            //    return;
-            //}
-            //DeudasViewer clienteViewer = new DeudasViewer(saldarDeudas);
-            //clienteViewer.Show();
+            if (saldarDeudas.Count == 0)
+            {
+                MessageBox.Show("Reporte esta vacio");
+                return;
+            }
+            DeudasViewer clienteViewer = new DeudasViewer(saldarDeudas);
+            clienteViewer.Show();
         }
 
         private void FiltrocomboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -86,12 +86,9 @@ namespace Warehouse_Pharmacy_System.UI.Consultas
                     break;
             }
 
-
-
-
-            //saldarDeudas = BLL.DeudasClientesBLL.GetList(filtro);
-            //ConsultadataGridView.DataSource = saldarDeudas;
-            ConsultadataGridView.DataSource = BLL.DeudasClientesBLL.GetList(filtro);
+            saldarDeudas = BLL.DeudasClientesBLL.GetList(filtro);
+            ConsultadataGridView.DataSource = saldarDeudas;
+            //ConsultadataGridView.DataSource = BLL.DeudasClientesBLL.GetList(filtro);
         }
 
         private void ClientecomboBox_SelectedValueChanged(object sender, EventArgs e)

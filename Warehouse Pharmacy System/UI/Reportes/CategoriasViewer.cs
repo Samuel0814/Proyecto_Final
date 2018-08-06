@@ -13,18 +13,18 @@ namespace Warehouse_Pharmacy_System.UI.Reportes
     public partial class CategoriasViewer : Form
     {
         private List<Categorias> categorias = null;
-        public CategoriasViewer(List<Categorias> categorias)
+        public CategoriasViewer(List<Categorias> lista)
         {
-            this.categorias = categorias;
+            this.categorias = lista;
             InitializeComponent();
         }
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
-            ListadoCategorias listado = new ListadoCategorias();
-            listado.SetDataSource(listado);
-            crystalReportViewer1.ReportSource = listado;
-            listado.Refresh();
+            ListadoCategorias listadoCategorias = new ListadoCategorias();
+            listadoCategorias.SetDataSource(categorias);
+            crystalReportViewer1.ReportSource = listadoCategorias;
+            crystalReportViewer1.Refresh();
         }
     }
 }

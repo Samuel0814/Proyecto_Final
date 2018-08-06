@@ -57,7 +57,7 @@
             this.TipocomboBox.Location = new System.Drawing.Point(123, 117);
             this.TipocomboBox.Name = "TipocomboBox";
             this.TipocomboBox.Size = new System.Drawing.Size(211, 21);
-            this.TipocomboBox.TabIndex = 58;
+            this.TipocomboBox.TabIndex = 3;
             // 
             // Tipo
             // 
@@ -65,7 +65,7 @@
             this.Tipo.Location = new System.Drawing.Point(12, 120);
             this.Tipo.Name = "Tipo";
             this.Tipo.Size = new System.Drawing.Size(28, 13);
-            this.Tipo.TabIndex = 57;
+            this.Tipo.TabIndex = 12;
             this.Tipo.Text = "Tipo";
             // 
             // ConfirmarContraseñatextBox
@@ -75,7 +75,7 @@
             this.ConfirmarContraseñatextBox.Name = "ConfirmarContraseñatextBox";
             this.ConfirmarContraseñatextBox.PasswordChar = '*';
             this.ConfirmarContraseñatextBox.Size = new System.Drawing.Size(211, 25);
-            this.ConfirmarContraseñatextBox.TabIndex = 56;
+            this.ConfirmarContraseñatextBox.TabIndex = 5;
             // 
             // ContraseñatextBox
             // 
@@ -84,7 +84,7 @@
             this.ContraseñatextBox.Name = "ContraseñatextBox";
             this.ContraseñatextBox.PasswordChar = '*';
             this.ContraseñatextBox.Size = new System.Drawing.Size(211, 25);
-            this.ContraseñatextBox.TabIndex = 55;
+            this.ContraseñatextBox.TabIndex = 4;
             // 
             // NombreArticulotextBox
             // 
@@ -92,7 +92,7 @@
             this.NombreArticulotextBox.Multiline = true;
             this.NombreArticulotextBox.Name = "NombreArticulotextBox";
             this.NombreArticulotextBox.Size = new System.Drawing.Size(211, 25);
-            this.NombreArticulotextBox.TabIndex = 44;
+            this.NombreArticulotextBox.TabIndex = 2;
             // 
             // label6
             // 
@@ -100,7 +100,7 @@
             this.label6.Location = new System.Drawing.Point(12, 200);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(105, 13);
-            this.label6.TabIndex = 52;
+            this.label6.TabIndex = 9;
             this.label6.Text = "Confirma Contraseña";
             // 
             // UsuarioIDnumericUpDown
@@ -113,7 +113,7 @@
             0});
             this.UsuarioIDnumericUpDown.Name = "UsuarioIDnumericUpDown";
             this.UsuarioIDnumericUpDown.Size = new System.Drawing.Size(105, 20);
-            this.UsuarioIDnumericUpDown.TabIndex = 43;
+            this.UsuarioIDnumericUpDown.TabIndex = 0;
             // 
             // NombreArticulolabel
             // 
@@ -121,7 +121,7 @@
             this.NombreArticulolabel.Location = new System.Drawing.Point(12, 77);
             this.NombreArticulolabel.Name = "NombreArticulolabel";
             this.NombreArticulolabel.Size = new System.Drawing.Size(83, 13);
-            this.NombreArticulolabel.TabIndex = 50;
+            this.NombreArticulolabel.TabIndex = 11;
             this.NombreArticulolabel.Text = "Nombre Usuario";
             // 
             // Contraseñalabel
@@ -130,7 +130,7 @@
             this.Contraseñalabel.Location = new System.Drawing.Point(12, 164);
             this.Contraseñalabel.Name = "Contraseñalabel";
             this.Contraseñalabel.Size = new System.Drawing.Size(61, 13);
-            this.Contraseñalabel.TabIndex = 51;
+            this.Contraseñalabel.TabIndex = 13;
             this.Contraseñalabel.Text = "Contraseña";
             // 
             // label1
@@ -139,7 +139,7 @@
             this.label1.Location = new System.Drawing.Point(12, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
-            this.label1.TabIndex = 49;
+            this.label1.TabIndex = 10;
             this.label1.Text = "Usuario ID";
             // 
             // MYerrorProvider
@@ -153,7 +153,7 @@
             this.Eliminarbutton.Location = new System.Drawing.Point(251, 249);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(83, 54);
-            this.Eliminarbutton.TabIndex = 47;
+            this.Eliminarbutton.TabIndex = 8;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
@@ -166,7 +166,7 @@
             this.Guardarbutton.Location = new System.Drawing.Point(131, 249);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(83, 54);
-            this.Guardarbutton.TabIndex = 46;
+            this.Guardarbutton.TabIndex = 7;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Guardarbutton.UseVisualStyleBackColor = true;
@@ -179,7 +179,7 @@
             this.Nuevobutton.Location = new System.Drawing.Point(15, 249);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(83, 54);
-            this.Nuevobutton.TabIndex = 45;
+            this.Nuevobutton.TabIndex = 6;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Nuevobutton.UseVisualStyleBackColor = true;
@@ -192,7 +192,7 @@
             this.Buscarbutton.Location = new System.Drawing.Point(259, 12);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(75, 54);
-            this.Buscarbutton.TabIndex = 48;
+            this.Buscarbutton.TabIndex = 1;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;

@@ -13,9 +13,9 @@ namespace Warehouse_Pharmacy_System.UI.Reportes
     public partial class FacturaViewer : Form
     {
         private List<Facturas> facturas = null;
-        public FacturaViewer(List<Facturas> facturas)
+        public FacturaViewer(List<Facturas> lista)
         {
-            this.facturas = facturas;
+            this.facturas = lista;
             InitializeComponent();
         }
 
@@ -24,7 +24,7 @@ namespace Warehouse_Pharmacy_System.UI.Reportes
             ListadoFacturas listado = new ListadoFacturas();
             listado.SetDataSource(facturas);
             crystalReportViewer1.ReportSource = listado;
-            listado.Refresh();
+            crystalReportViewer1.Refresh();
         }
     }
 }
