@@ -75,7 +75,7 @@ namespace Warehouse_Pharmacy_System.UI.Consultas
                     break;
 
                 case 2: //filtrando todos
-                    //Expression<Func<DeudasClientes, bool>> filtro2 = a => true;
+                    Expression<Func<DeudasClientes, bool>> filtro2 = a => true;
                     Contexto db = new Contexto();
                     var Consulta = from f in db.Facturas
                                    join d in db.deudas on f.IdFactura equals d.IdFactura
