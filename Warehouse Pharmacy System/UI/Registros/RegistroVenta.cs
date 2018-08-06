@@ -31,6 +31,7 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             TotalnumericUpDown.Value = Convert.ToInt32(facturas.Total);
             CreditocheckBox.Checked = facturas.ACredito;
             ClientecomboBox.SelectedValue = facturas.IdCliente;
+            Facturas.Detalle = facturas.Detalle;
 
 
             DetalledataGridView.DataSource = facturas.Detalle.ToList();
@@ -289,9 +290,16 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             {
 
                 List<FacturasDetalles> Detalle = (List<FacturasDetalles>)DetalledataGridView.DataSource;
+                Contexto db = new Contexto();
+                int detalleid = Convert.ToInt32(DetalledataGridView.SelectedRows[0].Cells[0].Value);
+                var detalle = db.DetalleFactura.Where(x=>x.ID==detalleid).First();
+                //
+                var articulo = db.articulos.Find(detalle.IdArticulo);
+                articulo.Existencia += detalle.Cantidad;
+                db.DetalleFactura.Remove(detalle);
 
-
-                Facturas.Detalle.RemoveAt(Convert.ToInt32(DetalledataGridView.SelectedRows[0].Index));
+                db.SaveChanges();
+                Facturas.Detalle=db.DetalleFactura.Where(x=>x.IdFactura==Facturas.IdFactura).ToList();
                 DetalledataGridView.DataSource = null;
                 DetalledataGridView.DataSource = Facturas.Detalle;
 

@@ -233,5 +233,26 @@ namespace BLL
             }
             return facturas;
         }
+        public static bool EliminarDetalleFactura(FacturasDetalles detalle)
+        {
+            Contexto db = new Contexto();
+            try
+            {
+
+                var articulo = db.articulos.Find(detalle.IdArticulo);
+                articulo.Existencia += detalle.Cantidad;
+                db.DetalleFactura.Remove(detalle);
+                db.SaveChanges();
+               
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+
+            }
+
+            return true;
+        }
     }
 }
