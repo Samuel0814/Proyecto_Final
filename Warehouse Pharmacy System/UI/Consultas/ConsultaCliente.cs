@@ -1,4 +1,5 @@
-﻿using Entidades;
+﻿using DAL;
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,7 +24,7 @@ namespace Warehouse_Pharmacy_System.UI.Consultas
         private void Llenar()
         {
             FiltrocomboBox.Items.Insert(0, "ID");
-            FiltrocomboBox.Items.Insert(1, "NombreCategoria");
+            FiltrocomboBox.Items.Insert(1, "NombreClientes");
             FiltrocomboBox.Items.Insert(2, "Todo");
         }
 
@@ -80,5 +81,23 @@ namespace Warehouse_Pharmacy_System.UI.Consultas
                 Criteriolabel.Visible = true;
             }
         }
+        private string CalcularDeuda(Clientes clientes)
+        {
+            double total = 0;
+            Contexto db = new Contexto();
+            //
+
+            //select * from Facturas where EstaSaldada='false' and IdCliente=1
+            var Factura = db.Facturas.Where(f => f.IdCliente == clientes.ClienteId && f.EstaSaldada == false);
+            foreach (var item in Factura)
+            {
+                total += item.Total;
+            }
+
+
+
+            return total.ToString();
+        }
+
     }
 }

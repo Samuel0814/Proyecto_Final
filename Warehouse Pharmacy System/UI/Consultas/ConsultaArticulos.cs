@@ -66,11 +66,11 @@ namespace Warehouse_Pharmacy_System.UI.Consultas
 
         private void Imprimirbutton_Click(object sender, EventArgs e)
         {
-            if(articulos.Count == 0)
-            {
-                MessageBox.Show("Reporte esta vacio");
-                return;
-            }
+            //if(articulos.Count == 0)
+            //{
+            //    MessageBox.Show("Reporte esta vacio");
+            //    return;
+            //}
             ArticulosViewer clienteViewer = new ArticulosViewer(articulos);
             clienteViewer.Show();
         }

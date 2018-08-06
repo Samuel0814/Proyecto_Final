@@ -1,4 +1,5 @@
-﻿using Entidades;
+﻿using DAL;
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,9 +32,17 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                 }
                 else
                 {
-                    BLL.UsuariosBLL.Modificar(user);
-                    MessageBox.Show("El Usuario se ha Modificado con exito.");
-                    limpiar();
+                    Contexto db = new Contexto();
+                    if (db.usuario.Find(user.Id) != null)
+                    {
+                        BLL.UsuariosBLL.Modificar(user);
+                        MessageBox.Show("El Usuario se ha Modificado con exito.");
+                        limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No hay usuario registrado con el id:"+user.Id);
+                    }
                 }
 
             }

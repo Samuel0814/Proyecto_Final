@@ -135,7 +135,7 @@
             this.PrecioVentatextBox.Name = "PrecioVentatextBox";
             this.PrecioVentatextBox.Size = new System.Drawing.Size(95, 25);
             this.PrecioVentatextBox.TabIndex = 33;
-            this.PrecioVentatextBox.TextChanged += new System.EventHandler(this.PrecioVentatextBox_TextChanged);
+            this.PrecioVentatextBox.TextChanged += new System.EventHandler(this.PrecioCompratextBox_TextChanged);
             // 
             // PrecioCompratextBox
             // 
@@ -144,6 +144,7 @@
             this.PrecioCompratextBox.Name = "PrecioCompratextBox";
             this.PrecioCompratextBox.Size = new System.Drawing.Size(99, 25);
             this.PrecioCompratextBox.TabIndex = 34;
+            this.PrecioCompratextBox.TextChanged += new System.EventHandler(this.PrecioCompratextBox_TextChanged);
             // 
             // Categoria
             // 

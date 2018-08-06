@@ -14,11 +14,14 @@ namespace Warehouse_Pharmacy_System.UI.Registros
 {
     public partial class RegistroClientes : Form
     {
+        DateTime fechamaxima;
         public RegistroClientes()
         {
             InitializeComponent();
             SexocomboBox.Items.Add(Genero.Femenino);
             SexocomboBox.Items.Add(Genero.Masculino);
+           
+           
             
         }
 
@@ -52,7 +55,7 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             EmailtextBox.Clear();
             SexocomboBox.SelectedValue = 0;
             CreditotextBox.Clear();
-            FechaNacimientodateTimePicker.Value = DateTime.Now;
+            FechaNacimientodateTimePicker.Text ="6/8/2000";
             creditomaximotextBox.Clear();
             CedulamaskedTextBox.Clear();
             TelefonomaskedTextBox.Clear();
@@ -70,6 +73,8 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                     "No Debes debes dejar el nombre del cliente vacio");
                 HayErrores = true;
             }
+           
+
 
 
             if (String.IsNullOrWhiteSpace(DirecciontextBox.Text))
@@ -108,7 +113,9 @@ namespace Warehouse_Pharmacy_System.UI.Registros
 
 
         }
-        
+
+
+     
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
@@ -179,26 +186,31 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            clientes = LlenaClase();
-
-
-            if (ClienteIDnumericUpDown.Value == 0)
-                Paso = BLL.ClientesBLL.Guardar(clientes);
-            else
-                Paso = BLL.ClientesBLL.Modificar(LlenaClase());
-
-
-            if (Paso)
-            {
-                MessageBox.Show("Guardado", "Exito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Limpiar();
-            }
             else
             {
-                MessageBox.Show("No se pudo guardar", "Falló",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+
+                clientes = LlenaClase();
+
+
+                if (ClienteIDnumericUpDown.Value == 0)
+                    Paso = BLL.ClientesBLL.Guardar(clientes);
+                else
+                    Paso = BLL.ClientesBLL.Modificar(LlenaClase());
+
+
+                if (Paso)
+                {
+                    MessageBox.Show("Guardado", "Exito",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo guardar", "Falló",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -212,14 +224,24 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             }
             else
             {
-                if (BLL.ClientesBLL.Eliminar(id))
+                Clientes clienttemp = BLL.ClientesBLL.Buscar(id);
+                double deuda = double.Parse(CalcularDeuda(clienttemp));
+                if ( deuda== 0)
                 {
-                    MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Limpiar();
+                    if (BLL.ClientesBLL.Eliminar(id))
+                    {
+
+                        MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo eliminar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo eliminar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Este cliente tiene una deuda de:"+deuda+" favor saldar, antes de eliminar" );
                 }
             }
             
@@ -257,5 +279,7 @@ namespace Warehouse_Pharmacy_System.UI.Registros
         {
 
         }
+        
+
     }
 }

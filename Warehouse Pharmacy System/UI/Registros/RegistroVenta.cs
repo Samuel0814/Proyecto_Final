@@ -202,7 +202,17 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                     "Debes Tener registrado al menos un cliente registrado");
                 HayErrores = true;
             }
-
+            if (!CreditocheckBox.Checked)
+            {
+                if (Convert.ToDouble(EfectivonumericUpDown.Value )<= Convert.ToDouble(TotalnumericUpDown.Value))
+                {
+                    MYerrorProvider.SetError(EfectivonumericUpDown,
+                        "El efectivo no alcanza para realizar el pago");
+                    HayErrores = true;
+                }
+            }
+            
+           
 
             if (string.IsNullOrEmpty(ArticulocomboBox.Text))
             {
@@ -266,6 +276,9 @@ namespace Warehouse_Pharmacy_System.UI.Registros
 
                 DetalledataGridView.Columns["ID"].Visible = false;
                 DetalledataGridView.Columns["IdFactura"].Visible = false;
+                DetalledataGridView.Columns["IdUsuario"].Visible = false;
+                DetalledataGridView.Columns["IdCliente"].Visible = false;
+
 
                 Total();
             }
@@ -300,20 +313,29 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                     List<FacturasDetalles> Detalle = (List<FacturasDetalles>)DetalledataGridView.DataSource;
                     Contexto db = new Contexto();
                     int detalleid = Convert.ToInt32(DetalledataGridView.SelectedRows[0].Cells[0].Value);
-                    var detalle = db.DetalleFactura.Where(x => x.ID == detalleid).First();
-                    //
-                    var articulo = db.articulos.Find(detalle.IdArticulo);
-                    articulo.Existencia += detalle.Cantidad;
-                    db.DetalleFactura.Remove(detalle);
 
-                    db.SaveChanges();
-                    Facturas.Detalle = db.DetalleFactura.Where(x => x.IdFactura == Facturas.IdFactura).ToList();
-                    DetalledataGridView.DataSource = null;
-                    DetalledataGridView.DataSource = Facturas.Detalle;
+                    var detalle = db.DetalleFactura.Where(x => x.ID == detalleid);
+                    //
+                    if (detalle.ToList().Count>0)
+                    {
+                        var articulo = db.articulos.Find(detalle.First().IdArticulo);
+                        articulo.Existencia += detalle.First().Cantidad;
+                        db.DetalleFactura.Remove(detalle.First());
+
+                        db.SaveChanges();
+                        Facturas.Detalle = db.DetalleFactura.Where(x => x.IdFactura == Facturas.IdFactura).ToList();
+                        DetalledataGridView.DataSource = null;
+                        DetalledataGridView.DataSource = Facturas.Detalle;
+                    }else
+                    {
+                        Facturas.Detalle = new List<FacturasDetalles>();
+                        DetalledataGridView.DataSource = Facturas.Detalle;
+
+                    }
                 }
                 catch
                 {
-                    Facturas.Detalle = new List<FacturasDetalles>();
+                    
 
                 }
             }
@@ -349,35 +371,38 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-
-            Facturas = LlenaClase();
-
-            if (FacturaIDnumericUpDown.Value == 0)
-            {
-                Contexto db = new Contexto();
-                Facturas = LlenaClase();
-                Facturas.IdFactura = db.Facturas.ToList().Count + 1;
-
-                Paso = BLL.FacturaBLL.Guardar(Facturas);
-
-            }
             else
             {
+
+
                 Facturas = LlenaClase();
-                Paso = BLL.FacturaBLL.Modificar(Facturas);
 
-            }
+                if (FacturaIDnumericUpDown.Value == 0)
+                {
+                    Contexto db = new Contexto();
+                    Facturas = LlenaClase();
+                    Facturas.IdFactura = db.Facturas.ToList().Count + 1;
 
-            if (Paso)
-            {
-                Nuevobutton.PerformClick();
-                MessageBox.Show("Guardado!!", "Exito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Paso = BLL.FacturaBLL.Guardar(Facturas);
+
+                }
+                else
+                {
+                    Facturas = LlenaClase();
+                    Paso = BLL.FacturaBLL.Modificar(Facturas);
+
+                }
+
+                if (Paso)
+                {
+                    Nuevobutton.PerformClick();
+                    MessageBox.Show("Guardado!!", "Exito",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                    MessageBox.Show("No se pudo guardar!!", "Fallo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
-                MessageBox.Show("No se pudo guardar!!", "Fallo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
@@ -430,6 +455,18 @@ namespace Warehouse_Pharmacy_System.UI.Registros
 
         private void CreditocheckBox_CheckedChanged(object sender, EventArgs e)
         {
+            if(CreditocheckBox.Checked)
+            {
+                EfectivonumericUpDown.Enabled = false;
+                DevueltanumericUpDown.Enabled = false;
+
+            }
+            else
+            {
+                EfectivonumericUpDown.Enabled = true;
+                DevueltanumericUpDown.Enabled = true;
+            }
+           
 
         }
 
@@ -463,6 +500,22 @@ namespace Warehouse_Pharmacy_System.UI.Registros
         private void RegistroVenta_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void DetalledataGridView_DataSourceChanged(object sender, EventArgs e)
+        {
+            if(DetalledataGridView.DataSource!=null)
+            {
+                Removerbutton.Enabled = true;
+            }else
+            {
+                Removerbutton.Enabled = false;
+            }
+        }
+
+        private void DetalledataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

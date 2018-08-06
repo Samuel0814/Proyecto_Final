@@ -100,6 +100,15 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                     "No debes dejar el ITBIS del articulo vacio");
                 HayErrores = true;
             }
+            if (IsNumber(PrecioCompratextBox.Text) && IsNumber(PrecioVentatextBox.Text))
+            {
+                if (double.Parse(PrecioVentatextBox.Text) < double.Parse(PrecioCompratextBox.Text))
+                {
+                    HayErrores = true;
+                    MessageBox.Show("El precio de la venta no puede ser menor que el de la compra");
+                }
+
+            }
 
             return HayErrores;
 
@@ -117,27 +126,30 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            articulos = LlenaClase();
-
-
-            if (ArticuloIdnumericUpDown.Value == 0)
-                Paso = BLL.ArticuloBLL.Guardar(articulos);
             else
-                Paso = BLL.ArticuloBLL.Modificar(LlenaClase());
-
-
-
-            if (Paso)
             {
-                MessageBox.Show("Guardado", "Exito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Limpiar();
-            }
-            else
-                MessageBox.Show("No se pudo guardar", "Falló",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                articulos = LlenaClase();
+
+
+                if (ArticuloIdnumericUpDown.Value == 0)
+                    Paso = BLL.ArticuloBLL.Guardar(articulos);
+                else
+                    Paso = BLL.ArticuloBLL.Modificar(LlenaClase());
+
+
+
+                if (Paso)
+                {
+                    MessageBox.Show("Guardado", "Exito",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                }
+                else
+                    MessageBox.Show("No se pudo guardar", "Falló",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
@@ -239,9 +251,23 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             }
         }
 
-        private void PrecioVentatextBox_TextChanged(object sender, EventArgs e)
+        private void PrecioCompratextBox_TextChanged(object sender, EventArgs e)
         {
-            
+           
+            if(!IsNumber(PrecioVentatextBox .Text))
+            {
+                PrecioVentatextBox.Clear();
+                return;
+            }else
+            if(!IsNumber(PrecioCompratextBox.Text))
+            {
+                PrecioCompratextBox.Clear();
+                return;
+            }
+
+         
         }
+
+        
     }
 }

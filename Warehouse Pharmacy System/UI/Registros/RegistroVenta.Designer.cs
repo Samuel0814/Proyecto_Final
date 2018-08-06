@@ -153,6 +153,8 @@
             this.DetalledataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DetalledataGridView.Size = new System.Drawing.Size(489, 139);
             this.DetalledataGridView.TabIndex = 52;
+            this.DetalledataGridView.DataSourceChanged += new System.EventHandler(this.DetalledataGridView_DataSourceChanged);
+            this.DetalledataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DetalledataGridView_CellContentClick);
             // 
             // CantidadnumericUpDown
             // 
@@ -213,6 +215,7 @@
             // 
             // Removerbutton
             // 
+            this.Removerbutton.Enabled = false;
             this.Removerbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Delete_32;
             this.Removerbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Removerbutton.Location = new System.Drawing.Point(415, 213);

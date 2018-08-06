@@ -42,6 +42,7 @@
             this.FiltrocomboBox = new System.Windows.Forms.ComboBox();
             this.Criteriolabel = new System.Windows.Forms.Label();
             this.Filtrolabel = new System.Windows.Forms.Label();
+            this.ImprimirTodasbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -183,11 +184,24 @@
             this.Filtrolabel.TabIndex = 0;
             this.Filtrolabel.Text = "Filtro";
             // 
+            // ImprimirTodasbutton
+            // 
+            this.ImprimirTodasbutton.Image = global::Warehouse_Pharmacy_System.Properties.Resources.icons8_Print_32;
+            this.ImprimirTodasbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ImprimirTodasbutton.Location = new System.Drawing.Point(116, 502);
+            this.ImprimirTodasbutton.Name = "ImprimirTodasbutton";
+            this.ImprimirTodasbutton.Size = new System.Drawing.Size(115, 48);
+            this.ImprimirTodasbutton.TabIndex = 18;
+            this.ImprimirTodasbutton.Text = "Imprimir Todas";
+            this.ImprimirTodasbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ImprimirTodasbutton.UseVisualStyleBackColor = true;
+            // 
             // ConsultaFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 562);
+            this.Controls.Add(this.ImprimirTodasbutton);
             this.Controls.Add(this.ConsultadataGridView);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
@@ -223,5 +237,6 @@
         private System.Windows.Forms.ComboBox FiltrocomboBox;
         private System.Windows.Forms.Label Criteriolabel;
         private System.Windows.Forms.Label Filtrolabel;
+        private System.Windows.Forms.Button ImprimirTodasbutton;
     }
 }

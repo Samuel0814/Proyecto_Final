@@ -88,27 +88,33 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            categorias = LlenaClase();
-
-
-            if (CategoriaIDnumericUpDown.Value == 0)
-                Paso = BLL.CategoriasBLL.Guardar(categorias);
             else
-                Paso = BLL.CategoriasBLL.Modificar(LlenaClase());
+            {
 
 
 
-            if (Paso) { 
-                MessageBox.Show("Guardado", "Exito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                categorias = LlenaClase();
+
+
+                if (CategoriaIDnumericUpDown.Value == 0)
+                    Paso = BLL.CategoriasBLL.Guardar(categorias);
+                else
+                    Paso = BLL.CategoriasBLL.Modificar(LlenaClase());
+
+
+
+                if (Paso)
+                {
+                    MessageBox.Show("Guardado", "Exito",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Limpiar();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo guardar", "Falló",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
-                MessageBox.Show("No se pudo guardar", "Falló",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)

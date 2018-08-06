@@ -105,14 +105,28 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
 
         private void Pagarbutton_Click(object sender, EventArgs e)
         {
+            CalcularTotal(null, null);
             Contexto db = new Contexto();
             double efectivo = Convert.ToDouble(EfectivotextBox.Value);
-            double total = double.Parse(TotaltextBox.Text);
+            double total = new double();
+            try
+            {
+              total = double.Parse(TotaltextBox.Text);
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Seleccione una o varias facturas para proceder a realizar el pago");
+
+            }
+            
            
             if (efectivo >= total)
             {
+                
                 try
                 {
+                   
                     foreach (DataGridViewRow item in FacturasdataGridView.Rows)
                     {
                         if ((bool)item.Cells[0].Value)
@@ -127,14 +141,19 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
                     }
                     if (db.SaveChanges() > 0)
                     {
+                        ClientecomboBox_SelectedValueChanged(null, null);
                         MessageBox.Show("Su pago se ha realizado correctamente");
                         
+                    }
+                    else
+                    {
+                        MessageBox.Show("Seleccione una o varias facturas para proceder a realizar el pago");
                     }
 
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    //MessageBox.Show(ex.Message);
 
                 }
             }

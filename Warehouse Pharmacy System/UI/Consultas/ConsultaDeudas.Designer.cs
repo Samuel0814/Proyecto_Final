@@ -72,6 +72,7 @@
             this.Buscatbutton.Text = "Buscar";
             this.Buscatbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscatbutton.UseVisualStyleBackColor = true;
+            this.Buscatbutton.Click += new System.EventHandler(this.Buscatbutton_Click_1);
             // 
             // groupBox1
             // 
