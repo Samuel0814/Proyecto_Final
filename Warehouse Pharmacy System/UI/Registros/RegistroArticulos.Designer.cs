@@ -126,6 +126,7 @@
             this.ExistenciatextBox.Name = "ExistenciatextBox";
             this.ExistenciatextBox.Size = new System.Drawing.Size(282, 25);
             this.ExistenciatextBox.TabIndex = 32;
+            this.ExistenciatextBox.TextChanged += new System.EventHandler(this.ExistenciatextBox_TextChanged);
             // 
             // PrecioVentatextBox
             // 

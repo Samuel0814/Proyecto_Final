@@ -124,8 +124,8 @@ namespace Warehouse_Pharmacy_System.UI.Registros
                 SexocomboBox.SelectedIndex = Convert.ToInt32(clientes.Sexo);
                 
                 FechaNacimientodateTimePicker.Value = clientes.FechaNacimiento;
-               
 
+                CreditotextBox.Text = CalcularDeuda(clientes);
                 creditomaximotextBox.Text = clientes.MaximoCredicto.ToString();
                 CedulamaskedTextBox.Text = clientes.Cedula;
                 TelefonomaskedTextBox.Text = clientes.Telefono;
@@ -135,6 +135,24 @@ namespace Warehouse_Pharmacy_System.UI.Registros
             {
                 MessageBox.Show("No encontrado");
             }
+        }
+
+        private string CalcularDeuda(Clientes clientes)
+        {
+            double total = 0;
+            Contexto db = new Contexto();
+            //
+            
+            //select * from Facturas where EstaSaldada='false' and IdCliente=1
+            var Factura = db.Facturas.Where(f => f.IdCliente == clientes.ClienteId && f.EstaSaldada == false);
+            foreach (var item in Factura)
+            {
+                total += item.Total; 
+            }
+           
+            
+
+            return total.ToString();
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)

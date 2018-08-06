@@ -119,12 +119,9 @@ namespace BLL
                 }
                 else
                 {
-                    if (!Tmp.ACredito&&Factura.ACredito)
+                    if (Tmp.ACredito&&!Factura.ACredito)
                     {
-                        DeudasClientes deudacliente = (from d in contexto.deudas
-                                                      where d.IdFactura == Factura.IdFactura
-                                                      select d).First();
-                        contexto.deudas.Remove(deudacliente);
+                        MessageBox.Show("Esta operacion se realiza en saldar deuda");
                     }
                 }
 

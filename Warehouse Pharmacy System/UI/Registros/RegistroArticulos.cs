@@ -190,5 +190,28 @@ namespace Warehouse_Pharmacy_System.UI.Registros
         {
 
         }
+
+        private void ExistenciatextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!IsNumber(ExistenciatextBox.Text))
+            {
+                ExistenciatextBox.Clear();
+            }
+        }
+
+        private bool IsNumber(string text)
+        {
+            try
+            {
+                decimal.Parse(text);
+
+            }
+            catch
+            {
+
+                return false;
+            }
+            return true;
+        }
     }
 }

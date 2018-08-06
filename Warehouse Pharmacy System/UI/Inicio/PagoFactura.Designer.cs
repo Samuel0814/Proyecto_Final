@@ -162,6 +162,11 @@
             // EfectivotextBox
             // 
             this.EfectivotextBox.Location = new System.Drawing.Point(668, 386);
+            this.EfectivotextBox.Maximum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            0});
             this.EfectivotextBox.Name = "EfectivotextBox";
             this.EfectivotextBox.Size = new System.Drawing.Size(120, 20);
             this.EfectivotextBox.TabIndex = 12;

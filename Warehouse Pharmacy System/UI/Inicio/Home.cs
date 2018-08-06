@@ -92,14 +92,6 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
 
         private void Home_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //if (MessageBox.Show("¿Seguro que desea salir de la aplicacion?",
-            //           "Consulta",
-            //           MessageBoxButtons.YesNo,
-            //           MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No)
-                       
-            //{
-            //    e.Cancel = true; //Cancela el cerrado del formulario
-            //}
            Application.Exit();
         }
 
@@ -150,7 +142,6 @@ namespace Warehouse_Pharmacy_System.UI.Inicio
 
         private void saldarDeudasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            //SaldarDeudas r = new SaldarDeudas();
             PagoFactura r = new PagoFactura();
             r.MdiParent = this;
             r.Show();
